@@ -34,4 +34,33 @@
     z-index: 2;
     
     
+}.container .newBox .logo .fa
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 90px;
+    transition: 0.5s;
+    color: white;
 }
+.container .newBox:hover .fa{
+    font-size: 50px;
+    
+}
+.container .newBox:hover .logo .fa{
+    font-size: 50px;
+    
+}
+
+
+.container .newBox:nth-child(1) .logo
+{
+    background: #23798e;
+    
+    
+}
+.container .newBox:nth-child(1) .logo
+{
+    background: #23798e;
+    
