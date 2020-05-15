@@ -13,7 +13,8 @@
     
 }
 .container .newBox {
-    position: relative;
+    position: absolute; 
+    top: 50%;
     height: calc(150px - 20px);
     width: calc(150px - 20px);
     margin: 15px;
