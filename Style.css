@@ -14,14 +14,15 @@
 }
 .container .newBox {
     position: absolute; 
-    top: 50%;
-    height: calc(150px - 20px);
-    width: calc(150px - 20px);
+    top: 60%;
+    height: calc(100px - 20px);
+    width: calc(100px - 20px);
     margin: 15px;
     left: 25%;
     overflow: hidden;
     box-sizing: border-box;
     border-radius: 20px;
+    opacity: 20%;
     }
 
 .container .newBox .logo
@@ -65,20 +66,11 @@
 {
     background: #23798e;
 }
+
 .container .box {
     position: relative;
-    height: calc(150px - 20px);
-    width: calc(150px - 20px);
-    margin: 15px;
-    left: 25%;
-    overflow: hidden;
-    box-sizing: border-box;
-    border-radius: 20px;
-}
-.container .box {
-    position: relative;
-    height: calc(150px - 20px);
-    width: calc(150px - 20px);
+    height: 140px;
+    width: 150px;
     margin: 15px;
     left: 25%;
     overflow: hidden;
