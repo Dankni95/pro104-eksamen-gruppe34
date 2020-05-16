@@ -67,11 +67,12 @@ nav {
 /* NavigationBar End */
 
 /* MainContainer Start */
-.MainContainer{
+.MainContainer {
   position: relative;
   width: 1400px;
   height: 800px;
 }
+
 .container {
   position: absolute;
   width: 1200px;
@@ -130,9 +131,11 @@ nav {
 .container .box:nth-child(2) {
   background: #81139c;
 }
+
 .container .box:nth-child(3) {
   background: #150b6d;
 }
+
 .container .box:nth-child(4) {
   background: #5a139c;
 }
