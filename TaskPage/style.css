@@ -1,0 +1,170 @@
+body,html{
+	padding: 0;
+    margin: 0;
+	background-color: #ffffffff;
+	width: 1200px;
+	height: 800px;
+	position: relative; 
+}
+/*Nav Bar: Start*/
+nav {
+	width: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: #273138;
+	font-family: "Poppins", sans-serif;
+}
+
+.logo img {
+	height: 6vh;
+	width: 60px;
+	color: #ff9800;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 35px;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.nav-links {
+	position: absolute;
+	right: 20px;
+	display: inline-flex;
+	justify-content: space-evenly;
+	width: 12%;
+	border-radius: 25px;
+	border: 1px solid;
+	color: grey;
+}
+
+.nav-links li {
+	list-style: none;
+}
+
+.nav-links a {
+	color: whitesmoke;
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.nav-links a:hover {
+	color: #ff9800;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+.burger div {
+	width: 25px;
+	height: 3px;
+	background-color: whitesmoke;
+	margin: 5px;
+}
+/*Nav Bar: End*/
+
+
+/*Top Box: Start*/
+#top_box{
+	width: 100%;
+	height: 100px;
+	position: fixed; 
+	top: 0x;
+	left: 0px;
+	background-color: #2E383F;
+
+
+}
+#top_title{
+	position: fixed;
+	left: 45%;
+	color: #E69638;
+}
+#img_top{
+	position: fixed; 
+	width: 200px;
+	height: 150px;
+	left: 52%;
+	
+	
+}
+/*Top Box: End*/
+
+
+/*Left Box: Start*/
+#left_container{
+	width: 160px;
+	height: 860px;
+	position: fixed; 
+	bottom: 20px;
+	left: 0px;
+	background-color: #2E383F;
+
+	
+}
+.add_boxes{
+	display: inline-block;
+	margin-left: 25px;
+	width: 100px;
+	height: 100px;
+	border: 2px solid black;
+	margin-top: 10px;
+	border-radius: 20%;
+}
+#add_box1{
+	background-color: #A2C76D;
+}
+#add_box2{
+	background-color: #53BAD1;
+}
+#add_container{
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	border: 2px solid black;
+	bottom: 50px;
+	left: 25px;
+	border-radius: 10%;
+
+}
+#plus_icon{
+	width: 60px;
+	height: 60px;
+	margin-left: 20px;
+	margin-top: 20px;
+
+	
+}
+#add_container:hover {
+	color: #ff9800;
+
+
+}
+/*Left Box: End*/
+
+#main_container{
+	position: absolute;
+	top: 100px;
+	left: 160px;
+	width: 1800px;
+	height: 500px;
+	background-color: #A2C76D;
+	border: 2px solid black;
+}
+#trash_container{
+	position: fixed;
+	width: 80px;
+	height: 80px;
+	right:50px;
+	bottom: 20px;
+
+
+}
+#trash{
+	width: 80px;
+	height: 80px;
+}
