@@ -15,7 +15,9 @@ nav {
   font-family: "Poppins", sans-serif;
 }
 
-.logo {
+.logo img {
+  height: 6vh;
+  width: 60px;
   color: #ff9800;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -73,11 +75,10 @@ nav {
 }
 
 .navigationContainer {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    right: 20%;
-
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  right: 20%;
 }
 
 .container .newBox {
