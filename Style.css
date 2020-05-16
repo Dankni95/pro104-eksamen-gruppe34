@@ -178,7 +178,8 @@ h3 {
     
   
 }
-.garbage img{
+
+.garbage img {
   position: absolute;
   height: 100px;
   width: 100px;
@@ -189,8 +190,5 @@ h3 {
   letter-spacing: 5px;
   font-size: 35px;
 }
+
 /* MainContainer End */
-
-
-
-
