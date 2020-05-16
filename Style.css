@@ -12,13 +12,15 @@ nav {
     min-height: 8vh;
     background-color: #273138;
     font-family: 'Poppins', sans-serif;
+
 }
 
 .logo {
     color: #ff9800;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 25px;
+    font-size: 35px;
+    text-shadow: 3px 3px 5px #000000;
 }
 
 .nav-links {
@@ -30,7 +32,6 @@ nav {
     border-radius: 25px;
     border: 1px solid;
     color: grey;
-
 }
 
 .nav-links li {
@@ -44,6 +45,10 @@ nav {
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #ff9800;
 }
 
 .burger {
@@ -60,6 +65,7 @@ nav {
 
 /* NavigationBar End */
 
+/* MainContainer Start */
 .container {
     position: relative;
     width: 1200px;
@@ -159,3 +165,5 @@ h3 {
 .box:hover {
     box-shadow: inset 0 0 0 10px #3a7999;
 }
+
+/* MainContainer End */
