@@ -12,6 +12,7 @@ nav {
     min-height: 8vh;
     background-color: #273138;
     font-family: 'Poppins', sans-serif;
+    width: 1400px;
 }
 
 .logo {
@@ -60,19 +61,26 @@ nav {
 
 /* NavigationBar End */
 
-.container {
+.MainContainer{
     position: relative;
-    width: 1200px;
-    height: 300px;
-    margin: 240px auto;
+    width: 1400px;
+    height: 1000px;
 
+}
+.container {
+    position: absolute;
+    width: 1200px;
+    height: 600px;
+    margin: 240px auto;
+    text-align: center;
+    bottom: 5%;
 
 }
 
 .navigationContainer {
     position: relative;
     width: 300px;
-    left: 80%;
+    left: 75%;
 
 }
 
@@ -143,6 +151,7 @@ nav {
     border-radius: 20px;
     background-color: blue;
     float: left;
+    top: 0%;
 }
 
 h3 {
