@@ -67,31 +67,31 @@ nav {
 /* NavigationBar End */
 
 /* MainContainer Start */
-.container {
+.MainContainer{
   position: relative;
-  width: 1200px;
-  height: 300px;
-  margin: 240px auto;
+  width: 1400px;
+  height: 1000px;
 }
-
-.navigationContainer {
+.container {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  right: 20%;
+  width: 1200px;
+  height: 600px;
+  margin: 240px auto;
+
 }
 
 .container .newBox {
-  position: absolute;
+  position: relative;
   top: 60%;
   height: calc(100px - 20px);
   width: calc(100px - 20px);
   margin: 15px;
-  left: 25%;
+  left: 30%;
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 20px;
   opacity: 20%;
+  margin-left: 60px;
 }
 
 .container .newBox .logo {
@@ -123,24 +123,34 @@ nav {
 }
 
 .container .newBox:nth-child(1) .logo {
-  background: #232a8e;
+  background: #236c8e;
 }
 
-.container .newBox:nth-child(1) .logo {
-  background: #1d139c;
+
+.container .box:nth-child(2) {
+  background: #81139c;
 }
+.container .box:nth-child(3) {
+  background: #150b6d;
+}
+.container .box:nth-child(4) {
+  background: #5a139c;
+}
+
 
 .container .box {
   position: relative;
   height: 140px;
   width: 150px;
   margin: 15px;
-  left: 25%;
+  left: 30%;
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 20px;
   background-color: blue;
   float: left;
+  text-align: center;
+  margin-left: 60px;
 }
 
 h3 {
@@ -159,3 +169,7 @@ h3 {
 }
 
 /* MainContainer End */
+
+
+
+
