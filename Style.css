@@ -73,18 +73,19 @@ nav {
 }
 .container {
     position: absolute;
-    width: 1200px;
+    width: 1400px;
     height: 600px;
     margin: 240px auto;
     text-align: center;
     bottom: 5%;
+    left: 10%;
 
 }
 
 .navigationContainer {
     position: relative;
-    width: 300px;
-    left: 75%;
+    width: 100px;
+    left: 100%;
 
 }
 
