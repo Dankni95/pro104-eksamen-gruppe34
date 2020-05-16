@@ -80,15 +80,8 @@ nav {
 
 }
 
-.navigationContainer {
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  right: 20%;
-}
-
 .container .newBox {
-  position: absolute;
+  position: relative;
   top: 60%;
   height: calc(100px - 20px);
   width: calc(100px - 20px);
@@ -98,7 +91,7 @@ nav {
   box-sizing: border-box;
   border-radius: 20px;
   opacity: 20%;
-  text-align: center;
+  margin-left: 60px;
 }
 
 .container .newBox .logo {
@@ -157,6 +150,7 @@ nav {
   background-color: blue;
   float: left;
   text-align: center;
+  margin-left: 60px;
 }
 
 h3 {
