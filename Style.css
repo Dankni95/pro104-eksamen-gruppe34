@@ -129,16 +129,17 @@ nav {
 
 
 .container .box:nth-child(2) {
-  background: #81139c;
+  background: #689c13;
 }
 
 .container .box:nth-child(3) {
-  background: #150b6d;
+  background: #0b6a6d;
 }
 
 .container .box:nth-child(4) {
-  background: #5a139c;
+  background: #9c1313;
 }
+
 
 
 .container .box {
