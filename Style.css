@@ -1,177 +1,158 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 /* NavigationBar Start */
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    background-color: #273138;
-    font-family: 'Poppins', sans-serif;
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #273138;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo {
-    color: #ff9800;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 35px;
-    text-shadow: 3px 3px 5px #000000;
+  color: #ff9800;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 35px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .nav-links {
-    position: absolute;
-    right: 20px;
-    display: inline-flex;
-    justify-content: space-evenly;
-    width: 12%;
-    border-radius: 25px;
-    border: 1px solid;
-    color: grey;
+  position: absolute;
+  right: 20px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 12%;
+  border-radius: 25px;
+  border: 1px solid;
+  color: grey;
 }
 
 .nav-links li {
-    list-style: none;
-
+  list-style: none;
 }
 
 .nav-links a {
-    color: whitesmoke;
-    text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 14px;
+  color: whitesmoke;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .nav-links a:hover {
-    color: #ff9800;
+  color: #ff9800;
 }
 
 .burger {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
 }
 
 .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: whitesmoke;
-    margin: 5px;
+  width: 25px;
+  height: 3px;
+  background-color: whitesmoke;
+  margin: 5px;
 }
 
 /* NavigationBar End */
 
 /* MainContainer Start */
-.MainContainer {
-    position: relative;
-    width: 1400px;
-    height: 1000px;
-
-}
 .container {
-    position: absolute;
-    width: 1400px;
-    height: 600px;
-    margin: 240px auto;
-    text-align: center;
-    bottom: 5%;
-    left: 10%;
-
+  position: relative;
+  width: 1200px;
+  height: 300px;
+  margin: 240px auto;
 }
 
 .navigationContainer {
-    position: relative;
-    width: 100px;
-    left: 100%;
-
+  position: relative;
+  width: 300px;
+  left: 80%;
 }
 
 .container .newBox {
-    position: relative;
-    top: 60%;
-    height: calc(100px - 20px);
-    width: calc(100px - 20px);
-    margin: 15px;
-    left: 25%;
-    overflow: hidden;
-    box-sizing: border-box;
-    border-radius: 20px;
-    opacity: 20%;
+  position: absolute;
+  top: 60%;
+  height: calc(100px - 20px);
+  width: calc(100px - 20px);
+  margin: 15px;
+  left: 25%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 20px;
+  opacity: 20%;
 }
 
 .container .newBox .logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
-    z-index: 2;
-
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 2;
 }
 
 .container .newBox .logo .fa {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 90px;
-    transition: 0.5s;
-    color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+  transition: 0.5s;
+  color: white;
 }
 
 .container .newBox:hover .fa {
-    font-size: 50px;
-
+  font-size: 50px;
 }
 
 .container .newBox:hover .logo .fa {
-    font-size: 50px;
-
-}
-
-
-.container .newBox:nth-child(1) .logo {
-    background: #232a8e;
-
-
+  font-size: 50px;
 }
 
 .container .newBox:nth-child(1) .logo {
-    background: #1d139c;
+  background: #232a8e;
+}
+
+.container .newBox:nth-child(1) .logo {
+  background: #1d139c;
 }
 
 .container .box {
-    position: relative;
-    height: 140px;
-    width: 150px;
-    margin: 15px;
-    left: 25%;
-    overflow: hidden;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background-color: blue;
-    float: left;
-    top: 0%;
+  position: relative;
+  height: 140px;
+  width: 150px;
+  margin: 15px;
+  left: 25%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: blue;
+  float: left;
 }
 
 h3 {
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 60px;
-    margin: 0 0 24px;
-    text-align: center;
-    text-transform: uppercase;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  margin: 0 0 24px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .box:hover {
-    box-shadow: inset 0 0 0 10px #3a7999;
+  box-shadow: inset 0 0 0 10px #3a7999;
 }
 
 /* MainContainer End */
