@@ -12,8 +12,6 @@ nav {
     min-height: 8vh;
     background-color: #273138;
     font-family: 'Poppins', sans-serif;
-    width: 1400;
-    width: 1400px;
 }
 
 .logo {
@@ -67,7 +65,7 @@ nav {
 /* NavigationBar End */
 
 /* MainContainer Start */
-.container {
+.MainContainer {
     position: relative;
     width: 1400px;
     height: 1000px;
@@ -91,7 +89,7 @@ nav {
 }
 
 .container .newBox {
-    position: absolute;
+    position: relative;
     top: 60%;
     height: calc(100px - 20px);
     width: calc(100px - 20px);
