@@ -96,7 +96,7 @@ nav {
 
 
 /*Left Box: Start*/
-#left_box{
+#left_container{
 	width: 160px;
 	height: 860px;
 	position: fixed; 
@@ -154,4 +154,17 @@ nav {
 	height: 500px;
 	background-color: #A2C76D;
 	border: 2px solid black;
+}
+#trash_container{
+	position: fixed;
+	width: 80px;
+	height: 80px;
+	right:50px;
+	bottom: 20px;
+
+
+}
+#trash{
+	width: 80px;
+	height: 80px;
 }
