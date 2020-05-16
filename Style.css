@@ -17,7 +17,7 @@ nav {
 
 .logo img {
   height: 6vh;
-  width: 60px;
+  width: 50px;
   color: #ff9800;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -74,11 +74,9 @@ nav {
 }
 
 .container {
-  position: relative;
   width: 1200px;
   height: 600px;
-  margin: 0 auto;
-  float: right;
+  text-align: center;
 
 }
 
@@ -141,8 +139,6 @@ nav {
   background: #9c1313;
 }
 
-
-
 .container .box {
   position: relative;
   height: 140px;
@@ -175,8 +171,8 @@ h3 {
   transform: scale(0.9);
   transition: 0.5s;
 
-    
-  
+
+
 }
 
 .garbage img {
