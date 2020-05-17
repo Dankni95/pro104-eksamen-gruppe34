@@ -115,6 +115,7 @@ body{
 	position: absolute;
 	top: 30px;
 	overflow: scroll;
+	height: 500px;
 	
 }
 .task_boxes{
@@ -129,6 +130,9 @@ body{
 	margin-left: 25px;
 	cursor: pointer;
 	
+}
+.task_boxes:hover {
+	transform: scale(1.1);
 }
 #task_box1{
 	background-color: #A2C76D;
@@ -154,8 +158,8 @@ body{
 	
 }
 #add_container:hover {
-	background-color: #ff9800;
-	transform: scale(0.6);
+	opacity: 50%;
+	
 }
 
 
