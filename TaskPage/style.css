@@ -42,6 +42,9 @@ body{
 #button3{
 	background-color: #6BE892;
 }
+.buttons:hover {
+	opacity: 50%;
+}
 /*Button: End*/
 
 
