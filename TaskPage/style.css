@@ -1,168 +1,139 @@
-body,html{
+*{
 	padding: 0;
-    margin: 0;
+	margin: 0;
+}
+body{
 	background-color: #ffffffff;
-	width: 1200px;
-	height: 800px;
 	position: relative; 
 }
-/*Nav Bar: Start*/
-nav {
-	width: auto;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	min-height: 8vh;
-	background-color: #273138;
-	font-family: "Poppins", sans-serif;
-}
-
-.logo img {
-	height: 6vh;
-	width: 60px;
-	color: #ff9800;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-size: 35px;
-	text-shadow: 2px 2px 4px #000000;
-}
-
-.nav-links {
+/*Top bar: Start*/
+#topBar{
 	position: absolute;
-	right: 20px;
-	display: inline-flex;
-	justify-content: space-evenly;
-	width: 12%;
+	width: 1440px;
+	height: 100px;
+	background-color: #273138;
+
+}
+/*Logo: Start*/
+#logo{
+	position: absolute;
+	top: 15px;
+	width: 60px;
+	height: 70px;
+	left: 50%;
+
+}
+#logoImg{
+	width: 60px;
+	height: 70px;
+}
+/*Logo: End*/
+
+
+/*Nav bar: Start*/
+#navBar{
+	position: absolute;
+	height: 25px;
+	width: 200px;
+	left: 1200px;
+	top: 40px;
+	border: 1px solid gray;
 	border-radius: 25px;
-	border: 1px solid;
-	color: grey;
 }
-
-.nav-links li {
-	list-style: none;
-}
-
-.nav-links a {
+#navBar li {
+	display: inline-block;
+	padding-top: 4px;
+	padding-left: 35px;
 	color: whitesmoke;
-	text-decoration: none;
-	letter-spacing: 3px;
-	font-weight: bold;
-	font-size: 14px;
 }
-
-.nav-links a:hover {
-	color: #ff9800;
-}
-
-.burger {
-	display: none;
+#navBar a{
+	color: whitesmoke;
 	cursor: pointer;
 }
-
-.burger div {
-	width: 25px;
-	height: 3px;
-	background-color: whitesmoke;
-	margin: 5px;
+#navBar a:hover{
+	color: #ff9800;
 }
-/*Nav Bar: End*/
-
-
-/*Top Box: Start*/
-#top_box{
-	width: 100%;
-	height: 100px;
-	position: fixed; 
-	top: 0x;
-	left: 0px;
-	background-color: #2E383F;
-
-
+.burger{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 100px;
+	left: 70%;
 }
-#top_title{
-	position: fixed;
-	left: 45%;
-	color: #E69638;
-}
-#img_top{
-	position: fixed; 
-	width: 200px;
-	height: 150px;
-	left: 52%;
-	
-	
-}
-/*Top Box: End*/
+/*Nav bar: End*/
+/*Top bar: End*/
 
 
 /*Left Box: Start*/
 #left_container{
+	position: absolute;
 	width: 160px;
-	height: 860px;
-	position: fixed; 
-	bottom: 20px;
-	left: 0px;
-	background-color: #2E383F;
+	height: 760px;
+	background-color: #273138;
 
 	
 }
-.add_boxes{
+/*Task boxes: Start*/
+
+#task_container{
+	position: absolute;
+	top: 100px;
+	overflow: scroll;
+	
+}
+.task_boxes{
 	display: inline-block;
-	margin-left: 25px;
+	border: 1px solid black;
 	width: 100px;
 	height: 100px;
-	border: 2px solid black;
-	margin-top: 10px;
+	top: 140px;
+	left: 25px;
 	border-radius: 20%;
+	margin-top: 10px;
+	margin-left: 25px;
+	cursor: pointer;
+	
 }
-#add_box1{
+#task_box1{
 	background-color: #A2C76D;
 }
-#add_box2{
-	background-color: #53BAD1;
-}
-#add_container{
-	position: fixed;
-	width: 100px;
-	height: 100px;
-	border: 2px solid black;
-	bottom: 50px;
-	left: 25px;
-	border-radius: 10%;
 
+/*Task boxes: End*/
+
+#add_container{
+	position: absolute;
+	bottom: 50px;
+	left: 35px;
+	height: 80px;
+	width: 80px;
+	border: 1px solid gray ;
+	border-radius: 15%;
+	cursor: pointer;
 }
 #plus_icon{
-	width: 60px;
-	height: 60px;
-	margin-left: 20px;
-	margin-top: 20px;
-
+	height: 80px;
+	width: 80px;
 	
 }
-#add_container:hover {
-	color: #ff9800;
 
 
-}
 /*Left Box: End*/
 
 #main_container{
 	position: absolute;
 	top: 100px;
 	left: 160px;
-	width: 1800px;
+	width: 1280px;
 	height: 500px;
 	background-color: #A2C76D;
-	border: 2px solid black;
+
 }
 #trash_container{
-	position: fixed;
+	position: absolute;
 	width: 80px;
 	height: 80px;
-	right:50px;
-	bottom: 20px;
-
-
+	right: 20px;
+	top: 680px;
 }
 #trash{
 	width: 80px;
