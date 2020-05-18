@@ -8,6 +8,7 @@ body {}
 
 /* NavigationBar Start */
 nav {
+  height: auto;
   width: auto;
   display: flex;
   justify-content: space-around;
@@ -92,15 +93,20 @@ nav {
 /* Mobile Responsive */
 @media only screen and (max-width: 768px) {
   .MainContainer {
-    padding: 1rem;
-    justify-content:
+    padding: 4rem;
+    grid-gap: 5rem;
+    grid-template-columns: repeat(auto-fill);
+
+
   }
 }
 
 /* IPad Responsive */
-@media (min-width: 768px) and (max-width: 1071px) {
+@media (min-width: 772px) and (max-width: 911px) {
   .MainContainer {
-    padding: 5rem;
+    padding: 4rem;
+    grid-gap: 5rem;
+    grid-template-columns: repeat(auto-fill);
 
   }
 }
