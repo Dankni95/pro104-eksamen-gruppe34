@@ -59,7 +59,15 @@
     <div class="garbage">
       <img src="/images/Garbage.png" alt="trash">
     </div>
-    
+<script>
+    function setLocalStorage(type, object) {
+    window.localStorage.setItem(type, JSON.stringify(object));
+}
+
+function getLocalStorage(type) {
+    return JSON.parse(window.localStorage.getItem(type)) || [];
+}      
+</script>    
 
   </div>
 
