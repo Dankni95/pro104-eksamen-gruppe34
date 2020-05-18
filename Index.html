@@ -30,44 +30,97 @@
         <a href="Index.html"><i class="fa fa-eye"></i></a>
       </li>
     </ul>
-
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
   </nav>
   <!-- NavigationBar End-->
 
-  <!-- MainContainer Start-->
+  <!-- BoxCreator -->
   <div class="MainContainer">
-
-    <div class="container">
-      <div class="newBox">
-        <div class="logo"><i class="fa fa-plus" aria hidden="true"></i></div>
+    <div class=" card" style="--background:orange; --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
       </div>
-      <div class="box">
-        <h3>Nr1</h3>
-      </div>
-      <div class="box">
-        <h3>Nr2</h3>
-      </div>
-      <div class="box">
-        <h3>Nr3</h3>
-      </div>
+      <div class="container"></div>
     </div>
-    <div class="garbage">
-      <img src="/images/Garbage.png" alt="trash">
-    </div>
-    <script>
-      function setLocalStorage(type, object) {
-        window.localStorage.setItem(type, JSON.stringify(object));
-      }
 
-      function getLocalStorage(type) {
-        return JSON.parse(window.localStorage.getItem(type)) || [];
-      }
-    </script>
+    <div class=" card" style="--background:rgb(34, 0, 112); --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>
+
+    <div class=" card" style="--background:#85DCB4; --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>
+
+    <div class=" card" style="--background:lightblue; --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>
+
+    <div class=" card" style="--background:orange; --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>
+
+    <div class=" card" style="--background:#e27d60; --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>
+
+    <div class=" card" style="--background:#85DCB4; --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>
+
+    <div class=" card" style="--background:#85DCB4; --text:white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>
+
+
+
+  </div>
+
+
+  <script>
+    function setLocalStorage(type, object) {
+      window.localStorage.setItem(type, JSON.stringify(object));
+    }
+
+    function getLocalStorage(type) {
+      return JSON.parse(window.localStorage.getItem(type)) || [];
+    }
+  </script>
 
   </div>
 
