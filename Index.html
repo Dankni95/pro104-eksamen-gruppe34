@@ -33,7 +33,7 @@
     <!-- Colorbox start-->
 
     <div class="colorbox">
-      <a onclick="changeColor('red')" id="red">#e74837</a>
+      <div id="red">#e74837</div>
       <a onclick="changeColor('blue')" id="blue">#2b8aca</a>
       <a onclick="changeColor('green')" id="green">#28cc6d</a>
       <a onclick="changeColor('gray')" id="gray">#364c61</a>
@@ -125,28 +125,24 @@
       var getColorYellow = document.getElementById("yellow");
       var getColorOrange = document.getElementById("orange");
       
-      getColorRed.onclick = function(){
+      getColorRed.onclick = function{
       changeColor("red");
-    }
-            getColorBlue.onclick = function(){
-      changeColor("blue");
       }
-            getColorGreen.onclick = function(){
+            getColorBlue.onclick = function{
+      changeColor("blue");
+            }
+            getColorGreen.onclick = function{
       changeColor("green");
             }
-      
-            getColorGray.onclick = function(){
-              changeColor("gray");  
+            getColorGray.onclick = function{
+      changeColor("gray");
+      }
+            getColorYellow.onclick = function{
+      changeColor("yellow");
             }
-      
-      
-            getColorYellow.onclick = function(){
-                      changeColor("yellow");
-            }
-
-            getColorOrange.onclick = function(){
-                changeColor("orange");
-            }
+            getColorOrange.onclick = function{
+      changeColor("orange");
+      }
     
       function changeColor(color){
           getMainContainer.style.backgroundColor = `${color}`;
@@ -161,11 +157,7 @@
     }
 
 
-    //colorscript
-    function changeColor(id) {
-      document.body.style.background = document.getElementById(id).innerHTML;
-
-    }
+   
   </script>
 
   </div>

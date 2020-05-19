@@ -21,7 +21,7 @@ body {
   background: #273138;
 }
 
-.colorbox a {
+#red {
   width: 40px;
   height: 40px;
   float: left;
