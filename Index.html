@@ -118,7 +118,7 @@
 
 
   <script type="text/javascript">
-            var getMainContainer= document.getElementById("maincontainer");
+      var getMainContainer= document.getElementById("maincontainer");
       var getColorRed = document.getElementById("red");
       var getColorBlue = document.getElementById("blue");
       var getColorGreen = document.getElementById("green");
@@ -126,27 +126,28 @@
       var getColorYellow = document.getElementById("yellow");
       var getColorOrange = document.getElementById("orange");
       
-      getColorRed.onclick = function{
-      changeColor("red");
+      getColorRed.onclick = function(){
+      getMainContainer.style.backgroundColor="red";
+    
       }
-            getColorBlue.onclick = function{
+            getColorBlue.onclick = function(){
       changeColor("blue");
             }
-            getColorGreen.onclick = function{
+            getColorGreen.onclick = function(){
       changeColor("green");
             }
-            getColorGray.onclick = function{
+            getColorGray.onclick = function(){
       changeColor("gray");
       }
-            getColorYellow.onclick = function{
+            getColorYellow.onclick = function(){
       changeColor("yellow");
             }
-            getColorOrange.onclick = function{
+            getColorOrange.onclick = function(){
       changeColor("orange");
       }
     
       function changeColor(color){
-          getMainContainer.style.backgroundColor = `${color}`;
+          getMainContainer.style.backgroundColor = "red";
           
       }
     function setLocalStorage(type, object) {
@@ -157,11 +158,11 @@
       return JSON.parse(window.localStorage.getItem(type)) || [];
     }
 
-
+      
    
   </script>
 
-  </div>
+ 
 
   <!-- MainContainer End-->
 </body>
