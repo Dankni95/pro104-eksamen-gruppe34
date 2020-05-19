@@ -125,24 +125,28 @@
       var getColorYellow = document.getElementById("yellow");
       var getColorOrange = document.getElementById("orange");
       
-      getColorRed.onclick = function(
+      getColorRed.onclick = function(){
       changeColor("red");
-      )
-            getColorBlue.onclick = function(
+    }
+            getColorBlue.onclick = function(){
       changeColor("blue");
-      )
-            getColorGreen.onclick = function(
+      }
+            getColorGreen.onclick = function(){
       changeColor("green");
-      )
-            getColorGray.onclick = function(
-      changeColor("gray");
-      )
-            getColorYellow.onclick = function(
-      changeColor("yellow");
-      )
-            getColorOrange.onclick = function(
-      changeColor("orange");
-      )
+            }
+      
+            getColorGray.onclick = function(){
+              changeColor("gray");  
+            }
+      
+      
+            getColorYellow.onclick = function(){
+                      changeColor("yellow");
+            }
+
+            getColorOrange.onclick = function(){
+                changeColor("orange");
+            }
     
       function changeColor(color){
           getMainContainer.style.backgroundColor = `${color}`;
