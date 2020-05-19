@@ -49,6 +49,7 @@
 
 /* NavigationBar Start */
 nav {
+  position: relative;
   height: auto;
   width: auto;
   display: flex;
