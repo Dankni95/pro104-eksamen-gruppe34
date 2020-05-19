@@ -15,10 +15,9 @@ body {
 
 .colorbox {
   position: absolute;
-  margin-top: 1px;
   right: 70%;
-  padding: 5px;
-  margin: 4px;
+  padding: 3px;
+  margin: 0px;
   background: #273138;
 }
 
