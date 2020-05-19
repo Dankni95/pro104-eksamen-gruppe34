@@ -117,37 +117,38 @@
 
 
   <script type="text/javascript">
-            var getMainContainer= document.getElementById("maincontainer");
-      var getColorRed = document.getElementById("red");
-      var getColorBlue = document.getElementById("blue");
-      var getColorGreen = document.getElementById("green");
-      var getColorGray = document.getElementById("gray");
-      var getColorYellow = document.getElementById("yellow");
-      var getColorOrange = document.getElementById("orange");
-      
-      getColorRed.onclick = function(
+    var getMainContainer = document.getElementById("maincontainer");
+    var getColorRed = document.getElementById("red");
+    var getColorBlue = document.getElementById("blue");
+    var getColorGreen = document.getElementById("green");
+    var getColorGray = document.getElementById("gray");
+    var getColorYellow = document.getElementById("yellow");
+    var getColorOrange = document.getElementById("orange");
+
+    getColorRed.onclick = function (
       changeColor("red");
-      )
-            getColorBlue.onclick = function(
+    )
+    getColorBlue.onclick = function (
       changeColor("blue");
-      )
-            getColorGreen.onclick = function(
+    )
+    getColorGreen.onclick = function (
       changeColor("green");
-      )
-            getColorGray.onclick = function(
+    )
+    getColorGray.onclick = function (
       changeColor("gray");
-      )
-            getColorYellow.onclick = function(
+    )
+    getColorYellow.onclick = function (
       changeColor("yellow");
-      )
-            getColorOrange.onclick = function(
+    )
+    getColorOrange.onclick = function (
       changeColor("orange");
-      )
-    
-      function changeColor(color){
-          getMainContainer.style.backgroundColor = `${color}`;
-          
-      }
+    )
+
+    function changeColor(color) {
+      getMainContainer.style.backgroundColor = `${color}`;
+
+    }
+
     function setLocalStorage(type, object) {
       window.localStorage.setItem(type, JSON.stringify(object));
     }
