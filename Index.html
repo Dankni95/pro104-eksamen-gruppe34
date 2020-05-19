@@ -34,13 +34,17 @@
     <!-- Colorbox start-->
 
     <div class="colorbox">
+      <div class="colorboxContainer">
+
       <div id="red">#e74837</div>
-      <a onclick="changeColor('blue')" id="blue">#2b8aca</a>
-      <a onclick="changeColor('green')" id="green">#28cc6d</a>
-      <a onclick="changeColor('gray')" id="gray">#364c61</a>
-      <a onclick="changeColor('yellow')" id="yellow">#e9bc0a</a>
-      <a onclick="changeColor('orange')" id="orange">#df7921</a>
+      <div id="blue">#2b8aca</div>
+      <div id="green">#28cc6d</div>
+      <div id ="gray">#364c61</div>
+      <div id="yellow">#e9bc0a</div>
+      <div id="orange">#df7921</div>
     </div>
+    </div>
+
   </nav>
   <!-- NavigationBar End-->
 
@@ -127,29 +131,29 @@
       var getColorOrange = document.getElementById("orange");
       
       getColorRed.onclick = function(){
-      getMainContainer.style.backgroundColor="red";
+      getMainContainer.style.backgroundColor= "#e74837";
     
       }
-            getColorBlue.onclick = function(){
-      changeColor("blue");
-            }
-            getColorGreen.onclick = function(){
-      changeColor("green");
-            }
-            getColorGray.onclick = function(){
-      changeColor("gray");
-      }
-            getColorYellow.onclick = function(){
-      changeColor("yellow");
-            }
-            getColorOrange.onclick = function(){
-      changeColor("orange");
-      }
+      getColorBlue.onclick = function(){
+      getMainContainer.style.backgroundColor= "#2b8aca";
     
-      function changeColor(color){
-          getMainContainer.style.backgroundColor = "red";
-          
       }
+      getColorGreen.onclick = function(){
+      getMainContainer.style.backgroundColor= "#28cc6d";
+    
+      }   
+      getColorGray.onclick = function(){
+      getMainContainer.style.backgroundColor= "#364c61";
+    
+      } 
+      getColorYellow.onclick = function(){
+      getMainContainer.style.backgroundColor= "#e9bc0a";
+    
+      }         
+      getColorOrange.onclick = function(){
+      getMainContainer.style.backgroundColor= "#df7921";
+    
+      }                 
     function setLocalStorage(type, object) {
       window.localStorage.setItem(type, JSON.stringify(object));
     }
