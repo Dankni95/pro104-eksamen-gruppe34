@@ -43,15 +43,15 @@
       </div>
       <div class="container"></div>
     </div>
-      <!-- BoxCreator -->
-      <div class = "colorbox">
-      <a onclick = "changeColor('red')" id="red">#e74837</a>
-      <a onclick = "changeColor('blue')" id ="blue">#2b8aca</a>
-      <a onclick = "changeColor('green')" id="green">#28cc6d</a>
-      <a onclick = "changeColor('gray')"id="gray">#364c61</a>
-      <a onclick = "changeColor('yellow')"id="yellow">#e9bc0a</a>
-      <a onclick = "changeColor('orange')"id="orange">#df7921</a>
-      </div>
+    <!-- BoxCreator -->
+    <div class="colorbox">
+      <a onclick="changeColor('red')" id="red">#e74837</a>
+      <a onclick="changeColor('blue')" id="blue">#2b8aca</a>
+      <a onclick="changeColor('green')" id="green">#28cc6d</a>
+      <a onclick="changeColor('gray')" id="gray">#364c61</a>
+      <a onclick="changeColor('yellow')" id="yellow">#e9bc0a</a>
+      <a onclick="changeColor('orange')" id="orange">#df7921</a>
+    </div>
 
     <div class=" card" style="--background:rgb(34, 0, 112); --text:white;">
       <div class="multi-button">
@@ -62,14 +62,6 @@
       <div class="container"></div>
     </div>
 
-    <div class=" box" style="--background:rgb(230, 92, 28); --text:white;">
-      <div class="multi-button">
-        <button class="fa fa-comment"></button>
-        <button class="fa fa-cog"></button>
-        <button class="fa fa-trash"></button>
-      </div>
-      <div class="container"></div>
-    </div>
 
     <div class=" card" style="--background:lightblue; --text:white;">
       <div class="multi-button">
@@ -132,13 +124,10 @@
 
 
     //colorscript
-    function changeColor(id){
+    function changeColor(id) {
       document.body.style.background = document.getElementById(id).innerHTML;
 
     }
-
-
-
   </script>
 
   </div>
