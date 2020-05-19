@@ -115,6 +115,8 @@ body{
 	position: absolute;
 	top: 30px;
 	overflow: scroll;
+	margin-top: 0;
+	margin-bottom: 0;
 	height: 500px;
 	
 }
@@ -165,6 +167,8 @@ body{
 
 /*Left Box: End*/
 
+
+/*Main: Start*/
 #main_container{
 	position: absolute;
 	top: 100px;
@@ -174,6 +178,32 @@ body{
 	background-color: #A2C76D;
 
 }
+#mainTitle{
+	margin-left: 10px;
+}
+#taskContainer{
+	position: absolute;
+	left: 10px;
+	border: 2px solid black;
+	width: 500px;
+}
+.taskTabs{
+	display: inline-block;
+	height: 250px;
+	width: 45px;
+	left: 10px;
+	top: 50px;
+	border: 2px solid black;
+	margin-top: 3px;
+	margin-left: 2px;
+}
+.plus{
+	border: 2px solid black;
+	width: 10px;
+	height: 10px;
+	margin-left: 30px;
+}
+/*Main: End*/
 #trash_container{
 	position: absolute;
 	right: 40px;
