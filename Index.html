@@ -31,6 +31,16 @@
         <a href="Index.html"><i class="fa fa-eye"></i></a>
       </li>
     </ul>
+    <!-- Colorbox start-->
+
+    <div class="colorbox">
+      <a onclick="changeColor('red')" id="red">#e74837</a>
+      <a onclick="changeColor('blue')" id="blue">#2b8aca</a>
+      <a onclick="changeColor('green')" id="green">#28cc6d</a>
+      <a onclick="changeColor('gray')" id="gray">#364c61</a>
+      <a onclick="changeColor('yellow')" id="yellow">#e9bc0a</a>
+      <a onclick="changeColor('orange')" id="orange">#df7921</a>
+    </div>
   </nav>
   <!-- NavigationBar End-->
 
@@ -44,15 +54,8 @@
       </div>
       <div class="container"></div>
     </div>
-      <!-- BoxCreator -->
-      <div class = "colorbox">
-      <a onclick = "changeColor('red')" id="red">#e74837</a>
-      <a onclick = "changeColor('blue')" id ="blue">#2b8aca</a>
-      <a onclick = "changeColor('green')" id="green">#28cc6d</a>
-      <a onclick = "changeColor('gray')"id="gray">#364c61</a>
-      <a onclick = "changeColor('yellow')"id="yellow">#e9bc0a</a>
-      <a onclick = "changeColor('orange')"id="orange">#df7921</a>
-      </div>
+    <!-- BoxCreator -->
+
 
     <div class=" card" style="--background:rgb(34, 0, 112); --text:white;">
       <div class="multi-button">
@@ -63,14 +66,6 @@
       <div class="container"><a href="#" onclick="newPage('test_page')">test</a></div>
     </div>
 
-    <div class=" box" style="--background:rgb(230, 92, 28); --text:white;">
-      <div class="multi-button">
-        <button class="fa fa-comment"></button>
-        <button class="fa fa-cog"></button>
-        <button class="fa fa-trash"></button>
-      </div>
-      <div class="container"></div>
-    </div>
 
     <div class=" card" style="--background:lightblue; --text:white;">
       <div class="multi-button">
@@ -123,6 +118,41 @@
 
 
   <script type="text/javascript">
+            var getMainContainer= document.getElementById("maincontainer");
+      var getColorRed = document.getElementById("red");
+      var getColorBlue = document.getElementById("blue");
+      var getColorGreen = document.getElementById("green");
+      var getColorGray = document.getElementById("gray");
+      var getColorYellow = document.getElementById("yellow");
+      var getColorOrange = document.getElementById("orange");
+      
+      getColorRed.onclick = function(){
+      changeColor("red");
+    }
+            getColorBlue.onclick = function(){
+      changeColor("blue");
+      }
+            getColorGreen.onclick = function(){
+      changeColor("green");
+            }
+      
+            getColorGray.onclick = function(){
+              changeColor("gray");  
+            }
+      
+      
+            getColorYellow.onclick = function(){
+                      changeColor("yellow");
+            }
+
+            getColorOrange.onclick = function(){
+                changeColor("orange");
+            }
+    
+      function changeColor(color){
+          getMainContainer.style.backgroundColor = `${color}`;
+          
+      }
     function setLocalStorage(type, object) {
       window.localStorage.setItem(type, JSON.stringify(object));
     }
@@ -133,13 +163,10 @@
 
 
     //colorscript
-    function changeColor(id){
+    function changeColor(id) {
       document.body.style.background = document.getElementById(id).innerHTML;
 
     }
-
-
-
   </script>
 
   </div>
