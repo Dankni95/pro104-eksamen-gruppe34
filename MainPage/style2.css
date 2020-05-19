@@ -17,7 +17,7 @@ nav {
 
 .logo img {
 	height: 6vh;
-	width: 60px;
+	width: 50px;
 	color: #ff9800;
 	text-transform: uppercase;
 	letter-spacing: 5px;
@@ -65,3 +65,11 @@ nav {
 }
 
 /* NavigationBar Start */
+/* Sidebar Start */
+.sidebar{
+	position: absolute;
+  	width: 16vh;
+	min-height: 70vh;
+    background-color: #273138;
+}
+
