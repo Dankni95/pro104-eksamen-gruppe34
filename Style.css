@@ -28,7 +28,7 @@ nav .logo img {
 nav ul {
   float: right;
   list-style: none;
-  margin-right: 40px;
+  margin-right: 75px;
   position: relative;
   isolation: isolate;
 
@@ -37,7 +37,7 @@ nav ul {
 nav ul li {
   float: left;
   display: inline-block;
-  background: #1b1b1b;
+  background: #242736;
   margin: 0 5px;
   
 }
@@ -278,7 +278,8 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
   border-radius: 10px;
   opacity: 0.5;
   font-size: 150px;
-  border-style: outset;
+  border-style: dotted;
+  border-width: 1.5px;
 }
 
 .createBox:hover {}
