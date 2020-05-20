@@ -21,10 +21,12 @@
   margin: 5px;
   border: 2px solid black;
   cursor: pointer;
+  
 }
 
 #red {
   background: #e74837;
+
 }
 
 #blue {
