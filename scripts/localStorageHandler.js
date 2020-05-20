@@ -23,6 +23,11 @@ function getStorageAsNumber(value) {
 	if (!isNaN(_value)) return parseInt(_value);
 	else return NaN;
 }
+
+function removeStorage(name) {
+	window.localStorage.removeItem(name);
+}
+
 /**
  * 
  * @param {String} name 
@@ -33,9 +38,11 @@ function addStorage(name, value, overwrite = false) {
 	if (!window) throw ReferenceError("This has to be run in a browser.");
 	const array = [];
 	if (typeof value == "Number") value = value.toString();
-	if (overwrite) {
-		for (const c of JSON.parse(window.localStorage.getItem(name))) {
-			array.push(c);
+	if (!overwrite) {
+		if (window.localStorage.getItem(name)) {
+			for (const c of JSON.parse(window.localStorage.getItem(name))) {
+				array.push(c);
+			}
 		}
 		array.push(value);
 		window.localStorage.setItem(name, JSON.stringify(array));

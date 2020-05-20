@@ -68,8 +68,6 @@
           <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
-      <div class="container"></div>
-    </div>
 
     <div class=" card" style="--background:lightblue; --text:white;">
       <div class="multi-button">
@@ -77,8 +75,6 @@
           <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
-      <div class="container"></div>
-    </div>
 
     <div class=" card" style="--background:orange; --text:white;">
       <div class="multi-button">
@@ -86,7 +82,6 @@
           <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
-      <div class="container"></div>
     </div>
 
     <div class=" card" style="--background:#e27d60; --text:white;">
@@ -113,37 +108,47 @@
         <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
-      <div class="container"></div>
-    </div>
+      <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
+    </div>`;
+        }
+        
+        
 
+      getColorRed.onclick = function () {
+        getMainContainer.style.backgroundColor = "#e74837";
+      };
+      getColorBlue.onclick = function () {
+        getMainContainer.style.backgroundColor = "#2b8aca";
+      };
+      getColorGreen.onclick = function () {
+        getMainContainer.style.backgroundColor = "#28cc6d";
+      };
+      getColorGray.onclick = function () {
+        getMainContainer.style.backgroundColor = "#364c61";
+      };
+      getColorYellow.onclick = function () {
+        getMainContainer.style.backgroundColor = "#e9bc0a";
+      };
+      getColorOrange.onclick = function () {
+        getMainContainer.style.backgroundColor = "#df7921";
+      };
 
+      function setLocalStorage(type, object) {
+        window.localStorage.setItem(type, JSON.stringify(object));
+      }
 
-  </div>
+      function getLocalStorage(type) {
+        return JSON.parse(window.localStorage.getItem(type)) || [];
+      }
+    
+        
+    </script>
 
-
-  <script type="text/javascript">
-    function setLocalStorage(type, object) {
-      window.localStorage.setItem(type, JSON.stringify(object));
-    }
-
-    function getLocalStorage(type) {
-      return JSON.parse(window.localStorage.getItem(type)) || [];
-    }
-
-
-    //colorscript
-    function changeColor(id){
-      document.body.style.background = document.getElementById(id).innerHTML;
-
-    }
-
-
-
-  </script>
-
-  </div>
-
-  <!-- MainContainer End-->
-</body>
+    <!-- MainContainer End-->
+  </body>
+  <script src="scripts/newPage.js"></script>
+  <script src="scripts/localStorageHandler.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
+<script src="scripts/darkmode.js"></script>
 
 </html>

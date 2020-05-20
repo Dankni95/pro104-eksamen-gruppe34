@@ -65,3 +65,11 @@ nav {
 }
 
 /* NavigationBar Start */
+/* Sidebar Start */
+.sidebar{
+	position: absolute;
+  	width: 16vh;
+	min-height: 70vh;
+    background-color: #273138;
+}
+
