@@ -1,12 +1,9 @@
 var getmain = document.getElementById("maincontainer");
-    var getPlussButtonAddProject = document.getElementById("addProject");
+    var getPlussButtonAddProject = document.getElementsByClassName("createBox");
     
-    //0=project, 1=categories, 2=task, 3=person
     getPlussButtonAddProject.onclick = function(){
         addItem("project", "Skoleprosjekt", "#FF6347");
     } 
-    
-    ////////////////////////////////////////////////////////////////////////////
     
     //type =project, category, tast or person
     function setLocalStorage(type, object) {
@@ -16,9 +13,8 @@ var getmain = document.getElementById("maincontainer");
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
 }
-    
-    ////////////////////////////
-    function addItem(typeToAdd, text, color, height, width){
+
+    function addItem(typeToAdd, text, color){
         if(typeToAdd==="project"){
            setLocalStorage("project", {texToToShow: `${text}`, backgroundcolor: `${color}`});
             buildItems();
@@ -34,10 +30,9 @@ function getLocalStorage(type) {
 
         }
     }
-    //////////////////////////////////
-    
+        
         function buildItems(){
-           // if(items=="project"){
+           // if(items=="project")
                 let getArrayLocalStorage = getLocalStorage(`project`);
                     let backgroundColor = getArrayLocalStorage.backgroundcolor;
                     let text = getArrayLocalStorage.texToToShow;
