@@ -33,7 +33,7 @@ nav ul {
 }
 
 nav ul li {
-  float: left;
+  float:left;
   display: inline-block;
   background: #1b1b1b;
   margin: 0 5px;
@@ -67,14 +67,14 @@ nav ul ul {
 }
 
 nav ul li:hover>ul {
-  top: 70px;
+  top: 85px;
   opacity: 1;
   visibility: visible;
 }
 
 nav ul ul li {
   position: relative;
-  width: 150px;
+  width: 100px;
   float: none;
   display: list-item;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -90,9 +90,6 @@ nav ul ul ul li {
   left: 150px;
 }
 
-.colorbox {
-  display: none;
-}
 
 #red {
   background: #e74837;
