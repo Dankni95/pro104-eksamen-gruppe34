@@ -274,7 +274,7 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
   border-radius: 10px;
   opacity: 0.5;
   font-size: 150px;
-  ;
+  border-style: outset;
 }
 
 .createBox:hover {}
