@@ -46,6 +46,7 @@ nav ul li a {
   font-size: 18px;
   padding: 8px 15px;
   display: list-item;
+  margin-right: 35px;
 }
 
 nav ul li a:hover {
@@ -64,10 +65,10 @@ nav ul ul {
   top: 30px;
   opacity: 0;
   visibility: hidden;
+  top: 85px;
 }
 
 nav ul li:hover>ul {
-  top: 85px;
   opacity: 1;
   visibility: visible;
 }
