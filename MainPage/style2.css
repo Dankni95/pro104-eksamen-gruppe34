@@ -1,68 +1,215 @@
+/* Removes default styling */
 * {
 	margin: 0px;
 	padding: 0px;
+	color: white;
+	font-family: "popins", sans-serif;
 	box-sizing: border-box;
 }
 
-/* NavigationBar Start */
+/* Navigation Bar */
 nav {
-	width: auto;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	min-height: 8vh;
-	background-color: #273138;
-	font-family: "Poppins", sans-serif;
+	background: #273138;
+	z-index: 0;
+}
+
+nav::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.logo {
+	text-align: center;
 }
 
 .logo img {
-	height: 6vh;
-	width: 50px;
-	color: #ff9800;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-size: 35px;
-	text-shadow: 2px 2px 4px #000000;
+	position: relative;
+	float: left;
+	width: 60px;
+	height: 55px;
+	margin-top: 10px;
+	margin-left: 50%;
 }
 
-.nav-links {
-	position: absolute;
-	right: 20px;
-	display: inline-flex;
-	justify-content: space-evenly;
-	width: 12%;
-	border-radius: 25px;
-	border: 1px solid;
-	color: grey;
-}
-
-.nav-links li {
+nav ul {
+	float: right;
 	list-style: none;
+	margin-right: 75px;
+	position: relative;
+	isolation: isolate;
 }
 
-.nav-links a {
+nav ul li i:hover {
+	color: orangered;
+}
+
+nav ul li {
+	float: left;
+	display: inline-block;
+	background: #273138;
+	margin: 0 5px;
+}
+
+nav ul li a {
 	color: whitesmoke;
 	text-decoration: none;
-	letter-spacing: 3px;
-	font-weight: bold;
-	font-size: 14px;
+	line-height: 70px;
+	font-size: 18px;
+	padding: 8px 15px;
+	display: list-item;
 }
 
-.nav-links a:hover {
-	color: #ff9800;
+nav ul li a:hover {
+	border-radius: 5px;
+	transform: scale(1.25);
 }
 
-.burger {
+nav ul ul li a:hover {
+	box-shadow: none;
+	transform: scale(1.1);
+}
+
+nav ul ul {
+	position: absolute;
+	top: 30px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+nav ul li:hover>ul {
+	top: 85px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li {
+	position: relative;
+	width: 100px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+nav ul ul ul li a {
+	line-height: 50px;
+}
+
+nav ul ul ul li {
+	position: relative;
+	top: -70px;
+	left: 150px;
+}
+
+.show,
+.icon,
+input {
 	display: none;
-	cursor: pointer;
 }
 
-.burger div {
-	width: 25px;
-	height: 3px;
-	background-color: whitesmoke;
-	margin: 5px;
+/* Mobile Responsive */
+@media all and (max-width: 768px) {
+	nav ul {
+		margin-right: 0px;
+		float: left;
+	}
+
+	nav nav .logo {
+		padding-left: 30px;
+		width: 100%;
+	}
+
+	nav ul li,
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul {
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		display: 1;
+		visibility: visible;
+	}
+
+	nav ul ul ul li {
+		position: static;
+	}
+
+	nav ul ul li {
+		border-bottom: 0px;
+	}
+
+	nav ul ul a {
+		padding-left: 80px;
+	}
+
+	.show {
+		display: block;
+		color: #f5f7fa;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+
+	.show:hover {
+		color: orangered;
+		text-decoration: underline;
+	}
+
+	.icon {
+		display: block;
+		color: #ffffff;
+		position: absolute;
+		right: 40px;
+		line-height: 50px;
+		font-size: 25px;
+		cursor: pointer;
+		top: 24px;
+	}
+
+	nav ul li a:hover {
+		box-shadow: none;
+	}
+
+	.show+a,
+	ul {
+		display: none;
+	}
+
+	[id^="btn"]:checked+ul {
+		display: block;
+	}
 }
+
+/* Colors for theme change */
+#red {
+	background: #e74837;
+}
+
+#blue {
+	background: #2b8aca;
+}
+
+#green {
+	background: #28cc6d;
+}
+
+#gray {
+	background: #364c61;
+}
+
+#yellow {
+	background: #e9bc0a;
+}
+
+#orange {
+	background: #df7921;
+}
+
 
 /* NavigationBar Start */
 
@@ -72,7 +219,8 @@ nav {
 div.box {
 	height: 200px;
 }
-.expanding{
+
+.expanding {
 	transition: width 0.3s ease-in-out;
 	width: 50px;
 	height: 500px;
@@ -83,32 +231,37 @@ div.box {
 	display: inline-block;
 	border-radius: 15px;
 	opacity: 0.8;
-	
+
 }
-.expanding:hover{
+
+.expanding:hover {
 	width: 500px;
 	height: 500px;
 	background-color: #803838;
 	opacity: 1;
 }
+
 .expanding:after {
 	content: '\02795';
 	font-size: 13px;
 	color: white;
 	float: right;
-  }
-  /*textarea*/
-.input{ 
-	display:none;
 }
-.expanding:hover .input{ 
+
+/*textarea*/
+.input {
+	display: none;
+}
+
+.expanding:hover .input {
 	background-color: #ffffff;
-	display:block; 
+	display: block;
 	position: absolute;
 	top: 5px;
 	left: 5px;
 	border-radius: 15px;
 }
+
 textarea {
 	position: absolute;
 	resize: none;
@@ -118,12 +271,9 @@ textarea {
 	width: 300px;
 	margin: 10px;
 }
-.inputTitle{
-	
 
-}
-.inputDetails{
+.inputTitle {}
+
+.inputDetails {
 	top: 50px;
 }
-
-

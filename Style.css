@@ -1,3 +1,4 @@
+/* Removes default styling */
 * {
   margin: 0px;
   padding: 0px;
@@ -5,7 +6,7 @@
   font-family: "popins", sans-serif;
   box-sizing: border-box;
 }
-
+/* Navigation Bar */
 nav {
   background: #273138;
   z-index: 0;
@@ -104,7 +105,7 @@ nav ul ul ul li {
 input {
   display: none;
 }
-
+/* Mobile Responsive */
 @media all and (max-width: 768px) {
   nav ul {
     margin-right: 0px;
@@ -181,7 +182,7 @@ input {
     display: block;
   }
 }
-
+/* Colors for theme change */
 #red {
   background: #e74837;
 }
@@ -206,6 +207,7 @@ input {
   background: #df7921;
 }
 
+/* Code that creates the boxes containing the different projects */
 .MainContainer {
   z-index: 5;
   height: 92vh;
@@ -220,7 +222,7 @@ input {
   justify-self: center;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive project boxes */
 @media only screen and (max-width: 768px) {
   .MainContainer {
     padding: 5rem;
@@ -346,6 +348,7 @@ body .card .multi-button button:first-child:nth-last-child(4) ~ *:nth-child(4) {
   height: 10rem;
 }
 
+/* Create new projects from a creator div */
 .createBox i {
   position: relative;
   width: 100%;
