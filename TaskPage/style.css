@@ -5,6 +5,7 @@
 body{
 	background-color: #ffffffff;
 	position: relative;
+	
 }
 /*Top bar: Start*/
 #topBar{
@@ -96,7 +97,7 @@ body{
 	position: absolute;
 	top: 62px;
 	width: 160px;
-	height: 660px;
+	height: 800px;
 	background-color: #273138;
 	transition: all 400ms linear;
 	left: 0px;
@@ -132,9 +133,11 @@ body{
 	top: 30px;
 	left: 10px;
 	overflow: scroll;
-	height: 500px;
-	
-	
+	height: 500px;	
+}
+#task_container::-webkit-scrollbar{
+	display: none;
+
 }
 .task_boxes{
 	display: inline-block;
@@ -161,6 +164,9 @@ body{
 	left: 141px;
 	visibility: hidden;
 	overflow: scroll;
+}
+#miniContainer::-webkit-scrollbar{
+	display: none;
 }
 .miniBox{
 	margin-top: 5px;
@@ -234,7 +240,7 @@ body{
 	top: 63px;
 	left: 160px;
 	width: 1280px;
-	height: 500px;
+	height: 610px;
 	background-color: #A2C76D;
 	transition: all 400ms linear;
 
@@ -265,6 +271,7 @@ body{
 	border: 1px solid black;
 	margin-top: 3px;
 	margin-left: 2px;
+	background-color: gray;
 }
 .plus{
 	border: 1px solid black;
@@ -304,7 +311,7 @@ body{
 /*Task Container: End*/
 #piechart{
 	position: absolute;
-	bottom: 10px;
+	bottom: 110px;
 	left: 12px;
 	border: 1px solid black;
 	
@@ -358,23 +365,30 @@ body{
 #descriptionBox{
 	position: absolute;
 	width: 692px;
-	height: 170px;
+	height: 270px;
 	border: 1px solid black;
-	bottom: 20px;
+	bottom: 40px;
 	left: 570px;
+	background-color: gray;
 
 }
+
 /*Main: End*/
-
-
 
 #trash_container{
 	position: absolute;
-	right: 40px;
-	top: 650px;
+	left: 1300px;
+	top: 750px;
 	
 }
 #trash{
 	width: 80px;
 	height: 80px;
 }
+#trash_container:hover {
+	visibility: visible;
+	
+}
+
+
+
