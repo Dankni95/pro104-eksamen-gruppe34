@@ -98,7 +98,8 @@ body{
 	width: 160px;
 	height: 660px;
 	background-color: #273138;
-	transition: all 500ms linear;
+	transition: all 400ms linear;
+	left: 0px;
 	
 		
 }
