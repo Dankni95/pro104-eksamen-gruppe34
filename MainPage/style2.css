@@ -65,11 +65,65 @@ nav {
 }
 
 /* NavigationBar Start */
-/* Sidebar Start */
-.sidebar{
-	position: absolute;
-  	width: 16vh;
-	min-height: 70vh;
-    background-color: #273138;
+
+
+/*Task collapsible*/
+
+div.box {
+	height: 200px;
 }
+.expanding{
+	transition: width 0.3s ease-in-out;
+	width: 50px;
+	height: 500px;
+	background-color: #803838;
+	position: relative;
+	left: 10vh;
+	top: 5vh;
+	display: inline-block;
+	border-radius: 15px;
+	opacity: 0.8;
+	
+}
+.expanding:hover{
+	width: 500px;
+	height: 500px;
+	background-color: #803838;
+	opacity: 1;
+}
+.expanding:after {
+	content: '\02795';
+	font-size: 13px;
+	color: white;
+	float: right;
+  }
+  /*textarea*/
+.input{ 
+	display:none;
+}
+.expanding:hover .input{ 
+	background-color: #ffffff;
+	display:block; 
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	border-radius: 15px;
+}
+textarea {
+	position: absolute;
+	resize: none;
+	outline: none;
+	border-radius: 15px;
+	padding: 5px;
+	width: 300px;
+	margin: 10px;
+}
+.inputTitle{
+	
+
+}
+.inputDetails{
+	top: 50px;
+}
+
 
