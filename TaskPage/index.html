@@ -13,6 +13,7 @@
 </head>
 <body>
 
+	<!--Topbar elements-->
 	<div id="topBar">
 
 		<div id="buttons_container">
@@ -42,7 +43,7 @@
 		</nav>
 	</div>
 
-
+<!--Overview of projects (Project tabs on left side)-->
 <div id="left_container">
 
 	<div id=task_container>
@@ -55,15 +56,29 @@
 	<div id="add_container">
 		<img src="../images/plus_icon.png" id="plus_icon" alt="plus">
 	</div>
+
+	<div id="miniContainer">
+		<div id="miniTaskBox" class="miniBox"></div>
+
+		
+	</div>
+	
+	<div id="miniAdd">
+		<img src="../images/plus_icon.png" id="miniPlus_icon" alt="plus">
+	</div>
 	
 </div>
 
+
+<!--Hovedinnhold (Task info, Descriotions, etc...)-->
 <div id="main_container">
 
 	<h2 id="mainTitle">Title</h2>
 
-	<div id="taskContainer">
+	<div class="toggle-btn" onclick="toggleSidebar()"></div>
 
+	<!--Task container with name, minipiechart and add button-->
+	<div id="taskContainer">
 
 		<div class=taskTabs>
 			<div class="plus"></div>
@@ -76,8 +91,11 @@
 		</div>
 	</div>
 
+	<!--Workprogress of tasks-->
 	<div id="pieChart"></div>
 
+
+	<!--Shows how many people are in the project-->
 	<div id="personList">
 
 		<div class="person">
@@ -89,6 +107,7 @@
 		</div>
 	</div>
 
+	<!--Information about task-->
 	<div id="descriptionBox"></div>
 
 </div>
@@ -98,6 +117,7 @@
 </div>
 
 </body>
+<script src="toggleSidebar.js"></script>
 <script src="../scripts/newPage.js"></script>
 <script src="../scripts/localStorageHandler.js"></script>
 </html>
