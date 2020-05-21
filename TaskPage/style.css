@@ -302,14 +302,12 @@ body{
 
 
 /*Task Container: End*/
-#pieChart{
+#piechart{
 	position: absolute;
-	bottom: 20px;
-	left: 20px;
-	width: 150px;
-	height: 150px;
+	bottom: 10px;
+	left: 12px;
 	border: 1px solid black;
-	border-radius: 100%;
+	
 }
 #personList{
 	position: absolute;
