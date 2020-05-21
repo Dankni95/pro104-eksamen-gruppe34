@@ -115,7 +115,7 @@
 
   <!--JavaScript-->
   <script type="text/javascript">
-    var getMainContainer = document.getElementById("maincontainer");
+var getMainContainer = document.getElementById("maincontainer");
     var getColorRed = document.getElementById("red");
     var getColorBlue = document.getElementById("blue");
     var getColorGreen = document.getElementById("green");
@@ -123,53 +123,35 @@
     var getColorYellow = document.getElementById("yellow");
     var getColorOrange = document.getElementById("orange");
     var getPlussAddProject = document.getElementById("createBox");
-
-    getPlussAddProject.onclick = function () {
-      addItem("project", "Skoleprosjekt", "#28cc6d");
-    };
-
-    function addItem(typeToAdd, text, color) {
-      if (typeToAdd === "project") {
-        setLocalStorage("project", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
+    var projectArray=[{textToShow: "TestProsjekt", backgroundcolor: "brown"}];
+      
+    
+    getPlussAddProject.onclick = function(){
+        projectArray.push({textToShow: "Skoleprosjekt", backgroundcolor: "#28cc6d"});
         buildItems();
-      }
-      if (typeToAdd === "category") {
-        setLocalStorage("category", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
-      }
-      if (typeToAdd === "task") {
-        setLocalStorage("task", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
-      }
-      if (typeToAdd === "person") {
-        setLocalStorage("person", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
-      }
+    };
+    function addArrayToLocalStorage(){
+        setLocalStorage("project", projectArray);
     }
 
+      
     function buildItems() {
-      let getArrayLocalStorage = getLocalStorage(`project`);
-      let backgroundColor = getArrayLocalStorage.backgroundcolor;
-      let text = getArrayLocalStorage.texToShow;
-      getMainContainer.innerHTML += `<div class=" card" id=${text} style="--background:${backgroundColor}; --text:white;">
-    <div class="multi-button">
-      <button class="fa fa-comment"></button>
-      <button class="fa fa-cog"></button>
-      <button class="fa fa-trash"></button>
-    </div>
-    <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
-  </div>`;
+      for(var i=0; i<projectArray.length; i++){
+        var backgroundColor = projectArray[i].backgroundcolor;
+        var text = projectArray[i].textToShow;
+        getMainContainer.innerHTML += `<div class=" card" style="--background:${backgroundColor}; --text:white;">
+        <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+        </div>
+        <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
+        </div>`;
+      }
     }
-
+      
+    addArrayToLocalStorage();
+     
     getColorRed.onclick = function () {
       getMainContainer.style.backgroundColor = "#e74837";
     };
