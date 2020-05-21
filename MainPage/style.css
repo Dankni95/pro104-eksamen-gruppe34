@@ -140,6 +140,11 @@ body{
 	display: none;
 
 }
+#task_container h2{
+	margin-top: 35px;
+	margin-left: 12px;
+	color: white;
+}
 .task_boxes{
 	display: inline-block;
 	border: 1px solid black;
