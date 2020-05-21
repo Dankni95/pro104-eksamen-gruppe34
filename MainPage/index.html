@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Project</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
+
+</head>
+<body>
+
+	<!--Topbar elements-->
+	<div id="topBar">
+
+		<div id="buttons_container">
+			<div class="buttons" id="button1">
+			</div>
+			<div class="buttons" id="button2"></div>
+			<div class="buttons" id="button3"></div>
+			
+		</div>
+
+		<div id="logo">
+			<img src="/images/firelogo.png" alt="Logo" id="logoImg">
+		</div>
+
+		<nav id="navBar">
+			<ul>
+				<li>
+					<a href="../Index.html" onclick="frontPage()"><i class="fa fa-home"></i></a>
+				</li>
+				<li class="navSymbols">
+					<a href="index.html"><i class="fa fa-cog"></i></a>
+				</li>
+				<li class="navSymbols">
+					<a href="index.html"><i class="fa fa-eye"></i></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+<!--Overview of projects (Project tabs on left side)-->
+<div id="left_container">
+
+	<div id=task_container>
+		<div id="task_box1" class="task_boxes">
+			<h2></h2>
+		</div>
+	</div>
+	
+	
+	<div id="add_container">
+		<img src="../images/plus_icon.png" id="plus_icon" alt="plus">
+	</div>
+
+	<div id="miniContainer">
+		<div id="miniTaskBox" class="miniBox"></div>
+
+		
+	</div>
+
+	<div id="miniAdd">
+		<img src="../images/plus_icon.png" id="miniPlus_icon" alt="plus">
+	</div>
+	
+</div>
+
+
+<!--Hovedinnhold (Task info, Descriotions, etc...)-->
+<div id="main_container">
+
+	<h2 id="mainTitle">Title</h2>
+
+	<div class="toggle-btn" onclick="toggleSidebar()"></div>
+
+	<!--Task container with name, minipiechart and add button-->
+	<div id="taskContainer">
+
+		<div class=taskTabs id="taskTab">
+			<div class="plus" onclick="expandTask()" id="test"></div>
+			<div class="miniChart" id="miniChart1"></div>
+		</div>
+	</div>
+
+	<!--Workprogress of tasks-->
+	<div id="piechart"></div>
+
+
+	<!--Shows how many people are in the project-->
+	<div id="personList">
+
+		<div class="person">
+			<img src="" alt="P" id="personId">		
+		</div>
+
+		<div id="addPerson">
+			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
+		</div>
+	</div>
+
+	<!--Information about task-->
+	<div id="descriptionBox"></div>
+
+	</div>
+
+	<!--Trash-->
+	<div id=trash_container>
+		<img src="../images/Garbage.png" id="trash" alt="Trash">
+
+	</div>
+
+</body>
+<script src="../scripts/pieChart.js"></script>
+<script src="../scripts/toggleSidebar.js"></script>
+<script src="../scripts/newPage.js"></script>
+<script src="../scripts/localStorageHandler.js"></script>
+</html>

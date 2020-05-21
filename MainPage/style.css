@@ -1,0 +1,397 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #ffffffff;
+	position: relative;
+	
+}
+/*Top bar: Start*/
+#topBar{
+	position: absolute;
+	width: 1440px;
+	height: 63px;
+	background-color: #273138;
+
+}
+
+
+/*Button: Start*/
+#buttons_container{
+	position: absolute;
+	top: 5px;
+	width: 100px;
+	height: 50px;
+	left: 30px;
+}
+.buttons{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	margin-left: 6px;
+	margin-top: 15px;
+	border-radius: 100%;
+}
+#button1{
+	background-color: #6DA7E8;
+}
+#button2{
+	background-color: gray;
+}
+#button3{
+	background-color: #6BE892;
+}
+.buttons:hover {
+	opacity: 50%;
+}
+/*Button: End*/
+
+
+/*Logo: Start*/
+#logo{
+	position: absolute;
+	top: 10px;
+	width: 45px;
+	height: px;
+	left: 50%;
+
+}
+#logoImg{
+	width: 45px;
+	height: 45px;
+}
+/*Logo: End*/
+
+
+/*Nav bar: Start*/
+#navBar{
+	position: absolute;
+	height: 25px;
+	width: 200px;
+	left: 1200px;
+	top: 18px;
+	border: 1px solid gray;
+	border-radius: 25px;
+}
+#navBar li {
+	display: inline-block;
+	padding-top: 4px;
+	padding-left: 35px;
+	color: whitesmoke;
+}
+#navBar a{
+	color: whitesmoke;
+	cursor: pointer;
+}
+#navBar a:hover{
+	color: #ff9800;
+}
+/*Nav bar: End*/
+/*Top bar: End*/
+
+
+/*Left Box: Start*/
+#left_container{
+	position: absolute;
+	top: 62px;
+	width: 160px;
+	height: 800px;
+	background-color: #273138;
+	transition: all 400ms linear;
+	left: 0px;
+	
+		
+}
+#left_container.active {
+	left: -140px;
+	
+	
+}
+.toggle-btn{
+	position: absolute;
+	border: 1px solid black;
+	top: 50%;
+	width: 5px;
+	height: 50px;
+	background-color: whitesmoke;
+	cursor: pointer;
+
+}
+.toggle-btn:hover{
+	opacity: 50%;
+	
+	
+}
+
+
+/*Task boxes: Start*/
+#task_container{
+	position: absolute;
+	width: 130px;
+	height: 300px;
+	top: 30px;
+	left: 10px;
+	overflow: scroll;
+	height: 500px;	
+}
+#task_container::-webkit-scrollbar{
+	display: none;
+
+}
+.task_boxes{
+	display: inline-block;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	border-radius: 20%;
+	margin-top: 10px;
+	margin-left: 13px;
+	
+	cursor: pointer;
+	
+}
+.task_boxes:hover {
+	transform: scale(1.1);
+}
+#task_box1{
+	background-color: #A2C76D;
+}
+#miniContainer{
+	position: absolute;
+	width: 15px;
+	height: 500px;
+	left: 141px;
+	visibility: hidden;
+	overflow: scroll;
+}
+#miniContainer::-webkit-scrollbar{
+	display: none;
+}
+.miniBox{
+	margin-top: 5px;
+	margin-left: 2px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid black;
+	background-color: #A2C76D;
+	border-radius: 25%;
+}
+.miniBox:hover{
+	opacity: 50%;
+}
+#miniContainer.active{
+	visibility: visible;
+}
+#miniAdd{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	bottom: 85px;
+	left: 144px;
+	border: 1px solid black;
+	border-radius: 25%;
+	visibility: hidden;
+	background-color: whitesmoke;
+}
+#miniPlus_icon{
+	margin-bottom: 4px;
+	width: 10px;
+	height: 10px;
+}
+#miniAdd.active{
+	visibility: visible;
+}
+#miniAdd:hover{
+	opacity: 50%;
+}
+/*Task boxes: End*/
+
+
+
+#add_container{
+	position: absolute;
+	bottom: 50px;
+	left: 35px;
+	height: 80px;
+	width: 80px;
+	border: 1px solid gray ;
+	border-radius: 15%;
+	cursor: pointer;
+	transform: scale(0.5);
+	background-color: whitesmoke;
+}
+#plus_icon{
+	height: 80px;
+	width: 80px;
+	
+}
+#add_container:hover {
+	opacity: 50%;
+	
+}
+/*Left Box: End*/
+
+
+
+/*Main: Start*/
+#main_container{
+	position: absolute;
+	top: 63px;
+	left: 160px;
+	width: 1280px;
+	height: 610px;
+	background-color: #A2C76D;
+	transition: all 400ms linear;
+
+}
+#mainTitle{
+	margin-left: 10px;
+}
+#main_container.active{
+	left: 20px;
+	width: 1420px;
+
+}
+
+
+
+/*Task container: Start*/
+#taskContainer{
+	position: absolute;
+	left: 10px;
+	width: 1252px;
+}
+#taskTab.active{
+	width: 450px;
+}
+.taskTabs{
+	display: inline-block;
+	height: 250px;
+	width: 45px;
+	left: 10px;
+	top: 50px;
+	border: 1px solid black;
+	margin-top: 3px;
+	margin-left: 2px;
+	background-color: gray;
+	transition: all 600ms linear;
+}
+.plus{
+	position: absolute;
+	border: 1px solid black;
+	width: 10px;
+	height: 10px;
+	left: 10px;
+	top: 10px;
+	background-color: whitesmoke;
+	cursor: pointer;
+}	
+
+.miniChart{
+	position: absolute;
+	bottom: 10px;
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 100%;
+	left: 15px;
+	
+}
+#miniChart1{
+	transition: all 600ms linear;
+}
+#miniChart1.active{
+	left: 380px;
+	transform: scale(2.5);
+	bottom: 30px;
+	
+
+}
+
+
+/*Task Container: End*/
+#piechart{
+	position: absolute;
+	bottom: 80px;
+	left: 12px;
+	
+	
+}
+#personList{
+	position: absolute;
+	left: 200px;
+	bottom: 20px;
+	width: 350px;
+	height: 50px;
+	border: 1px solid black;
+	border-radius: 25px;
+
+}
+.person{
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	height: 30px;
+	width: 30px;
+	border: 1px solid black;
+	border-radius: 100%;
+}
+#personId{
+	position: absolute;
+	top: 5px;
+	left: 2px;
+	width: 30;
+	height: 30;
+	border-radius: 100%;
+
+	border: 1px solid black;
+}
+#addPerson{
+	position: absolute;
+	top: 9px;
+	height: 30px;
+	width: 30px;
+	left: 310px;
+	border: 1px solid black;
+	border-radius: 100%;
+	background-color: whitesmoke;
+}
+#addPluss{
+	height: 30px;
+	width: 30px;
+}
+#addPerson:hover {
+	opacity: 50%;
+}
+#descriptionBox{
+	position: absolute;
+	width: 692px;
+	height: 270px;
+	border: 1px solid black;
+	bottom: 40px;
+	left: 570px;
+	background-color: gray;
+
+}
+
+/*Main: End*/
+
+#trash_container{
+	position: absolute;
+	left: 1300px;
+	top: 750px;
+	
+}
+#trash{
+	width: 80px;
+	height: 80px;
+}
+#trash_container:hover {
+	visibility: visible;
+	
+}
+
+
+
