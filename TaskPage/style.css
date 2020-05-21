@@ -190,9 +190,9 @@ body{
 	bottom: 85px;
 	left: 144px;
 	border: 1px solid black;
-	background-color: whitesmoke;
 	border-radius: 25%;
 	visibility: hidden;
+	background-color: whitesmoke;
 }
 #miniPlus_icon{
 	margin-bottom: 4px;
@@ -218,8 +218,8 @@ body{
 	border: 1px solid gray ;
 	border-radius: 15%;
 	cursor: pointer;
-	background-color: whitesmoke;
 	transform: scale(0.5);
+	background-color: whitesmoke;
 }
 #plus_icon{
 	height: 80px;
@@ -262,6 +262,9 @@ body{
 	left: 10px;
 	width: 1252px;
 }
+#taskTab.active{
+	width: 450px;
+}
 .taskTabs{
 	display: inline-block;
 	height: 250px;
@@ -272,14 +275,18 @@ body{
 	margin-top: 3px;
 	margin-left: 2px;
 	background-color: gray;
+	transition: all 600ms linear;
 }
 .plus{
+	position: absolute;
 	border: 1px solid black;
 	width: 10px;
 	height: 10px;
-	margin-left: 30px;
-	margin-top: 5px;
+	left: 10px;
+	top: 10px;
+	background-color: whitesmoke;
 }	
+
 .miniChart{
 	position: absolute;
 	bottom: 10px;
@@ -287,33 +294,27 @@ body{
 	height: 20px;
 	border: 1px solid black;
 	border-radius: 100%;
-	margin-left: 12px;
+	left: 15px;
+	
 }
-#taskBar2{
-	width: 390px ;
+#miniChart1{
+	transition: all 600ms linear;
+}
+#miniChart1.active{
+	left: 380px;
+	transform: scale(2.5);
+	bottom: 30px;
+	
 
 }
-#plus2{
-	position: absolute;
-	left: 390px;
-}
-#miniChart2{
-	position: absolute;
-	left: 365px;
-	bottom: 15px;
-	width: 50px;
-	height: 50px;
-
-}
-
 
 
 /*Task Container: End*/
 #piechart{
 	position: absolute;
-	bottom: 110px;
+	bottom: 80px;
 	left: 12px;
-	border: 1px solid black;
+	
 	
 }
 #personList{
