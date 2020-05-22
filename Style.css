@@ -213,7 +213,7 @@ input {
 /* Code that creates the boxes containing the different projects */
 .MainContainer {
   z-index: 5;
-  height: 300vh;
+  height: auto;
   min-height: 30vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17vh, 1fr));
@@ -353,15 +353,12 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 /* Create new projects from a creator div */
 .createBox i {
   position: relative;
-  width: 80%;
-  height: 140px;
-  background-color: #273138;
+  width: 100%;
+  height: 160px;
+  background-color: black;
   border-radius: 10px;
   opacity: 0.5;
-  font-size: 140px;
+  font-size: 150px;
+  border-style: dotted;
   border-width: 1.5px;
-}
-
-.createBox i:hover {
-  opacity:1;
 }
