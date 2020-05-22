@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="Style.css" />
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/scripts/js.js"></script>
   <title>Front-page</title>
 </head>
 
@@ -80,26 +79,13 @@
 
   <!-- Box Creator -->
   <div class="MainContainer" id="maincontainer">
-    <div class="card" style="--background: lightblue; --text: white;">
+    <!--<div class="card" style="--background: lightblue; --text: white;">
       <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
       <div class="container"></div>
-    </div>
-
-    <div class="card" style="--background: orange; --text: white;">
-      <div class="multi-button">
-        <button class="fa fa-comment"></button>
-        <button class="fa fa-cog"></button>
-        <button class="fa fa-trash"></button>
-      </div>
-      <div class="container"></div>
-    </div>
-
-    <div class="createBox" id="createBox" style="">
-      <i class="fa fa-plus" aria-hidden="true"></i>
     </div>
     <div class="card" id="Skoleprosjekt" style="--background: #28cc6d; --text: white;">
       <div class="multi-button">
@@ -107,11 +93,23 @@
         <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
+    <div class="card" style="--background: orange; --text: white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+      </div>
+      <div class="container"></div>
+    </div>-->
+
+    <div class="createBox" id="createBox">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </div>
+
       <div class="container">
         <a href="#" onclick="newPage('test_page')">Skoleprosjekt</a>
       </div>
     </div>
-  </div>
 
   <!--JavaScript-->
   <script type="text/javascript">
@@ -123,53 +121,44 @@
     var getColorYellow = document.getElementById("yellow");
     var getColorOrange = document.getElementById("orange");
     var getPlussAddProject = document.getElementById("createBox");
-
-    getPlussAddProject.onclick = function () {
-      addItem("project", "Skoleprosjekt", "#28cc6d");
+    var projectArray=[];
+      
+    
+    getPlussAddProject.onclick = function(){
+        projectArray.push({textToShow: "New Project", backgroundcolor: "#28cc6d"});
+        projectArray.push({textToShow: "New Project", backgroundcolor: "#28cc6d"});
+        projectArray.push({textToShow: "New Project", backgroundcolor: "#28cc6d"});
+        setLocalStorage("project", projectArray);
+        buildItems();
+        
     };
 
-    function addItem(typeToAdd, text, color) {
-      if (typeToAdd === "project") {
-        setLocalStorage("project", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
-        buildItems();
-      }
-      if (typeToAdd === "category") {
-        setLocalStorage("category", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
-      }
-      if (typeToAdd === "task") {
-        setLocalStorage("task", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
-      }
-      if (typeToAdd === "person") {
-        setLocalStorage("person", {
-          texToShow: `${text}`,
-          backgroundcolor: `${color}`,
-        });
-      }
-    }
-
+      
     function buildItems() {
-      let getArrayLocalStorage = getLocalStorage(`project`);
-      let backgroundColor = getArrayLocalStorage.backgroundcolor;
-      let text = getArrayLocalStorage.texToShow;
-      getMainContainer.innerHTML += `<div class=" card" id=${text} style="--background:${backgroundColor}; --text:white;">
-    <div class="multi-button">
-      <button class="fa fa-comment"></button>
-      <button class="fa fa-cog"></button>
-      <button class="fa fa-trash"></button>
-    </div>
-    <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
-  </div>`;
+        
+        getMainContainer.innerHTML = ``;
+        projectArray=getLocalStorage(`project`);
+        for(var i=0; i<projectArray.length; i++){
+        var backgroundColor = projectArray[i].backgroundcolor;
+        var text = projectArray[i].textToShow;
+        getMainContainer.innerHTML += `<div class=" card" style="--background:${backgroundColor}; --text:white;">
+        <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
+        </div>
+        <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
+        </div>`;
+      }
+        getMainContainer.innerHTML += `<div class="createBox" id="createBox">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </div>`;
+        let getter = document.getElementById("createBox");
+        getPlussAddProject = getter;
     }
+      
 
+     
     getColorRed.onclick = function () {
       getMainContainer.style.backgroundColor = "#e74837";
     };
@@ -200,10 +189,10 @@
 
   <!-- MainContainer End-->
 
-  <script src="scripts/newPage.js"></script>
+  <!--<script src="scripts/newPage.js"></script>
   <script src="scripts/localStorageHandler.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
-  <script src="scripts/darkmode.js"></script>
+  <script src="scripts/darkmode.js"></script>-->
 </body>
 
 </html>
