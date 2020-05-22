@@ -214,7 +214,6 @@ input {
 .MainContainer {
   z-index: 5;
   height: auto;
-  min-height: 30vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17vh, 1fr));
   grid-gap: 5rem;
