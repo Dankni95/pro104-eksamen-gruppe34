@@ -185,35 +185,6 @@ input {
 	}
 }
 
-/* Colors for theme change */
-#red {
-	background: #e74837;
-}
-
-#blue {
-	background: #2b8aca;
-}
-
-#green {
-	background: #28cc6d;
-}
-
-#gray {
-	background: #364c61;
-}
-
-#yellow {
-	background: #e9bc0a;
-}
-
-#orange {
-	background: #df7921;
-}
-
-
-/* NavigationBar Start */
-
-
 /*Task collapsible*/
 
 div.box {
