@@ -79,12 +79,13 @@
 
 	<div class="toggle-btn" onclick="toggleSidebar()"></div>
 
-	<!--Task container with name, minipiechart and add button-->
+	<!--Task container with name, dropPerson, minipiechart and add button-->
 	<div id="taskContainer">
 
 		<div class=taskTabs id="taskTab">
 			<div class="plus" onclick="expandTask()" id="test"></div>
 			<div class="miniChart" id="miniChart1"></div>
+			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
 		</div>
 	</div>
 
@@ -96,7 +97,8 @@
 	<div id="personList">
 
 		<div class="person">
-			<img src="" alt="P" id="personId">		
+			<img src="" alt="P" id="personId" draggable="true" ondragstart="drag(event)">	
+
 		</div>
 
 		<div id="addPerson">
@@ -114,7 +116,7 @@
 		<img src="../images/Garbage.png" id="trash" alt="Trash">
 
 	</div>
-
+	
 </body>
 <script src="../scripts/pieChart.js"></script>
 <script src="../scripts/toggleSidebar.js"></script>
