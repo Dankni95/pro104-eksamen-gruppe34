@@ -15,5 +15,5 @@ var options = {
 
   const darkmode = new Darkmode(options);
   darkmode.showWidget();
-  document.getElementById("CbBtn").onclick = darkmode();
+  document.getElementById("CbBtn").onclick = darkmode;
 }
