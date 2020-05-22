@@ -118,7 +118,7 @@
       var getPlussAddProject = document.getElementById("createBox");
       var projectArray = [];
       getPlussAddProject.onclick = onClickAddProject;
-
+        
       function onClickAddProject() {
         let counter = 0;
         projectArray.push({
@@ -129,12 +129,12 @@
         console.log(counter);
         buildItems();
       };
-
+        buildItems();
 
       function buildItems() {
 
         getMainContainer.innerHTML = "";
-        projectArray = getLocalStorage("project");
+        projectArray = getLocalStorage(`project`);
         for (var i = 0; i < projectArray.length; i++) {
           var backgroundColor = projectArray[i].backgroundcolor;
           var text = projectArray[i].textToShow;
