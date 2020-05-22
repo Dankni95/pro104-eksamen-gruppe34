@@ -79,7 +79,7 @@
 
   <!-- Box Creator -->
   <div class="MainContainer" id="maincontainer">
-    <div class="card" style="--background: lightblue; --text: white;">
+    <!--<div class="card" style="--background: lightblue; --text: white;">
       <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
@@ -93,64 +93,64 @@
         <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
-      <div class="card" style="--background: orange; --text: white;">
-        <div class="multi-button">
-          <button class="fa fa-comment"></button>
-          <button class="fa fa-cog"></button>
-          <button class="fa fa-trash"></button>
-        </div>
-        <div class="container"></div>
+    <div class="card" style="--background: orange; --text: white;">
+      <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash"></button>
       </div>
+      <div class="container"></div>
+    </div>-->
 
-      <div class="createBox" id="createBox">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-      </div>
-
-      <div class="container">
-        <a href="#" onclick="newPage('test_page')">Skoleprosjekt</a>
-      </div>
+    <div class="createBox" id="createBox">
+      <i class="fa fa-plus" aria-hidden="true"></i>
     </div>
 
-    <!--JavaScript-->
-    <script type="text/javascript">
-      var getMainContainer = document.getElementById("maincontainer");
-      var getColorRed = document.getElementById("red");
-      var getColorBlue = document.getElementById("blue");
-      var getColorGreen = document.getElementById("green");
-      var getColorGray = document.getElementById("gray");
-      var getColorYellow = document.getElementById("yellow");
-      var getColorOrange = document.getElementById("orange");
-      var getPlussAddProject = document.getElementById("createBox");
-      var projectArray = [];
+    <div class="container">
+      <a href="#" onclick="newPage('test_page')">Skoleprosjekt</a>
+    </div>
+  </div>
+
+  <!--JavaScript-->
+  <script type="text/javascript">
+    var getMainContainer = document.getElementById("maincontainer");
+    var getColorRed = document.getElementById("red");
+    var getColorBlue = document.getElementById("blue");
+    var getColorGreen = document.getElementById("green");
+    var getColorGray = document.getElementById("gray");
+    var getColorYellow = document.getElementById("yellow");
+    var getColorOrange = document.getElementById("orange");
+    var getPlussAddProject = document.getElementById("createBox");
+    var projectArray = [];
 
 
-      getPlussAddProject.onclick = function () {
-        projectArray.push({
-          textToShow: "New Project",
-          backgroundcolor: "#28cc6d"
-        });
-        projectArray.push({
-          textToShow: "New Project",
-          backgroundcolor: "#28cc6d"
-        });
-        projectArray.push({
-          textToShow: "New Project",
-          backgroundcolor: "#28cc6d"
-        });
-        setLocalStorage("project", projectArray);
-        buildItems();
+    getPlussAddProject.onclick = function () {
+      projectArray.push({
+        textToShow: "New Project",
+        backgroundcolor: "#28cc6d"
+      });
+      projectArray.push({
+        textToShow: "New Project",
+        backgroundcolor: "#28cc6d"
+      });
+      projectArray.push({
+        textToShow: "New Project",
+        backgroundcolor: "#28cc6d"
+      });
+      setLocalStorage("project", projectArray);
+      buildItems();
 
-      };
+    };
 
 
-      function buildItems() {
+    function buildItems() {
 
-        getMainContainer.innerHTML = ``;
-        projectArray = getLocalStorage(`project`);
-        for (var i = 0; i < projectArray.length; i++) {
-          var backgroundColor = projectArray[i].backgroundcolor;
-          var text = projectArray[i].textToShow;
-          getMainContainer.innerHTML += `<div class=" card" style="--background:${backgroundColor}; --text:white;">
+      getMainContainer.innerHTML = ``;
+      projectArray = getLocalStorage(`project`);
+      for (var i = 0; i < projectArray.length; i++) {
+        var backgroundColor = projectArray[i].backgroundcolor;
+        var text = projectArray[i].textToShow;
+        getMainContainer.innerHTML += `<div class=" card" style="--background:${backgroundColor}; --text:white;">
         <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
@@ -158,50 +158,50 @@
         </div>
         <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
         </div>`;
-        }
-        getMainContainer.innerHTML += `<div class="createBox" id="createBox">
+      }
+      getMainContainer.innerHTML += `<div class="createBox" id="createBox">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </div>`;
-        let getter = document.getElementById("createBox");
-        getPlussAddProject = getter;
-      }
+      let getter = document.getElementById("createBox");
+      getPlussAddProject = getter;
+    }
 
 
 
-      getColorRed.onclick = function () {
-        getMainContainer.style.backgroundColor = "#e74837";
-      };
-      getColorBlue.onclick = function () {
-        getMainContainer.style.backgroundColor = "#2b8aca";
-      };
-      getColorGreen.onclick = function () {
-        getMainContainer.style.backgroundColor = "#28cc6d";
-      };
-      getColorGray.onclick = function () {
-        getMainContainer.style.backgroundColor = "#364c61";
-      };
-      getColorYellow.onclick = function () {
-        getMainContainer.style.backgroundColor = "#e9bc0a";
-      };
-      getColorOrange.onclick = function () {
-        getMainContainer.style.backgroundColor = "#df7921";
-      };
+    getColorRed.onclick = function () {
+      getMainContainer.style.backgroundColor = "#e74837";
+    };
+    getColorBlue.onclick = function () {
+      getMainContainer.style.backgroundColor = "#2b8aca";
+    };
+    getColorGreen.onclick = function () {
+      getMainContainer.style.backgroundColor = "#28cc6d";
+    };
+    getColorGray.onclick = function () {
+      getMainContainer.style.backgroundColor = "#364c61";
+    };
+    getColorYellow.onclick = function () {
+      getMainContainer.style.backgroundColor = "#e9bc0a";
+    };
+    getColorOrange.onclick = function () {
+      getMainContainer.style.backgroundColor = "#df7921";
+    };
 
-      function setLocalStorage(type, object) {
-        window.localStorage.setItem(type, JSON.stringify(object));
-      }
+    function setLocalStorage(type, object) {
+      window.localStorage.setItem(type, JSON.stringify(object));
+    }
 
-      function getLocalStorage(type) {
-        return JSON.parse(window.localStorage.getItem(type)) || [];
-      }
-    </script>
+    function getLocalStorage(type) {
+      return JSON.parse(window.localStorage.getItem(type)) || [];
+    }
+  </script>
 
-    <!-- MainContainer End-->
+  <!-- MainContainer End-->
 
-    <script src="scripts/newPage.js"></script>
-    <script src="scripts/localStorageHandler.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
-    <script src="scripts/darkmode.js"></script>
+  <script src="scripts/newPage.js"></script>
+  <script src="scripts/localStorageHandler.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
+  <script src="scripts/darkmode.js"></script>
 </body>
 
 </html>
