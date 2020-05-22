@@ -213,8 +213,7 @@ input {
 /* Code that creates the boxes containing the different projects */
 .MainContainer {
   z-index: 5;
-  height: 92vh;
-  max-height: 92vh;
+  height: 300vh;
   min-height: 30vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17vh, 1fr));
