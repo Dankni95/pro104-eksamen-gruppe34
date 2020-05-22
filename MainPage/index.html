@@ -83,8 +83,17 @@
 	<div id="taskContainer">
 
 		<div class=taskTabs id="taskTab">
+            <div class="overskrift" id="overskrift">overskrift</div>
 			<div class="plus" onclick="expandTask()" id="test"></div>
+            <div class="addTask" id="addtask" style="width: 20px; height: 20px; right: -200px; position: relative; background-color: antiquewhite">addtask</div>
+            <div class="listoftasks">
+            <div class="task" id="task0" style="background-color: beige; position: relative;">her kommer det diverse tasks. de blir generert etter localstorage.</div>
+            </div>
 			<div class="miniChart" id="miniChart1"></div>
+            <div id="addTasks" style="position: relative; bottom: -150px;">
+            <input type="text" id="textbox" value="to add tasks">
+                <input type="button" id="addTask" value="O">
+            </div>
 			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
 		</div>
 	</div>
