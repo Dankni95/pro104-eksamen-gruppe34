@@ -118,12 +118,11 @@
       var getPlussAddProject = document.getElementById("createBox");
       var getTrash = document.getElementById("trash");
       var projectArray = [];
+      let counter = 0;
       getPlussAddProject.onclick = onClickAddProject;
-      getTrash.onclick = removeItem(`New Project`);  
       
         buildItems();
       function onClickAddProject() {
-        let counter = 0;
         projectArray.push({
           textToShow: `New Project ${++counter}`,
           backgroundcolor: "#28cc6d"
@@ -135,17 +134,16 @@
         
 
       function buildItems() {
-
         getMainContainer.innerHTML = "";
         projectArray = getLocalStorage(`project`);
         for (var i = 0; i < projectArray.length; i++) {
           var backgroundColor = projectArray[i].backgroundcolor;
           var text = projectArray[i].textToShow;
-          getMainContainer.innerHTML += `<div class=" card" style="--background:${backgroundColor}; --text:white;">
+          getMainContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white;">
         <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
-        <button class="fa fa-trash" id="trash"></button>
+        <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
         <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
         </div>`;
@@ -158,14 +156,17 @@
         getPlussAddProject.onclick = onClickAddProject;
       }
         
-        function removeItem(toBeRemoved){
-        for(var i=0; i<projectArray.length; i++){
-            if(toBeRemoved===projectArray[i].textToShow){
+      function removeItem(toBeRemoved) {
+        console.log("test");
+        for (let i in projectArray) {
+          console.log(projectArray);
+          console.log(i);
+            if (toBeRemoved===projectArray[i].textToShow) {
                 projectArray.splice(i, 1);
             }
         }
         setLocalStorage(`project`, projectArray);
-    }
+      }
 
       getColorRed.onclick = function () {
         getMainContainer.style.backgroundColor = "#e74837";
