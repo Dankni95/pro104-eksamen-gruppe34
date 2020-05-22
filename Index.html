@@ -125,14 +125,6 @@
           textToShow: `New Project ${++counter}`,
           backgroundcolor: "#28cc6d"
         });
-        projectArray.push({
-          textToShow: `New Project ${++counter}`,
-          backgroundcolor: "#28cc6d"
-        });
-        projectArray.push({
-          textToShow: `New Project ${++counter}`,
-          backgroundcolor: "#28cc6d"
-        });
         setLocalStorage("project", projectArray);
         console.log(counter);
         buildItems();
@@ -154,8 +146,8 @@
         </div>
         <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
         </div>`;
-      }
-      getMainContainer.innerHTML += `<div class="createBox" id="createBox">
+        }
+        getMainContainer.innerHTML += `<div class="createBox" id="createBox">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </div>`;
         let getter = document.getElementById("createBox");
