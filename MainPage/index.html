@@ -98,7 +98,6 @@
 
 		<div class="person">
 			<img src="" alt="P" id="personId" draggable="true" ondragstart="drag(event)">	
-
 		</div>
 
 		<div id="addPerson">
@@ -129,7 +128,7 @@
         var mainTasksArray= [];
         var taskArray = [];
         var personArray=[];
-        buildItems();
+        buildItems("category");
         
         getAddContainer.onclick = onclickAddCategory;
         getAddPerson.onclick = onclickAddPerson;
@@ -150,8 +149,8 @@
         getLeftContainer.innerHTML = "";
         categoryArray = getLocalStorage(`category`);
         for (var i = 0; i < categoryArray.length; i++) {
-          var backgroundColor = categoryArray[i].backgroundcolor;
-          var text = categoryArray[i].textToShow;
+          let backgroundColor = categoryArray[i].backgroundcolor;
+          let text = categoryArray[i].textToShow;
           getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white;">
         <div class="multi-button">
         <button class="fa fa-comment"></button>
@@ -162,16 +161,27 @@
         </div>`;
         }
 
-        let getter = document.getElementById("add_container");
-        getAddContainer = getter;
-        getAddContainer.onclick = onclickAddCategory;
+
       }
             if(type==="person"){
-                
+                getPersonList.innerHTML=``;
+                personArray = getLocalStorage(`person`);
+                for(var i=0; i<personArray.length; i++){
+                    let backgroundPerson = personArray[i].backgroundcolor;
+                    let textPerson = personArray[i].textToShow;
+                    getPersonList.innerHTML += `<div class="person">
+			<img src="" alt="${textPerson}" id="personId" draggable="true" ondragstart="drag(event)">	
+		</div>`
+                }
+                getPersonList.innerHTML += `<div id="addPerson">
+			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
+		</div>`
             }
+            
             if(type==="task"){
                 
             }
+            getAddPerson.onclick = onclickAddPerson;
             }
         
         
