@@ -118,17 +118,9 @@
       var getPlussAddProject = document.getElementById("createBox");
       var projectArray = [];
       getPlussAddProject.onclick = onClickAddProject;
-
+        
       function onClickAddProject() {
         let counter = 0;
-        projectArray.push({
-          textToShow: `New Project ${++counter}`,
-          backgroundcolor: "#28cc6d"
-        });
-        projectArray.push({
-          textToShow: `New Project ${++counter}`,
-          backgroundcolor: "#28cc6d"
-        });
         projectArray.push({
           textToShow: `New Project ${++counter}`,
           backgroundcolor: "#28cc6d"
@@ -137,12 +129,12 @@
         console.log(counter);
         buildItems();
       };
-
+        buildItems();
 
       function buildItems() {
 
         getMainContainer.innerHTML = "";
-        projectArray = getLocalStorage("project");
+        projectArray = getLocalStorage(`project`);
         for (var i = 0; i < projectArray.length; i++) {
           var backgroundColor = projectArray[i].backgroundcolor;
           var text = projectArray[i].textToShow;
@@ -154,8 +146,8 @@
         </div>
         <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
         </div>`;
-      }
-      getMainContainer.innerHTML += `<div class="createBox" id="createBox">
+        }
+        getMainContainer.innerHTML += `<div class="createBox" id="createBox">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </div>`;
         let getter = document.getElementById("createBox");
