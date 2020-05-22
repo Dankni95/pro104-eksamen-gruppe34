@@ -106,7 +106,6 @@
       <i class="fa fa-plus" aria-hidden="true"></i>
     </div>
 
-<<<<<<< HEAD
     <!--JavaScript-->
     <script type="text/javascript">
       var getMainContainer = document.getElementById("maincontainer");
@@ -148,53 +147,6 @@
           var backgroundColor = projectArray[i].backgroundcolor;
           var text = projectArray[i].textToShow;
           getMainContainer.innerHTML += `<div class=" card" style="--background:${backgroundColor}; --text:white;">
-=======
-    <div class="container">
-      <a href="#" onclick="newPage('test_page')">Skoleprosjekt</a>
-    </div>
-  </div>
-
-  <!--JavaScript-->
-  <script type="text/javascript">
-    var getMainContainer = document.getElementById("maincontainer");
-    var getColorRed = document.getElementById("red");
-    var getColorBlue = document.getElementById("blue");
-    var getColorGreen = document.getElementById("green");
-    var getColorGray = document.getElementById("gray");
-    var getColorYellow = document.getElementById("yellow");
-    var getColorOrange = document.getElementById("orange");
-    var getPlussAddProject = document.getElementById("createBox");
-    var projectArray = [];
-
-
-    getPlussAddProject.onclick = function () {
-      projectArray.push({
-        textToShow: "New Project",
-        backgroundcolor: "#28cc6d"
-      });
-      projectArray.push({
-        textToShow: "New Project",
-        backgroundcolor: "#28cc6d"
-      });
-      projectArray.push({
-        textToShow: "New Project",
-        backgroundcolor: "#28cc6d"
-      });
-      setLocalStorage("project", projectArray);
-      buildItems();
-
-    };
-
-
-    function buildItems() {
-
-      getMainContainer.innerHTML = ``;
-      projectArray = getLocalStorage(`project`);
-      for (var i = 0; i < projectArray.length; i++) {
-        var backgroundColor = projectArray[i].backgroundcolor;
-        var text = projectArray[i].textToShow;
-        getMainContainer.innerHTML += `<div class=" card" style="--background:${backgroundColor}; --text:white;">
->>>>>>> 9aaddd5a71cad9ed3cd56b816320a2a0dcf928ba
         <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
@@ -206,7 +158,6 @@
       getMainContainer.innerHTML += `<div class="createBox" id="createBox">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </div>`;
-<<<<<<< HEAD
         let getter = document.getElementById("createBox");
         getPlussAddProject = getter;
         getPlussAddProject.onclick = onClickAddProject;
@@ -248,48 +199,6 @@
     <script src="scripts/localStorageHandler.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
     <script src="scripts/darkmode.js"></script>
-=======
-      let getter = document.getElementById("createBox");
-      getPlussAddProject = getter;
-    }
-
-
-
-    getColorRed.onclick = function () {
-      getMainContainer.style.backgroundColor = "#e74837";
-    };
-    getColorBlue.onclick = function () {
-      getMainContainer.style.backgroundColor = "#2b8aca";
-    };
-    getColorGreen.onclick = function () {
-      getMainContainer.style.backgroundColor = "#28cc6d";
-    };
-    getColorGray.onclick = function () {
-      getMainContainer.style.backgroundColor = "#364c61";
-    };
-    getColorYellow.onclick = function () {
-      getMainContainer.style.backgroundColor = "#e9bc0a";
-    };
-    getColorOrange.onclick = function () {
-      getMainContainer.style.backgroundColor = "#df7921";
-    };
-
-    function setLocalStorage(type, object) {
-      window.localStorage.setItem(type, JSON.stringify(object));
-    }
-
-    function getLocalStorage(type) {
-      return JSON.parse(window.localStorage.getItem(type)) || [];
-    }
-  </script>
-
-  <!-- MainContainer End-->
-
-  <script src="scripts/newPage.js"></script>
-  <script src="scripts/localStorageHandler.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
-  <script src="scripts/darkmode.js"></script>
->>>>>>> 9aaddd5a71cad9ed3cd56b816320a2a0dcf928ba
 </body>
 
 </html>
