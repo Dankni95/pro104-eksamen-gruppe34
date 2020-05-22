@@ -48,7 +48,7 @@
 <!--Overview of projects (Project tabs on left side)-->
 <div id="left_container">
 
-	<div id=task_container>
+	<div id="task_container">
 		<div id="task_box1" class="task_boxes">
 			<h2>HTML</h2>
 		</div>
@@ -121,15 +121,29 @@
     <script>
         var getLeftContainer = document.getElementById("task_container");
         var getAddContainer = document.getElementById("add_container");
+        var getAddPerson = document.getElementById("addPerson");
+        var getPersonList = document.getElementById("personList")
+    //  var getAddTask = document.getElementById("");
+    //  var getAddMainTask = document.getElementById("");
         var categoryArray = [];
+        var mainTasksArray= [];
+        var taskArray = [];
+        var personArray=[];
+        buildItems();
         
         getAddContainer.onclick = onclickAddCategory;
+        getAddPerson.onclick = onclickAddPerson;
         
         function onclickAddCategory(){
             categoryArray.push({textToShow: "CSS", backgroundcolor: "#28cc6d"});
             setLocalStorage(`category`, categoryArray);
+            buildItems("category");
         }
         
+        function onclickAddPerson(){
+            personArray.push({textToShow: "G", backgroundcolor: "#28cc6d"});
+            setLocalStorage(`person`, personArray);
+        }
         
         function buildItems(type){
             if(type=="category"){
@@ -152,6 +166,12 @@
         getAddContainer = getter;
         getAddContainer.onclick = onclickAddCategory;
       }
+            if(type==="person"){
+                
+            }
+            if(type==="task"){
+                
+            }
             }
         
         
