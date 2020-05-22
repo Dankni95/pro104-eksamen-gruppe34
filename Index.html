@@ -118,19 +118,10 @@
       var getPlussAddProject = document.getElementById("createBox");
       var getTrash = document.getElementById("trash");
       var projectArray = [];
-<<<<<<< HEAD
       let counter = 0;
       getPlussAddProject.onclick = onClickAddProject;
       
         buildItems();
-=======
-
-      getPlussAddProject.onclick = onClickAddProject;
-      getTrash.onclick = removeItem(`New Project`);
-
-      buildItems();
-
->>>>>>> 16042b7df4a2131dcb4c1b85ed55b628fc9d6681
       function onClickAddProject() {
         projectArray.push({
           textToShow: `New Project ${++counter}`,
@@ -164,7 +155,6 @@
         getPlussAddProject = getter;
         getPlussAddProject.onclick = onClickAddProject;
       }
-<<<<<<< HEAD
         
       function removeItem(toBeRemoved) {
         console.log("test");
@@ -174,14 +164,6 @@
             if (toBeRemoved===projectArray[i].textToShow) {
                 projectArray.splice(i, 1);
             }
-=======
-
-      function removeItem(toBeRemoved) {
-        for (var i = 0; i < projectArray.length; i++) {
-          if (toBeRemoved === projectArray[i].textToShow) {
-            projectArray.splice(i, 1);
-          }
->>>>>>> 16042b7df4a2131dcb4c1b85ed55b628fc9d6681
         }
         setLocalStorage(`project`, projectArray);
       }
