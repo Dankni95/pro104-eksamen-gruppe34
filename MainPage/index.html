@@ -162,7 +162,7 @@
         function onclickAddTask(){
             let text = getTextbox.value;
             let date = getDate.value;
-            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d", date:`${date}`});
+            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d", date:`${date}`, WIP: "no", done: "no"});
             setLocalStorage(`task`, taskArray);
             buildItems("task");
         }
@@ -207,7 +207,7 @@
                 for(var i=0; i<taskArray.length; i++){
                     let backgroundText = taskArray[i].backgroundcolor;
                     let textTask = taskArray[i].textToShow;
-                    getTaskarea.innerHTML +=`<div class="task" id="{textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}</div>
+                    getTaskarea.innerHTML +=`<div class="task" id="{textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done"><input type="button" id="${textTask}WIP" value="WIP"></div>
             </div>`
                 }
                 
