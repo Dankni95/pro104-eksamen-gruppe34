@@ -131,8 +131,9 @@
         var getAddContainer = document.getElementById("add_container");
         var getAddPerson = document.getElementById("addPerson");
         var getPersonList = document.getElementById("personList")
-    //  var getAddTask = document.getElementById("");
+        var getAddTask = document.getElementById("addTask");
     //  var getAddMainTask = document.getElementById("");
+        var getTextbox = document.getElementById("textbox")
         var categoryArray = [];
         var mainTasksArray= [];
         var taskArray = [];
@@ -141,6 +142,8 @@
         
         getAddContainer.onclick = onclickAddCategory;
         getAddPerson.onclick = onclickAddPerson;
+        getAddTask.onclick= onclickAddTask;
+        
         
         function onclickAddCategory(){
             categoryArray.push({textToShow: "CSS", backgroundcolor: "#28cc6d"});
@@ -151,6 +154,13 @@
         function onclickAddPerson(){
             personArray.push({textToShow: "G", backgroundcolor: "#28cc6d"});
             setLocalStorage(`person`, personArray);
+        }
+        
+        function onclickAddTask(){
+            let text = getTextbox.value;
+            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d"});
+            setLocalStorage(`task`, taskArray);
+            buildItems("task");
         }
         
         function buildItems(type){
