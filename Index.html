@@ -116,9 +116,12 @@
       var getColorYellow = document.getElementById("yellow");
       var getColorOrange = document.getElementById("orange");
       var getPlussAddProject = document.getElementById("createBox");
+      var getTrash = document.getElementById("trash");
       var projectArray = [];
       getPlussAddProject.onclick = onClickAddProject;
-        
+      getTrash.onclick = removeItem(`New Project`);  
+      
+        buildItems();
       function onClickAddProject() {
         let counter = 0;
         projectArray.push({
@@ -129,7 +132,7 @@
         console.log(counter);
         buildItems();
       };
-        buildItems();
+        
 
       function buildItems() {
 
@@ -142,7 +145,7 @@
         <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
-        <button class="fa fa-trash"></button>
+        <button class="fa fa-trash" id="trash"></button>
         </div>
         <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
         </div>`;
@@ -154,8 +157,15 @@
         getPlussAddProject = getter;
         getPlussAddProject.onclick = onClickAddProject;
       }
-
-
+        
+        function removeItem(toBeRemoved){
+        for(var i=0; i<projectArray.length; i++){
+            if(toBeRemoved===projectArray[i].textToShow){
+                projectArray.splice(i, 1);
+            }
+        }
+        setLocalStorage(`project`, projectArray);
+    }
 
       getColorRed.onclick = function () {
         getMainContainer.style.backgroundColor = "#e74837";
