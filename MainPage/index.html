@@ -118,6 +118,52 @@
 	</div>
 	
 </body>
+    <script>
+        var getLeftContainer = document.getElementById("task_container");
+        var getAddContainer = document.getElementById("add_container");
+        var categoryArray = [];
+        
+        getAddContainer.onclick = onclickAddCategory;
+        
+        function onclickAddCategory(){
+            categoryArray.push({textToShow: "CSS", backgroundcolor: "#28cc6d"});
+            setLocalStorage(`category`, categoryArray);
+        }
+        
+        
+        function buildItems(type){
+            if(type=="category"){
+        getLeftContainer.innerHTML = "";
+        categoryArray = getLocalStorage(`category`);
+        for (var i = 0; i < categoryArray.length; i++) {
+          var backgroundColor = categoryArray[i].backgroundcolor;
+          var text = categoryArray[i].textToShow;
+          getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white;">
+        <div class="multi-button">
+        <button class="fa fa-comment"></button>
+        <button class="fa fa-cog"></button>
+        <button class="fa fa-trash" id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
+        </div>
+        <div class="container">${text}</div>
+        </div>`;
+        }
+
+        let getter = document.getElementById("add_container");
+        getAddContainer = getter;
+        getAddContainer.onclick = onclickAddCategory;
+      }
+            }
+        
+        
+        function setLocalStorage(type, object) {
+        window.localStorage.setItem(type, JSON.stringify(object));
+      }
+
+      function getLocalStorage(type) {
+        return JSON.parse(window.localStorage.getItem(type)) || [];
+      }
+        
+    </script>
 <script src="../scripts/pieChart.js"></script>
 <script src="../scripts/toggleSidebar.js"></script>
 <script src="../scripts/newPage.js"></script>
