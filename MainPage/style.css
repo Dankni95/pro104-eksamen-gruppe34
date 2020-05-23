@@ -263,11 +263,15 @@ body{
 }
 #addtask{
 	position: absolute;
+	top: 0px;
 	left: 70px;
-	background-color: antiquewhite;
-	width: 20px;
+	background-color: #FF6961;
+	width: 60px;
 	height: 20px;
 	transition: all 600ms linear;
+	border: 1px solid black;
+	border-radius: 10%;
+	
 
 }
 #addtask.active{
