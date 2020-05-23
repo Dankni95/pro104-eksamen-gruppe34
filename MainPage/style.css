@@ -274,13 +274,22 @@ body{
 	left: 470px;
 }
 #addTasks{
+	position: absolute;
+	bottom: 20px;
+	left: 5px;
 	visibility: hidden;
+	transition: all 10ms linear;
+	transition-delay: 200ms;
+	
 	
 		
 }
 #addTasks.active{
 	visibility: visible;
+	
+	
 }
+
 
 
 /*Task container: Start*/
