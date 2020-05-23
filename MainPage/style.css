@@ -140,6 +140,7 @@ body{
 	display: none;
 
 }
+/*
 #task_container h2{
 	margin-top: 35px;
 	margin-left: 12px;
@@ -163,6 +164,7 @@ body{
 #task_box1{
 	background-color: #A2C76D;
 }
+*/
 #miniContainer{
 	position: absolute;
 	width: 15px;
@@ -259,7 +261,26 @@ body{
 	width: 1420px;
 
 }
+#addtask{
+	position: absolute;
+	left: 70px;
+	background-color: antiquewhite;
+	width: 20px;
+	height: 20px;
+	transition: all 600ms linear;
 
+}
+#addtask.active{
+	left: 470px;
+}
+#addTasks{
+	visibility: hidden;
+	
+		
+}
+#addTasks.active{
+	visibility: visible;
+}
 
 
 /*Task container: Start*/
@@ -289,11 +310,16 @@ body{
 	width: 10px;
 	height: 10px;
 	left: 10px;
-	top: 10px;
+	top: 20px;
 	background-color: whitesmoke;
 	cursor: pointer;
+	border-radius: 25%;
 }	
-
+.plus_icon{
+	width: 10px;
+	height: 10px;
+	margin-bottom: 5px;
+}
 .miniChart{
 	position: absolute;
 	bottom: 10px;
