@@ -82,12 +82,12 @@
 	<!--Task container with name, dropPerson, minipiechart and add button-->
 	<div id="taskContainer">
 
-		<div class=taskTabs id="taskTab">
+		<div class="taskTabs" id="taskTab">
             <div class="overskrift" id="overskrift">overskrift</div>
             <div class="plus" onclick="expandTask()" id="test">
                 <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
             </div>
-            <div class="addTask" id="addtask">addtask</div>
+            <div class="addTask" id="addtask">addMainTask</div>
             <div class="listoftasks" id="listoftasks">
             <div class="task" id="task0" style="background-color: beige; position: relative; top: 40px;">her kommer det diverse tasks. de blir generert etter localstorage.</div>
             </div>
@@ -139,6 +139,8 @@
     //  var getAddMainTask = document.getElementById("");
         var getTextbox = document.getElementById("textbox");
         var getDate = document.getElementById("date");
+        var getMainTitle = document.getElementById("mainTitle");
+        var getTaskContainer = document.getElementById("taskContainer");
         var categoryArray = [];
         var mainTasksArray= [];
         var taskArray = [];
@@ -157,16 +159,32 @@
         }
         
         function onclickAddPerson(){
-            personArray.push({textToShow: "G", backgroundcolor: "#28cc6d"});
+            personArray.push({textToShow: "G", backgroundcolor: "#28cc6d", category: "CSS"});
             setLocalStorage(`person`, personArray);
         }
         
         function onclickAddTask(){
             let text = getTextbox.value;
             let date = getDate.value;
-            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d", date:`${date}`, WIP: "no", done: "no"});
+            let category = document.getElementById("mainTitle").innerHTML;
+            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d", date:`${date}`, WIP: "no", done: "no", category: `${category}`});
             setLocalStorage(`task`, taskArray);
             buildItems("task");
+        }
+        
+        function buildMainSite(categoryToBuild){
+            getMainTitle.innerHTML = categoryToBuild;
+            getTaskContainer.innerHTML = ``;
+            let tempTaskArray = getLocalStorage(`task`);
+            let tempTaskArray2 =[];
+            for(var i=0; i<tempTaskArray.length; i++){
+                if(tempTaskArray[i].category==categoryToBuild){
+                    tempTaskArray2.push(tempTaskArray[i]);
+                    
+                }
+            }
+            getAddContainer.innerHTML +=
+            
         }
         
         function buildItems(type){
@@ -176,7 +194,7 @@
         for (var i = 0; i < categoryArray.length; i++) {
           let backgroundColor = categoryArray[i].backgroundcolor;
           let text = categoryArray[i].textToShow;
-          getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white;">
+          getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
