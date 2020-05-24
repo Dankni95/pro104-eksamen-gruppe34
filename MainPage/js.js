@@ -1,147 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Web Project</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	
-
-</head>
-<body>
-
-	<!--Topbar elements-->
-	<div id="topBar">
-
-		<div id="buttons_container">
-			<div class="buttons" id="button1">
-			</div>
-			<div class="buttons" id="button2"></div>
-			<div class="buttons" id="button3"></div>
-			
-		</div>
-
-		<div id="logo">
-			<img src="/images/firelogo.png" alt="Logo" id="logoImg">
-		</div>
-
-		<nav id="navBar">
-			<ul>
-				<li>
-					<a href="../Index.html" onclick="frontPage()"><i class="fa fa-home"></i></a>
-				</li>
-				<li class="navSymbols">
-					<a href="index.html"><i class="fa fa-cog"></i></a>
-				</li>
-				<li class="navSymbols">
-					<a href="index.html"><i class="fa fa-eye"></i></a>
-				</li>
-			</ul>
-		</nav>
-	</div> 
-
-<!--Overview of projects (Project tabs on left side)-->
-<div id="left_container">
-
-	<div id="task_container">
-		<div id="task_box1" class="task_boxes">
-		</div>
-	</div>
-	
-    <div id="add_container">
-	<div id="add_category">
-		<img src="../images/plus_icon.png" id="plus_icon" alt="plus">
-	</div>
-    <input type="text" id="categoryText">
-    </div>
-
-	<div id="miniContainer">
-		<div id="miniTaskBox" class="miniBox"></div>
-
-		
-	</div>
-
-	<div id="miniAdd">
-		<img src="../images/plus_icon.png" id="miniPlus_icon" alt="plus">
-	</div>
-	
-</div>
-
-
-<!--Hovedinnhold (Task info, Descriotions, etc...)-->
-<div id="main_container">
-
-	<!--add maintasks -->
-    
-    <div id="taskContainerArea">
-
-        <!--add maintasks -->
-    <div id="containerAddmainTasks">
-        <div class="addMainTasks" id="addMainTask">
-            <h3>Add Task</h3>
-        </div><br><input type="text" id="addMainTaskText">
-            </div>
-
-        <h2 id="mainTitle">HTML</h2>
-
-    <div class="toggle-btn" onclick="toggleSidebar()"></div>
-
-    
-    <!--Task container with name, dropPerson, minipiechart and add button-->
-	<div id="taskContainer">
-            
-		<div class="taskTabs" id="taskTab">
-            <div class="overskrift" id="overskrift">overskrift</div>
-            <div class="plus" onclick="expandTask()" id="test">
-                <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
-            </div>
-            
-            <div class="listoftasks" id="listoftasks">
-            <div class="task" id="task0" style="background-color: beige; position: relative; top: 40px;">her kommer det diverse tasks. de blir generert etter localstorage.</div>
-            </div>
-			<div class="miniChart" id="miniChart1"></div>
-            <div id="addTasks">
-            <input type="text" id="textbox" value="to add tasks">
-                <input type="button" id="addTask" value="O"><br>
-                <input type="date" id="date">
-            </div>
-			<div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p></div>
-		</div>
-    </div>
-
-    <div id="piechart"></div>
-   
-	<!--Shows how many people are in the project-->
-	<div id="personList">
-
-		<div class="person">
-			<img src="" alt="P" id="personId" draggable="true" ondragstart="x_drag(event)">	
-		</div>
-
-		<div id="addPerson">
-			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
-		</div>
-	</div>
-
-	<!--Information about task-->
-	<div id="descriptionBox"></div>
-    
-</div>
-
-	<!--Trash-->
-	<div id=trash_container>
-		<img src="../images/Garbage.png" id="trash" alt="Trash">
-
-	</div>
-	
-</body>
-<<<<<<< HEAD
-    <script>
         var getLeftContainer = document.getElementById("task_container");
         var getAddContainer = document.getElementById("add_category");
         var getAddPerson = document.getElementById("addPerson");
@@ -153,7 +9,7 @@
         var getDate = document.getElementById("date");
         var getMainTitle = document.getElementById("mainTitle");
         var getTaskContainer = document.getElementById("taskContainer");
-        
+    
         var categoryArray = [];
         var mainTasksArray= [];
         var taskArray = [];
@@ -177,14 +33,14 @@
         function onclickAddPerson(){
             personArray.push({textToShow: "G", backgroundcolor: "#28cc6d", category: "CSS"});
             setLocalStorage(`person`, personArray);
-            buildItems("person");
         }
         
         function onclickAddTask(){
             let text = getTextbox.value;
             let date = getDate.value;
+            let mainTask = document.getElementById("overskrift").innerHTML;
             let category = document.getElementById("mainTitle").innerHTML;
-            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d", date:`${date}`, WIP: "no", done: "no", category: `${category}`});
+            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d", date:`${date}`, WIP: "no", done: "no", category: `${category}`, mainTask: `${mainTask}`});
             setLocalStorage(`task`, taskArray);
             buildItems("task");
         }
@@ -200,23 +56,9 @@
         function buildMainSite(categoryToBuild){
             getMainTitle.innerHTML = categoryToBuild;
             buildItems("mainTask");
+            
         }
         
-
-        function x_allowDrop(ev) {
-            ev.preventDefault();
-        }
-
-        function x_drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        function x_drop(ev) {
-            ev.preventDefault();
-            const data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-
         function buildItems(type){
             if(type=="category"){
         getLeftContainer.innerHTML = "";
@@ -237,21 +79,22 @@
             if(type==="person"){
                 getPersonList.innerHTML=``;
                 personArray = getLocalStorage(`person`);
-                for (var i = 0; i < personArray.length; i++){
+                for(var i=0; i<personArray.length; i++){
                     let backgroundPerson = personArray[i].backgroundcolor;
                     let textPerson = personArray[i].textToShow;
                     getPersonList.innerHTML += `<div class="person">
-			<img src="" alt="${textPerson}" id="personId" draggable="true" ondragstart="x_drag(event)">	
-		</div>`;
+			<img src="" alt="${textPerson}" id="personId" draggable="true" ondragstart="drag(event)">	
+		</div>`
                 }
                 getPersonList.innerHTML += `<div id="addPerson">
 			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
-		</div>`;
+		</div>`
             }
             
             if(type==="task"){
                 getTaskarea.innerHTML = ``;
                 taskArray = getLocalStorage(`task`);
+                let category = document.getElementById("mainTitle").innerHTML;
                 for(var i=0; i<taskArray.length; i++){
                     let backgroundText = taskArray[i].backgroundcolor;
                     let textTask = taskArray[i].textToShow;
@@ -285,7 +128,7 @@
                 <input type="button" id="addTask{counter}" value="O"><br>
                 <input type="date" id="date">
             </div>
-			<div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p></div>
+			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
 		</div>
 	</div>
     </div>`;
@@ -304,12 +147,3 @@
         return JSON.parse(window.localStorage.getItem(type)) || [];
       }
         
-    </script>
-=======
-<script src="js.js"> </script>
->>>>>>> 0c27a258c3cf393196d7b1812e4b15839c086cc0
-<script src="../scripts/pieChart.js"></script>
-<script src="../scripts/toggleSidebar.js"></script>
-<script src="../scripts/newPage.js"></script>
-<script src="../scripts/localStorageHandler.js"></script>
-</html>
