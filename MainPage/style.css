@@ -1,106 +1,219 @@
 * {
-	padding: 0;
-	margin: 0;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	font-family: "popins", sans-serif;
+	box-sizing: border-box;
 }
 
-body {
-	background-color: #ffffffff;
+/* Navigation Bar */
+nav {
+	background: #273138;
+	z-index: 0;
+}
+
+nav::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo img {
 	position: relative;
-	
+	float: left;
+	width: 60px;
+	height: 55px;
+	margin-top: 10px;
+	margin-left: 50%;
+}
+
+nav ul {
+	float: right;
+	list-style: none;
+	margin-right: 75px;
+	position: relative;
+	isolation: isolate;
 
 }
 
-/*Top bar: Start*/
-#topBar {
-	position: absolute;
-	width: 100%;
-	height: 63px;
-	background-color: #273138;
+nav ul li i:hover {
+	color: #f86e37;
+}
+
+nav ul li {
+	float: left;
+	display: inline-block;
+	background: #273138;
+	margin: 0 5px;
+}
+
+nav ul li a {
+	color: whitesmoke;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 18px;
+	padding: 8px 15px;
+	display: list-item;
+}
+
+nav ul li a:hover {
+	border-radius: 5px;
+	color: #f86e37;
+	transform: scale(1.05);
 
 }
 
+nav ul ul li a:hover {
+	box-shadow: none;
+	background-color: rgb(39, 37, 37);
+}
 
-/*Button: Start*/
-#buttons_container {
+nav ul ul {
 	position: absolute;
-	top: 5px;
+	top: 30px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+nav ul li:hover>ul {
+	top: 85px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li {
+	position: relative;
 	width: 100px;
-	height: 50px;
-	left: 30px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.buttons {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	border: 1px solid black;
-	margin-left: 6px;
-	margin-top: 15px;
-	border-radius: 100%;
+nav ul ul ul li a {
+	line-height: 50px;
 }
 
-#button1 {
-	background-color: #6DA7E8;
+nav ul ul ul li {
+	position: relative;
+	top: -70px;
+	left: 150px;
 }
 
-#button2 {
-	background-color: gray;
+.show,
+.icon,
+input {
+	display: none;
 }
 
-#button3 {
-	background-color: #6BE892;
+/* Mobile Responsive */
+@media all and (max-width: 768px) {
+	nav ul {
+		margin-right: 0px;
+		float: right;
+	}
+
+	nav nav .logo {
+		padding-left: 30px;
+		width: 100%;
+	}
+
+	nav ul li,
+	nav ul ul li {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	nav ul ul {
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		display: 1;
+		visibility: visible;
+	}
+
+	nav ul ul ul li {
+		position: static;
+	}
+
+	nav ul ul li {
+		border-bottom: 0px;
+	}
+
+	nav ul ul a {
+		padding-left: 80px;
+		text-align: center;
+	}
+
+	.show {
+		display: block;
+		color: #f5f7fa;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+
+	.show:hover {
+		color: #f86e37;
+		background-color: rgb(39, 37, 37);
+		background-size: 5px;
+
+	}
+
+	.icon {
+		display: block;
+		color: #ffffff;
+		position: absolute;
+		right: 40px;
+		line-height: 50px;
+		font-size: 25px;
+		cursor: pointer;
+		top: 10px;
+	}
+
+	nav ul li a:hover {
+		box-shadow: none;
+	}
+
+	.show+a,
+	ul {
+		display: none;
+	}
+
+	[id^="btn"]:checked+ul {
+		display: block;
+	}
 }
 
-.buttons:hover {
-	opacity: 50%;
+/* Colors for theme change */
+#red {
+	background: #e74837;
 }
 
-/*Button: End*/
-
-
-/*Logo: Start*/
-#logo {
-	position: absolute;
-	top: 10px;
-	width: 50%px;
-	height: px;
-	left: 50%;
-
+#blue {
+	background: #2b8aca;
 }
 
-#logoImg {
-	width: 45px;
-	height: 45px;
+#green {
+	background: #28cc6d;
 }
 
-/*Logo: End*/
-
-
-/*Nav bar: Start*/
-#navBar {
-	position: absolute;
-	height: 25px;
-	width: 200px;
-	left: 85%;
-	top: 18px;
-	border: 1px solid gray;
-	border-radius: 25px;
+#gray {
+	background: #364c61;
 }
 
-#navBar li {
-	display: inline-block;
-	padding-top: 4px;
-	padding-left: 35px;
-	color: whitesmoke;
+#yellow {
+	background: #e9bc0a;
 }
 
-#navBar a {
-	color: whitesmoke;
-	cursor: pointer;
-}
-
-#navBar a:hover {
-	color: #ff9800;
+#orange {
+	background: #df7921;
 }
 
 /*Nav bar: End*/
@@ -159,6 +272,7 @@ body {
 	display: none;
 
 }
+
 #miniContainer {
 	position: absolute;
 	width: 15px;
@@ -258,7 +372,7 @@ body {
 	background-color: #A2C76D;
 	transition: all 400ms linear;
 	z-index: -1;
-	
+
 
 }
 
@@ -267,6 +381,7 @@ body {
 	top: 0px;
 	left: 30px;
 }
+
 #addTasks {
 	position: absolute;
 	bottom: 20px;
@@ -297,21 +412,23 @@ body {
 	border: 1px solid black;
 	cursor: pointer;
 }
+
 #addMainTask:hover {
 	opacity: 70%;
 }
-#addMainTaskText{
+
+#addMainTaskText {
 	position: absolute;
 	top: 25px;
 	left: 2%;
 
 }
-#addMainTask h3{
-	color: #ff9800;
+
+#addMainTask h3 {
 	font-size: 15px;
 	margin-top: 2px;
 	margin-left: 5px;
-	
+
 }
 
 /*Task container: Start*/
@@ -319,9 +436,14 @@ body {
 	position: absolute;
 	top: 50px;
 	left: 30px;
+<<<<<<< HEAD
 	width: 90%;
 	height: 258px;
 	border: 1px solid black;
+=======
+	width: 65%;
+	height: 280px;
+>>>>>>> 8345e1e881c3060f83f8d53ed7cb7f4f78a68a37
 
 }
 
@@ -334,7 +456,8 @@ body {
 	z-index: -1;
 	transition: all 400ms linear;
 }
-#taskContainerArea.active{
+
+#taskContainerArea.active {
 	left: 20px;
 }
 
@@ -383,12 +506,13 @@ body {
 	left: 15px;
 
 }
-.task{
+
+.task {
 	position: absolute;
 	top: 15px;
 	left: 5px;
 	margin: 5px;
-	
+
 }
 
 
@@ -424,7 +548,8 @@ body {
 	background-color: #ffffff;
 
 }
-.overskrift{
+
+.overskrift {
 	margin-left: 7px;
 }
 
@@ -505,12 +630,14 @@ body {
 	background-color: #273138;
 
 }
-#descriptionBox h3{
+
+#descriptionBox h3 {
 	margin-left: 7px;
 	color: #ff9800;
-	
+
 }
-#text-box{
+
+#text-box {
 	position: absolute;
 	width: 440px;
 	height: 200px;
@@ -518,10 +645,12 @@ body {
 	left: 10px;
 	background-color: whitesmoke;
 }
-#taskInfo{
+
+#taskInfo {
 	margin-left: 5px;
 }
-#assignTask{
+
+#assignTask {
 	position: absolute;
 	bottom: 7px;
 	left: 10px;
