@@ -107,7 +107,7 @@
                 <input type="button" id="addTask" value="O"><br>
                 <input type="date" id="date">
             </div>
-			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
+			<div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p></div>
 		</div>
     </div>
 
@@ -117,7 +117,7 @@
 	<div id="personList">
 
 		<div class="person">
-			<img src="" alt="P" id="personId" draggable="true" ondragstart="drag(event)">	
+			<img src="" alt="P" id="personId" draggable="true" ondragstart="x_drag(event)">	
 		</div>
 
 		<div id="addPerson">
@@ -173,6 +173,7 @@
         function onclickAddPerson(){
             personArray.push({textToShow: "G", backgroundcolor: "#28cc6d", category: "CSS"});
             setLocalStorage(`person`, personArray);
+            buildItems("person");
         }
         
         function onclickAddTask(){
@@ -195,9 +196,23 @@
         function buildMainSite(categoryToBuild){
             getMainTitle.innerHTML = categoryToBuild;
             buildItems("mainTask");
-            
         }
         
+
+        function x_allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function x_drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function x_drop(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
         function buildItems(type){
             if(type=="category"){
         getLeftContainer.innerHTML = "";
@@ -218,16 +233,16 @@
             if(type==="person"){
                 getPersonList.innerHTML=``;
                 personArray = getLocalStorage(`person`);
-                for(var i=0; i<personArray.length; i++){
+                for (var i = 0; i < personArray.length; i++){
                     let backgroundPerson = personArray[i].backgroundcolor;
                     let textPerson = personArray[i].textToShow;
                     getPersonList.innerHTML += `<div class="person">
-			<img src="" alt="${textPerson}" id="personId" draggable="true" ondragstart="drag(event)">	
-		</div>`
+			<img src="" alt="${textPerson}" id="personId" draggable="true" ondragstart="x_drag(event)">	
+		</div>`;
                 }
                 getPersonList.innerHTML += `<div id="addPerson">
 			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
-		</div>`
+		</div>`;
             }
             
             if(type==="task"){
@@ -266,7 +281,7 @@
                 <input type="button" id="addTask{counter}" value="O"><br>
                 <input type="date" id="date">
             </div>
-			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
+			<div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p></div>
 		</div>
 	</div>
     </div>`;
