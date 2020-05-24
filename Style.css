@@ -42,8 +42,7 @@ nav ul {
 }
 
 nav ul li i:hover {
-  color: #f8a437;
-
+  color: #f86e37;
 }
 
 nav ul li {
@@ -64,7 +63,7 @@ nav ul li a {
 
 nav ul li a:hover {
   border-radius: 5px;
-  color: #f8a437;
+  color: #f86e37;
   transform: scale(1.05);
 
 }
@@ -148,6 +147,7 @@ input {
 
   nav ul ul a {
     padding-left: 80px;
+    text-align: center;
   }
 
   .show {
@@ -160,7 +160,7 @@ input {
   }
 
   .show:hover {
-    color: #f8a437;
+    color: #f86e37;
     background-color: rgb(39, 37, 37);
     background-size: 5px;
 
