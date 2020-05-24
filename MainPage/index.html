@@ -81,11 +81,13 @@
     <div id="containerAddmainTasks">
     <div class="addMainTasks" id="addMainTask">addMainTask</div><br><input type="text" id="addMainTaskText">
         </div>
+
     <div id="taskContainerArea">
 
         <h2 id="mainTitle">HTML</h2>
 
-	<div class="toggle-btn" onclick="toggleSidebar()"></div>
+    <div class="toggle-btn" onclick="toggleSidebar()"></div>
+
     
     <!--Task container with name, dropPerson, minipiechart and add button-->
 	<div id="taskContainer">
@@ -195,16 +197,7 @@
         
         function buildMainSite(categoryToBuild){
             getMainTitle.innerHTML = categoryToBuild;
-            getTaskContainer.innerHTML = ``;
-            let tempTaskArray = getLocalStorage(`task`);
-            let tempTaskArray2 =[];
-            for(var i=0; i<tempTaskArray.length; i++){
-                if(tempTaskArray[i].category==categoryToBuild){
-                    tempTaskArray2.push(tempTaskArray[i]);
-                    
-                }
-            }
-            getAddContainer.innerHTML +=``;
+            buildItems("mainTask");
             
         }
         
@@ -224,8 +217,6 @@
         <div class="container">${text}</div>
         </div>`;
         }
-
-
       }
             if(type==="person"){
                 getPersonList.innerHTML=``;
@@ -263,7 +254,7 @@
                 for(var i=0; i<mainTasksArray.length; i++){
                     if(category===mainTasksArray[i].category){
                         let getMaintext = mainTasksArray[i].textToShow;
-                        getTaskContainer.innerHTML += `<div id="taskContainer${counter}"><div id="${getMaintext}">
+                        getTaskContainer.innerHTML += `<div id="taskContainer${counter}"><div id="${getMaintext}" style="float: left">
 		<div class="taskTabs" id="taskTab">
             <div class="overskrift" id="${getMaintext}">${getMaintext}</div>
             <div class="plus" onclick="expandTask()" id="test${counter}">
@@ -275,7 +266,7 @@
 			<div class="miniChart" id="miniChart1"></div>
             <div id="addTasks">
             <input type="text" id="textbox${counter}" value="to add tasks">
-                <input type="button" id="addTask" value="O"><br>
+                <input type="button" id="addTask{counter}" value="O"><br>
                 <input type="date" id="date">
             </div>
 			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
