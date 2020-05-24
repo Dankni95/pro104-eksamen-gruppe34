@@ -401,13 +401,13 @@ input {
 
 #addMainTask {
 	position: absolute;
-	top: 15px;
-	left: 15%;
-	height: 30px;
+	top: 22px;
+	left: 13%;
+	height: 20px;
 	width: 75px;
-	background-color: beige;
+	background-color: #273138;
 	z-index: 4;
-	border-radius: 20px;
+	border-radius: 5px;
 	border: 1px solid black;
 	cursor: pointer;
 }
@@ -425,7 +425,7 @@ input {
 
 #addMainTask h3 {
 	font-size: 15px;
-	margin-top: 5px;
+	margin-top: 2px;
 	margin-left: 5px;
 
 }
@@ -437,7 +437,7 @@ input {
 	left: 30px;
 	width: 65%;
 	height: 280px;
-	border: 1px solid black;
+
 }
 
 #taskContainerArea {
@@ -446,7 +446,6 @@ input {
 	left: 160px;
 	height: 610px;
 	width: 90%;
-	border: 1px solid black;
 	z-index: -1;
 	transition: all 400ms linear;
 }
@@ -468,7 +467,7 @@ input {
 	border: 1px solid black;
 	margin-top: 3px;
 	margin-left: 2px;
-	background-color: gray;
+	background-color: #273138;
 	transition: all 600ms linear;
 }
 
@@ -541,6 +540,10 @@ input {
 	opacity: 1;
 	background-color: #ffffff;
 
+}
+
+.overskrift {
+	margin-left: 7px;
 }
 
 
