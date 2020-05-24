@@ -356,6 +356,7 @@ input {
 
 #add_container:hover {
 	opacity: 50%;
+	background-color: #ff9800;
 
 }
 
@@ -436,8 +437,14 @@ input {
 	position: absolute;
 	top: 50px;
 	left: 30px;
+<<<<<<< HEAD
+	width: 90%;
+	height: 258px;
+	border: 1px solid black;
+=======
 	width: 65%;
 	height: 280px;
+>>>>>>> 8345e1e881c3060f83f8d53ed7cb7f4f78a68a37
 
 }
 
@@ -567,6 +574,7 @@ input {
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 25px;
+	background-color: #273138;
 
 }
 
@@ -610,6 +618,7 @@ input {
 
 #addPerson:hover {
 	opacity: 50%;
+	background-color: #ff9800;
 }
 
 #descriptionBox {
