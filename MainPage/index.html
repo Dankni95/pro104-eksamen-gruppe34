@@ -82,103 +82,29 @@
         <div class="toggle-btn" onclick="toggleSidebar()"></div>
 
         <!--Task container with name, dropPerson, minipiechart and add button-->
-        <div class="addMainTasks" id="addMainTask">addMainTask<br><input type="text" id="addMainTaskText"></div>
-        <div id="taskContainerArea">
-
-            <div id="taskContainer">
-
-                <div class="taskTabs" id="taskTab">
-                    <div class="overskrift" id="overskrift">overskrift</div>
-                    <div class="plus" onclick="expandTask()" id="test">
-                        <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
-                    </div>
-                    <div class="buttons" id="button2"></div>
-                    <div class="buttons" id="button3"></div>
-
+        <div id="taskContainer">
+            <div class="addMainTasks" id="addMainTask">addMainTask</div>
+            <div class="taskTabs" id="taskTab">
+                <div class="overskrift" id="overskrift">overskrift</div>
+                <div class="plus" onclick="expandTask()" id="test">
+                    <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
                 </div>
 
-                <div id="logo">
-                    <img src="/images/firelogo.png" alt="Logo" id="logoImg">
+                <div class="listoftasks" id="listoftasks">
+                    <div class="task" id="task0" style="background-color: beige; position: relative; top: 40px;">her
+                        kommer det diverse tasks. de blir generert etter localstorage.</div>
                 </div>
-
-                <nav id="navBar">
-                    <ul>
-                        <li>
-                            <a href="../Index.html" onclick="frontPage()"><i class="fa fa-home"></i></a>
-                        </li>
-                        <li class="navSymbols">
-                            <a href="index.html"><i class="fa fa-cog"></i></a>
-                        </li>
-                        <li class="navSymbols">
-                            <a href="index.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-            <!--Overview of projects (Project tabs on left side)-->
-            <div id="left_container">
-
-                <div id="task_container">
-                    <div id="task_box1" class="task_boxes">
-                        <h2>HTML</h2>
-                    </div>
+                <div class="miniChart" id="miniChart1"></div>
+                <div id="addTasks">
+                    <input type="text" id="textbox" value="to add tasks">
+                    <input type="button" id="addTask" value="O"><br>
+                    <input type="date" id="date">
                 </div>
-
-
-                <div id="add_container">
-                    <img src="../images/plus_icon.png" id="plus_icon" alt="plus">
-                </div>
-
-                <div id="miniContainer">
-                    <div id="miniTaskBox" class="miniBox"></div>
-
-
-                </div>
-
-                <div id="miniAdd">
-                    <img src="../images/plus_icon.png" id="miniPlus_icon" alt="plus">
-                </div>
-
-            </div>
-
-
-            <!--Hovedinnhold (Task info, Descriotions, etc...)-->
-            <div id="main_container">
-
-                <h2 id="mainTitle">HTML</h2>
-
-                <div class="toggle-btn" onclick="toggleSidebar()"></div>
-
-                <!--Task container with name, dropPerson, minipiechart and add button-->
-                <div id="taskContainer">
-                    <div class="addMainTasks" id="addMainTask">addMainTask</div>
-                    <div class="taskTabs" id="taskTab">
-                        <div class="overskrift" id="overskrift">overskrift</div>
-                        <div class="plus" onclick="expandTask()" id="test">
-                            <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
-                        </div>
-
-                        <div class="listoftasks" id="listoftasks">
-                            <div class="task" id="task0"
-                                style="background-color: beige; position: relative; top: 40px;">her
-                                kommer det diverse tasks. de blir generert etter localstorage.</div>
-                        </div>
-                        <div class="miniChart" id="miniChart1"></div>
-                        <div id="addTasks">
-                            <input type="text" id="textbox" value="to add tasks">
-                            <input type="button" id="addTask" value="O"><br>
-                            <input type="date" id="date">
-                        </div>
-                        <div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop
-                            person
-                            here</div>
-                    </div>
-                    <div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop
-                        person here</div>
-                </div>
+                <div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person
+                    here</div>
             </div>
         </div>
+
         <!--Workprogress of tasks-->
         <div id="piechart"></div>
 
@@ -215,10 +141,11 @@
     var getTaskarea = document.getElementById("listoftasks")
     var getAddMainTask = document.getElementById("addMainTask")
     var getAddTask = document.getElementById("addTask");
+    //  var getAddMainTask = document.getElementById("");
     var getTextbox = document.getElementById("textbox");
     var getDate = document.getElementById("date");
     var getMainTitle = document.getElementById("mainTitle");
-    var getTaskContainer = document.getElementById("taskContainerArea");
+    var getTaskContainer = document.getElementById("taskContainer");
 
     var categoryArray = [];
     var mainTasksArray = [];
@@ -269,9 +196,8 @@
 
     function onclickaddMainTask() {
         let category = document.getElementById("mainTitle").innerHTML;
-        let getText = document.getElementById("addMainTaskText").value;
         mainTasksArray.push({
-            textToShow: `${getText}`,
+            textToShow: "fix shit",
             backgroundcolor: "beige",
             category: `${category}`
         })
@@ -290,8 +216,7 @@
 
             }
         }
-    }
-    getAddContainer.innerHTML += ``;
+        getAddContainer.innerHTML += ``;
 
     }
 
@@ -341,40 +266,6 @@
 
         }
         getAddPerson.onclick = onclickAddPerson;
-
-        if (type === "mainTask") {
-            getTaskContainer.innerHTML = ``;
-            mainTasksArray = getLocalStorage(`mainTask`);
-            let category = document.getElementById("mainTitle").innerHTML;
-            let counter = 0;
-            for (var i = 0; i < mainTasksArray.length; i++) {
-                if (category === mainTasksArray[i].category) {
-                    let getMaintext = mainTasksArray[i].textToShow;
-                    getTaskContainer.innerHTML += `<div id="${getMaintext}">
-		<div class="taskTabs" id="taskTab">
-            <div class="overskrift" id="${getMaintext}">${getMaintext}</div>
-            <div class="plus" onclick="expandTask()" id="test${counter}">
-                <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
-            </div>
-            
-            <div class="listoftasks" id="listoftasks">
-            </div>
-			<div class="miniChart" id="miniChart1"></div>
-            <div id="addTasks">
-            <input type="text" id="textbox" value="to add tasks">
-                <input type="button" id="addTask" value="O"><br>
-                <input type="date" id="date">
-            </div>
-			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
-		</div>
-	</div>`
-                }
-            }
-        }
-    }
-
-    }
-    getAddPerson.onclick = onclickAddPerson;
     }
 
 
