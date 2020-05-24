@@ -163,7 +163,7 @@ body {
 	position: absolute;
 	width: 15px;
 	height: 500px;
-	left: 200px;
+	left: 142px;
 	visibility: hidden;
 	overflow: scroll;
 }
@@ -252,42 +252,18 @@ body {
 #main_container {
 	position: absolute;
 	top: 63px;
-	left: 160px;
 	width: 100%;
 	height: 610px;
 	background-color: #A2C76D;
 	transition: all 400ms linear;
+	z-index: -1;
+	
 
 }
 
 #mainTitle {
-	margin-left: 10px;
+	margin-left: 210px;
 }
-
-#main_container.active {
-	left: 20px;
-	width: 1420px;
-
-}
-
-#addtask {
-	position: absolute;
-	top: 0px;
-	left: 70px;
-	background-color: #FF6961;
-	width: 60px;
-	height: 20px;
-	transition: all 600ms linear;
-	border: 1px solid black;
-	border-radius: 10%;
-
-
-}
-
-#addtask.active {
-	left: 470px;
-}
-
 #addTasks {
 	position: absolute;
 	bottom: 20px;
@@ -318,15 +294,25 @@ body {
 /*Task container: Start*/
 #taskContainer {
 	position: absolute;
-	left: 10px;
+	top: 50px;
+	left: 30px;
 	width: 1252px;
+	height: 280px;
+	border: 1px solid black;
 }
 
 #taskContainerArea {
 	position: absolute;
-	left: 10px;
+	top: 0px;
+	left: 160px;
+	height: 610px;
 	width: 1300px;
-	z-index: 1;
+	border: 1px solid black;
+	z-index: -1;
+	transition: all 400ms linear;
+}
+#taskContainerArea.active{
+	left: 20px;
 }
 
 #taskTab.active {
