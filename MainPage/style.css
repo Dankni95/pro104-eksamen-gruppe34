@@ -436,14 +436,11 @@ input {
 	position: absolute;
 	top: 50px;
 	left: 30px;
-<<<<<<< HEAD
 	width: 90%;
 	height: 258px;
 	border: 1px solid black;
-=======
-	width: 65%;
-	height: 280px;
->>>>>>> 8345e1e881c3060f83f8d53ed7cb7f4f78a68a37
+	overflow: hidden;
+	
 
 }
 
