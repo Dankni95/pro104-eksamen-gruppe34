@@ -359,7 +359,7 @@ body {
 	width: 10px;
 	height: 10px;
 	left: 10px;
-	top: 20px;
+	top: 25px;
 	background-color: whitesmoke;
 	cursor: pointer;
 	border-radius: 25%;
@@ -386,7 +386,9 @@ body {
 	top: 15px;
 	left: 5px;
 	margin: 5px;
+	
 }
+
 
 #miniChart1 {
 	transition: all 600ms linear;
