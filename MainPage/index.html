@@ -54,10 +54,12 @@
 		</div>
 	</div>
 	
-	
-	<div id="add_container">
+    <div id="add_container">
+	<div id="add_category">
 		<img src="../images/plus_icon.png" id="plus_icon" alt="plus">
 	</div>
+    <input type="text" id="categoryText">
+    </div>
 
 	<div id="miniContainer">
 		<div id="miniTaskBox" class="miniBox"></div>
@@ -138,7 +140,7 @@
 </body>
     <script>
         var getLeftContainer = document.getElementById("task_container");
-        var getAddContainer = document.getElementById("add_container");
+        var getAddContainer = document.getElementById("add_category");
         var getAddPerson = document.getElementById("addPerson");
         var getPersonList = document.getElementById("personList")
         var getTaskarea = document.getElementById("listoftasks")
@@ -163,7 +165,8 @@
         
         
         function onclickAddCategory(){
-            categoryArray.push({textToShow: "CSS", backgroundcolor: "#28cc6d"});
+            let text = document.getElementById("categoryText").value;
+            categoryArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d"});
             setLocalStorage(`category`, categoryArray);
             buildItems("category");
         }
