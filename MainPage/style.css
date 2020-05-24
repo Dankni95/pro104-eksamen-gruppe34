@@ -487,7 +487,30 @@ body {
 	border: 1px solid black;
 	bottom: 10px;
 	left: 590px;
-	background-color: gray;
+	background-color: #273138;
+
+}
+#descriptionBox h3{
+	margin-left: 7px;
+	color: #ff9800;
+	
+}
+#text-box{
+	position: absolute;
+	width: 440px;
+	height: 200px;
+	border: 1px solid black;
+	left: 10px;
+	background-color: whitesmoke;
+}
+#taskInfo{
+	margin-left: 5px;
+}
+#assignTask{
+	position: absolute;
+	bottom: 7px;
+	left: 10px;
+	color: #ff9800;
 
 }
 
