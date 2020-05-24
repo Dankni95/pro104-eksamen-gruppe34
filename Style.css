@@ -218,6 +218,9 @@ input {
 
 /* Code that creates the boxes containing the different projects */
 .MainContainer {
+  background-image: url(/Images/gradient.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 5;
   height: auto;
   min-height: 850px;
@@ -225,7 +228,6 @@ input {
   grid-template-columns: repeat(auto-fill, minmax(17vh, 1fr));
   grid-gap: 5rem;
   padding: 10rem;
-  background: #f5f7fa;
   text-align: center;
   justify-self: center;
 }
