@@ -263,7 +263,7 @@
                 for(var i=0; i<mainTasksArray.length; i++){
                     if(category===mainTasksArray[i].category){
                         let getMaintext = mainTasksArray[i].textToShow;
-                        getTaskContainer.innerHTML += `<div id="taskContainer${counter}"><div id="${getMaintext}">
+                        getTaskContainer.innerHTML += `<div id="taskContainer${counter}"><div id="${getMaintext}" style="float: left">
 		<div class="taskTabs" id="taskTab">
             <div class="overskrift" id="${getMaintext}">${getMaintext}</div>
             <div class="plus" onclick="expandTask()" id="test${counter}">
