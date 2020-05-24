@@ -1,0 +1,560 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #ffffffff;
+	font-family: Poppins;
+
+}
+
+/*Top bar: Start*/
+#topBar {
+
+	background-color: #273138;
+
+}
+
+#header{
+	
+}
+
+/*Button: Start*/
+#buttons_container {
+	position: absolute;
+	top: 5px;
+	width: 100px;
+	height: 50px;
+	left: 30px;
+}
+
+.buttons {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	margin-left: 6px;
+	margin-top: 15px;
+	border-radius: 100%;
+}
+
+#button1 {
+	background-color: #6DA7E8;
+}
+
+#button2 {
+	background-color: gray;
+}
+
+#button3 {
+	background-color: #6BE892;
+}
+
+.buttons:hover {
+	opacity: 50%;
+}
+
+/*Button: End*/
+
+
+/*Logo: Start*/
+#logo {
+	position: absolute;
+	top: 10px;
+	width: 50px;
+	height: auto;
+	left: 50%;
+
+}
+
+#logoImg {
+	width: auto;
+	height: 75px;
+}
+
+/*Logo: End*/
+
+
+/*Nav bar: Start*/
+#navBar {
+	float:right;
+	border: 1px solid gray;
+	border-radius: 25px;
+}
+
+#navBar li {
+	display: inline-block;
+	padding: 4px 10px 0px 10px;
+
+	color: whitesmoke;
+}
+
+#navBar a {
+	color: whitesmoke;
+	cursor: pointer;
+}
+
+#navBar a:hover {
+	color: #ff9800;
+}
+
+/*Nav bar: End*/
+/*Top bar: End*/
+
+
+/*Left Box: Start*/
+#left_container {
+	
+	height: 800px;
+	background-color: #273138;
+	transition: all 400ms linear;
+	
+
+
+}
+
+#left_container.active {
+	left: -140px;
+
+
+}
+
+#containerAddmainTasks {
+	padding-left:40px;
+}
+
+.toggle-btn {
+	width: 5px;
+	height: 50px;
+	background-color: whitesmoke;
+	cursor: pointer;
+
+}
+
+.toggle-btn:hover {
+	opacity: 50%;
+
+
+}
+
+
+/*Task boxes: Start*/
+#task_container {
+	
+	width: 130px;
+	height: 300px;
+
+	overflow: scroll;
+	height: 500px;
+}
+
+#task_container::-webkit-scrollbar {
+	display: none;
+
+}
+#miniContainer {
+
+	width: 15px;
+	height: 500px;
+
+	visibility: hidden;
+	overflow: scroll;
+}
+
+#miniContainer::-webkit-scrollbar {
+	display: none;
+}
+
+.miniBox {
+	
+	border: 1px solid black;
+	background-color: #A2C76D;
+	border-radius: 25%;
+}
+
+.miniBox:hover {
+	opacity: 50%;
+}
+
+#miniContainer.active {
+	visibility: visible;
+}
+
+#miniAdd {
+	
+	width: 10px;
+	height: 10px;
+	
+	border: 1px solid black;
+	border-radius: 25%;
+	visibility: hidden;
+	background-color: whitesmoke;
+}
+
+#miniPlus_icon {
+	margin-bottom: 4px;
+	width: 10px;
+	height: 10px;
+}
+
+#miniAdd.active {
+	visibility: visible;
+}
+
+#miniAdd:hover {
+	opacity: 50%;
+}
+
+/*Task boxes: End*/
+
+
+
+#add_container {
+
+	height: 80px;
+	width: 80px;
+	border: 1px solid gray;
+	border-radius: 15%;
+	cursor: pointer;
+	transform: scale(0.5);
+	background-color: whitesmoke;
+}
+
+#plus_icon {
+	height: 80px;
+	width: 80px;
+
+}
+
+#add_container:hover {
+	opacity: 50%;
+
+}
+
+/*Left Box: End*/
+
+
+
+/*Main: Start*/
+#main_container {
+	
+	width: 100%;
+	height: 610px;
+	background-color: #A2C76D;
+	transition: all 400ms linear;
+	z-index: -1;
+	
+
+}
+
+#mainTitle {
+
+}
+#addTasks {
+	
+	visibility: visible;
+	transition: all 10ms linear;
+	transition-delay: 200ms;
+
+
+
+}
+
+#addTasks.active {
+	visibility: visible;
+
+
+}
+
+#addMainTask {
+	
+	height: 30px;
+	width: 75px;
+	background-color: beige;
+	z-index: 4;
+	border-radius: 20px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+#addMainTask:hover {
+	opacity: 70%;
+}
+#addMainTaskText{
+	
+
+}
+#addMainTask h3{
+	font-size: 15px;
+	margin-top: 5px;
+	margin-left: 5px;
+	
+}
+
+/*Task container: Start*/
+#taskContainer {
+	
+}
+
+#taskContainerArea {
+	
+	height: 610px;
+	width: 90%;
+
+	z-index: -1;
+	transition: all 400ms linear;
+}
+#taskContainerArea.active{
+	left: 20px;
+}
+
+#taskTab.active {
+	width: 450px;
+}
+
+.taskTabs {
+	display: inline-block;
+	height: 250px;
+	width: 45px;
+	
+	border: 1px solid black;
+	margin-top: 3px;
+	margin-left: 2px;
+	background-color: gray;
+	transition: all 600ms linear;
+}
+
+.plus {
+	
+	border: 1px solid black;
+	width: 20px;
+	height: 20px;
+	background-color: whitesmoke;
+	cursor: pointer;
+	border-radius: 25%;
+}
+
+.plus_icon {
+	position:absolute;
+	width: 20px;
+	height: 20px;
+	margin-bottom: 5px;
+}
+
+.miniChart {
+	
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 100%;
+	left: 15px;
+
+}
+
+#miniChart1 {
+	transition: all 600ms linear;
+}
+
+#miniChart1.active {
+	
+	transform: scale(2.5);
+	bottom: 30px;
+
+
+}
+
+.dropPerson {
+	display: none;
+	transition: opacity 4s ease;
+	opacity: 0;
+}
+
+#dropPerson1.active {
+	display: block;
+	
+	height: 20px;
+	width: 125px;
+	border: 1px solid black;
+	border-radius: 15px;
+	padding: 5px;
+	opacity: 1;
+	background-color: #ffffff;
+
+}
+
+
+
+
+/*Task Container: End*/
+#piechart {
+	
+
+
+}
+
+#personList {
+	width: 350px;
+	height: 50px;
+	border: 1px solid black;
+	border-radius: 25px;
+
+}
+
+.person {
+	
+	height: 30px;
+	width: 30px;
+	border: 1px solid black;
+	border-radius: 100%;
+}
+
+#personId {
+	
+	width: 30;
+	height: 30;
+	border-radius: 100%;
+
+	border: 1px solid black;
+}
+
+#addPerson {
+	
+	height: 30px;
+	width: 30px;
+	
+	border: 1px solid black;
+	border-radius: 100%;
+	background-color: whitesmoke;
+}
+
+#addPluss {
+	height: 30px;
+	width: 30px;
+}
+
+
+#addPerson:hover {
+	opacity: 50%;
+}
+
+#descriptionBox {
+	
+	width: 70%;
+	height: 255px;
+	border: 1px solid black;
+	float:right;
+	background-color: gray;
+
+}
+
+/*Main: End*/
+
+#trash_container {
+	
+
+}
+
+#trash {
+	width: auto;
+	height: 60px;
+	float:right;
+
+}
+
+#trash_container:hover {
+	visibility: visible;
+
+}
+
+/* kortene på venstre side*/
+#task_container .card .multi-button button {
+	display: grid;
+	place-items: center;
+	
+	border: none;
+	border-radius: 100%;
+	background: var(--background);
+	color: var(--text);
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
+	box-shadow: 0 0 0rem -0.25rem var(--background);
+}
+
+#task_container .card .multi-button button:hover {
+	background: var(--text);
+	color: var(--background);
+	box-shadow: 0 0 1rem -0.25rem var(--background);
+}
+
+body .card .multi-button button:first-child:nth-last-child(1):nth-child(1),
+body .card .multi-button button:first-child:nth-last-child(1)~*:nth-child(1) {
+	left: 25%;
+	top: 25%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(2):nth-child(1),
+body .card .multi-button button:first-child:nth-last-child(2)~*:nth-child(1) {
+	left: 37.5%;
+	top: 18.75%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(2):nth-child(2),
+body .card .multi-button button:first-child:nth-last-child(2)~*:nth-child(2) {
+	left: 18.75%;
+	top: 37.5%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(3):nth-child(1),
+body .card .multi-button button:first-child:nth-last-child(3)~*:nth-child(1) {
+	left: 50%;
+	top: 15.625%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(3):nth-child(2),
+body .card .multi-button button:first-child:nth-last-child(3)~*:nth-child(2) {
+	left: 25%;
+	top: 25%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(3):nth-child(3),
+body .card .multi-button button:first-child:nth-last-child(3)~*:nth-child(3) {
+	left: 15.625%;
+	top: 50%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(4):nth-child(1),
+body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(1) {
+	left: 62.5%;
+	top: 18.75%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(4):nth-child(2),
+body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(2) {
+	left: 37.5%;
+	top: 18.75%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(4):nth-child(3),
+body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(3) {
+	left: 18.75%;
+	top: 37.5%;
+}
+
+body .card .multi-button button:first-child:nth-last-child(4):nth-child(4),
+body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
+	left: 18.75%;
+	top: 62.5%;
+}
+
+#task_container .card .container {
+
+	border-radius: 1rem;
+	background: var(--background);
+	color: var(--text);
+}
+
+#task_container .card:hover .multi-button,
+#task_container .card .multi-button:focus-within {
+
+}

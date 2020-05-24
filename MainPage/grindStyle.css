@@ -1,0 +1,36 @@
+*
+
+.header { 
+    grid-area: header;
+background-color: #273138;
+
+    }
+.sideBar { 
+    grid-area: sideBar;
+    background-color: #273138;
+
+ }
+.taskArea { grid-area: taskArea;
+     }
+.piechart { grid-area: piechart;
+   }
+.infoArea { grid-area: infoArea;
+   }
+.footer { grid-area: footer; 
+    background-color:#658092;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'sideBar header header header header header'
+    'sideBar taskArea taskArea taskArea taskArea taskArea'
+    'sideBar piechart piechart infoArea infoArea infoArea'
+    'sideBar footer footer footer footer footer';
+  grid-gap: 0px;
+
+}
+
+.grid-container > div {
+  padding: 20px 0;
+  font-size: 30px;
+}
