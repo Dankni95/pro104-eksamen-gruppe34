@@ -81,13 +81,13 @@
 
 	<!--Task container with name, dropPerson, minipiechart and add button-->
 	<div id="taskContainer">
-
+            <div class="addMainTasks" id="addMainTask">addMainTask</div>
 		<div class="taskTabs" id="taskTab">
             <div class="overskrift" id="overskrift">overskrift</div>
             <div class="plus" onclick="expandTask()" id="test">
                 <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
             </div>
-            <div class="addTask" id="addtask">addMainTask</div>
+            
             <div class="listoftasks" id="listoftasks">
             <div class="task" id="task0" style="background-color: beige; position: relative; top: 40px;">her kommer det diverse tasks. de blir generert etter localstorage.</div>
             </div>
@@ -135,12 +135,14 @@
         var getAddPerson = document.getElementById("addPerson");
         var getPersonList = document.getElementById("personList")
         var getTaskarea = document.getElementById("listoftasks")
+        var getAddMainTask = document.getElementById("addMainTask")
         var getAddTask = document.getElementById("addTask");
     //  var getAddMainTask = document.getElementById("");
         var getTextbox = document.getElementById("textbox");
         var getDate = document.getElementById("date");
         var getMainTitle = document.getElementById("mainTitle");
         var getTaskContainer = document.getElementById("taskContainer");
+        
         var categoryArray = [];
         var mainTasksArray= [];
         var taskArray = [];
@@ -150,6 +152,8 @@
         getAddContainer.onclick = onclickAddCategory;
         getAddPerson.onclick = onclickAddPerson;
         getAddTask.onclick= onclickAddTask;
+        getAddMainTask.onclick = onclickaddMainTask;
+        
         
         
         function onclickAddCategory(){
@@ -172,6 +176,13 @@
             buildItems("task");
         }
         
+        function onclickaddMainTask(){
+            let category= document.getElementById("mainTitle").innerHTML;
+            mainTasksArray.push({textToShow: "fix shit", backgroundcolor: "beige", category:`${category}`})
+            setLocalStorage(`mainTask`, mainTasksArray);
+            buildItems("mainTask");
+        }
+        
         function buildMainSite(categoryToBuild){
             getMainTitle.innerHTML = categoryToBuild;
             getTaskContainer.innerHTML = ``;
@@ -183,7 +194,7 @@
                     
                 }
             }
-            getAddContainer.innerHTML +=
+            getAddContainer.innerHTML +=``;
             
         }
         

@@ -294,7 +294,13 @@ body{
 	
 }
 
-
+#addMainTask{
+    position: absolute;
+    right: 200px;
+    height: 30px;
+    width: 100px;
+    background-color: beige
+}
 
 /*Task container: Start*/
 #taskContainer{
