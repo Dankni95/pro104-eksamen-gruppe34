@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Project</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Project</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
 
 </head>
-
 <body>
 
-<<<<<<< HEAD
 	<!--Topbar elements-->
 	<div id="topBar">
 
@@ -95,95 +92,17 @@
             <div class="overskrift" id="overskrift">overskrift</div>
             <div class="plus" onclick="expandTask()" id="test">
                 <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
-=======
-    <!--Topbar elements-->
-    <div id="topBar">
-
-        <div id="buttons_container">
-            <div class="buttons" id="button1">
->>>>>>> 7e8adff9fd68a6552aef31cc343bfd1670ae2fd6
             </div>
-            <div class="buttons" id="button2"></div>
-            <div class="buttons" id="button3"></div>
-
-        </div>
-
-        <div id="logo">
-            <img src="/images/firelogo.png" alt="Logo" id="logoImg">
-        </div>
-
-        <nav id="navBar">
-            <ul>
-                <li>
-                    <a href="../Index.html" onclick="frontPage()"><i class="fa fa-home"></i></a>
-                </li>
-                <li class="navSymbols">
-                    <a href="index.html"><i class="fa fa-cog"></i></a>
-                </li>
-                <li class="navSymbols">
-                    <a href="index.html"><i class="fa fa-eye"></i></a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <!--Overview of projects (Project tabs on left side)-->
-    <div id="left_container">
-
-        <div id="task_container">
-            <div id="task_box1" class="task_boxes">
-                <h2>HTML</h2>
+            
+            <div class="listoftasks" id="listoftasks">
+            <div class="task" id="task0" style="background-color: beige; position: relative; top: 40px;">her kommer det diverse tasks. de blir generert etter localstorage.</div>
             </div>
-        </div>
-
-
-        <div id="add_container">
-            <img src="../images/plus_icon.png" id="plus_icon" alt="plus">
-        </div>
-
-        <div id="miniContainer">
-            <div id="miniTaskBox" class="miniBox"></div>
-
-
-        </div>
-
-        <div id="miniAdd">
-            <img src="../images/plus_icon.png" id="miniPlus_icon" alt="plus">
-        </div>
-
-    </div>
-
-
-    <!--Hovedinnhold (Task info, Descriotions, etc...)-->
-    <div id="main_container">
-
-        <h2 id="mainTitle">HTML</h2>
-
-        <div class="toggle-btn" onclick="toggleSidebar()"></div>
-
-        <!--Task container with name, dropPerson, minipiechart and add button-->
-        <div id="taskContainer">
-            <div class="addMainTasks" id="addMainTask">addMainTask</div>
-            <div class="taskTabs" id="taskTab">
-                <div class="overskrift" id="overskrift">overskrift</div>
-                <div class="plus" onclick="expandTask()" id="test">
-                    <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
-                </div>
-
-                <div class="listoftasks" id="listoftasks">
-                    <div class="task" id="task0" style="background-color: beige; position: relative; top: 40px;">her
-                        kommer det diverse tasks. de blir generert etter localstorage.</div>
-                </div>
-                <div class="miniChart" id="miniChart1"></div>
-                <div id="addTasks">
-                    <input type="text" id="textbox" value="to add tasks">
-                    <input type="button" id="addTask" value="O"><br>
-                    <input type="date" id="date">
-                </div>
-                <div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person
-                    here</div>
+			<div class="miniChart" id="miniChart1"></div>
+            <div id="addTasks">
+            <input type="text" id="textbox" value="to add tasks">
+                <input type="button" id="addTask" value="O"><br>
+                <input type="date" id="date">
             </div>
-<<<<<<< HEAD
 			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
 		</div>
 	</div>
@@ -191,137 +110,109 @@
     </div>
 	<!--Workprogress of tasks-->
 	<div id="piechart"></div>
-=======
-        </div>
->>>>>>> 7e8adff9fd68a6552aef31cc343bfd1670ae2fd6
-
-        <!--Workprogress of tasks-->
-        <div id="piechart"></div>
 
 
-        <!--Shows how many people are in the project-->
-        <div id="personList">
+	<!--Shows how many people are in the project-->
+	<div id="personList">
 
-            <div class="person">
-                <img src="" alt="P" id="personId" draggable="true" ondragstart="drag(event)">
-            </div>
+		<div class="person">
+			<img src="" alt="P" id="personId" draggable="true" ondragstart="drag(event)">	
+		</div>
 
-            <div id="addPerson">
-                <img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
-            </div>
-        </div>
+		<div id="addPerson">
+			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
+		</div>
+	</div>
 
-        <!--Information about task-->
-        <div id="descriptionBox"></div>
+	<!--Information about task-->
+	<div id="descriptionBox"></div>
 
-    </div>
-
-<<<<<<< HEAD
 	
-=======
-    <!--Trash-->
-    <div id=trash_container>
-        <img src="../images/Garbage.png" id="trash" alt="Trash">
->>>>>>> 7e8adff9fd68a6552aef31cc343bfd1670ae2fd6
 
-    </div>
+	<!--Trash-->
+	<div id=trash_container>
+		<img src="../images/Garbage.png" id="trash" alt="Trash">
 
+	</div>
+	
 </body>
-<script>
-    var getLeftContainer = document.getElementById("task_container");
-    var getAddContainer = document.getElementById("add_container");
-    var getAddPerson = document.getElementById("addPerson");
-    var getPersonList = document.getElementById("personList")
-    var getTaskarea = document.getElementById("listoftasks")
-    var getAddMainTask = document.getElementById("addMainTask")
-    var getAddTask = document.getElementById("addTask");
-    //  var getAddMainTask = document.getElementById("");
-    var getTextbox = document.getElementById("textbox");
-    var getDate = document.getElementById("date");
-    var getMainTitle = document.getElementById("mainTitle");
-    var getTaskContainer = document.getElementById("taskContainer");
-
-    var categoryArray = [];
-    var mainTasksArray = [];
-    var taskArray = [];
-    var personArray = [];
-    buildItems("category");
-
-    getAddContainer.onclick = onclickAddCategory;
-    getAddPerson.onclick = onclickAddPerson;
-    getAddTask.onclick = onclickAddTask;
-    getAddMainTask.onclick = onclickaddMainTask;
-
-
-
-    function onclickAddCategory() {
-        categoryArray.push({
-            textToShow: "CSS",
-            backgroundcolor: "#28cc6d"
-        });
-        setLocalStorage(`category`, categoryArray);
+    <script>
+        var getLeftContainer = document.getElementById("task_container");
+        var getAddContainer = document.getElementById("add_container");
+        var getAddPerson = document.getElementById("addPerson");
+        var getPersonList = document.getElementById("personList")
+        var getTaskarea = document.getElementById("listoftasks")
+        var getAddMainTask = document.getElementById("addMainTask")
+        var getAddTask = document.getElementById("addTask");
+        var getTextbox = document.getElementById("textbox");
+        var getDate = document.getElementById("date");
+        var getMainTitle = document.getElementById("mainTitle");
+        var getTaskContainer = document.getElementById("taskContainerArea");
+        
+        var categoryArray = [];
+        var mainTasksArray= [];
+        var taskArray = [];
+        var personArray=[];
         buildItems("category");
-    }
-
-    function onclickAddPerson() {
-        personArray.push({
-            textToShow: "G",
-            backgroundcolor: "#28cc6d",
-            category: "CSS"
-        });
-        setLocalStorage(`person`, personArray);
-    }
-
-    function onclickAddTask() {
-        let text = getTextbox.value;
-        let date = getDate.value;
-        let category = document.getElementById("mainTitle").innerHTML;
-        taskArray.push({
-            textToShow: `${text}`,
-            backgroundcolor: "#28cc6d",
-            date: `${date}`,
-            WIP: "no",
-            done: "no",
-            category: `${category}`
-        });
-        setLocalStorage(`task`, taskArray);
-        buildItems("task");
-    }
-
-    function onclickaddMainTask() {
-        let category = document.getElementById("mainTitle").innerHTML;
-        mainTasksArray.push({
-            textToShow: "fix shit",
-            backgroundcolor: "beige",
-            category: `${category}`
-        })
-        setLocalStorage(`mainTask`, mainTasksArray);
-        buildItems("mainTask");
-    }
-
-    function buildMainSite(categoryToBuild) {
-        getMainTitle.innerHTML = categoryToBuild;
-        getTaskContainer.innerHTML = ``;
-        let tempTaskArray = getLocalStorage(`task`);
-        let tempTaskArray2 = [];
-        for (var i = 0; i < tempTaskArray.length; i++) {
-            if (tempTaskArray[i].category == categoryToBuild) {
-                tempTaskArray2.push(tempTaskArray[i]);
-
-            }
+        
+        getAddContainer.onclick = onclickAddCategory;
+        getAddPerson.onclick = onclickAddPerson;
+        getAddTask.onclick= onclickAddTask;
+        getAddMainTask.onclick = onclickaddMainTask;
+        
+        
+        
+        function onclickAddCategory(){
+            categoryArray.push({textToShow: "CSS", backgroundcolor: "#28cc6d"});
+            setLocalStorage(`category`, categoryArray);
+            buildItems("category");
         }
-        getAddContainer.innerHTML += ``;
-
-    }
-
-    function buildItems(type) {
-        if (type == "category") {
-            getLeftContainer.innerHTML = "";
-            categoryArray = getLocalStorage(`category`);
-            for (var i = 0; i < categoryArray.length; i++) {
-                let backgroundColor = categoryArray[i].backgroundcolor;
-                let text = categoryArray[i].textToShow;
-                getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
+        
+        function onclickAddPerson(){
+            personArray.push({textToShow: "G", backgroundcolor: "#28cc6d", category: "CSS"});
+            setLocalStorage(`person`, personArray);
+        }
+        
+        function onclickAddTask(){
+            let text = getTextbox.value;
+            let date = getDate.value;
+            let category = document.getElementById("mainTitle").innerHTML;
+            taskArray.push({textToShow: `${text}`, backgroundcolor: "#28cc6d", date:`${date}`, WIP: "no", done: "no", category: `${category}`});
+            setLocalStorage(`task`, taskArray);
+            buildItems("task");
+        }
+        
+        function onclickaddMainTask(){
+            let category= document.getElementById("mainTitle").innerHTML;
+            let getText = document.getElementById("addMainTaskText").value;
+            mainTasksArray.push({textToShow: `${getText}`, backgroundcolor: "beige", category:`${category}`})
+            setLocalStorage(`mainTask`, mainTasksArray);
+            buildItems("mainTask");
+        }
+        
+        function buildMainSite(categoryToBuild){
+            getMainTitle.innerHTML = categoryToBuild;
+            getTaskContainer.innerHTML = ``;
+            let tempTaskArray = getLocalStorage(`task`);
+            let tempTaskArray2 =[];
+            for(var i=0; i<tempTaskArray.length; i++){
+                if(tempTaskArray[i].category==categoryToBuild){
+                    tempTaskArray2.push(tempTaskArray[i]);
+                    
+                }
+            }
+            getAddContainer.innerHTML +=``;
+            
+        }
+        
+        function buildItems(type){
+            if(type=="category"){
+        getLeftContainer.innerHTML = "";
+        categoryArray = getLocalStorage(`category`);
+        for (var i = 0; i < categoryArray.length; i++) {
+          let backgroundColor = categoryArray[i].backgroundcolor;
+          let text = categoryArray[i].textToShow;
+          getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
@@ -329,35 +220,36 @@
         </div>
         <div class="container">${text}</div>
         </div>`;
-            }
-
-
         }
-        if (type === "person") {
-            getPersonList.innerHTML = ``;
-            personArray = getLocalStorage(`person`);
-            for (var i = 0; i < personArray.length; i++) {
-                let backgroundPerson = personArray[i].backgroundcolor;
-                let textPerson = personArray[i].textToShow;
-                getPersonList.innerHTML += `<div class="person">
+
+
+      }
+            if(type==="person"){
+                getPersonList.innerHTML=``;
+                personArray = getLocalStorage(`person`);
+                for(var i=0; i<personArray.length; i++){
+                    let backgroundPerson = personArray[i].backgroundcolor;
+                    let textPerson = personArray[i].textToShow;
+                    getPersonList.innerHTML += `<div class="person">
 			<img src="" alt="${textPerson}" id="personId" draggable="true" ondragstart="drag(event)">	
 		</div>`
-            }
-            getPersonList.innerHTML += `<div id="addPerson">
+                }
+                getPersonList.innerHTML += `<div id="addPerson">
 			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
 		</div>`
-        }
-
-        if (type === "task") {
-            getTaskarea.innerHTML = ``;
-            taskArray = getLocalStorage(`task`);
-            for (var i = 0; i < taskArray.length; i++) {
-                let backgroundText = taskArray[i].backgroundcolor;
-                let textTask = taskArray[i].textToShow;
-                getTaskarea.innerHTML += `<div class="task" id="{textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done"><input type="button" id="${textTask}WIP" value="WIP"></div>
-            </div>`
             }
-<<<<<<< HEAD
+            
+            if(type==="task"){
+                getTaskarea.innerHTML = ``;
+                taskArray = getLocalStorage(`task`);
+                for(var i=0; i<taskArray.length; i++){
+                    let backgroundText = taskArray[i].backgroundcolor;
+                    let textTask = taskArray[i].textToShow;
+                    getTaskarea.innerHTML +=`<div class="task" id="{textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done"><input type="button" id="${textTask}WIP" value="WIP"></div>
+            </div>`
+                }
+                
+            }
             getAddPerson.onclick = onclickAddPerson;
             
             if(type==="mainTask"){
@@ -395,25 +287,16 @@
         
         
         function setLocalStorage(type, object) {
-=======
-
-        }
-        getAddPerson.onclick = onclickAddPerson;
-    }
-
-
-    function setLocalStorage(type, object) {
->>>>>>> 7e8adff9fd68a6552aef31cc343bfd1670ae2fd6
         window.localStorage.setItem(type, JSON.stringify(object));
-    }
+      }
 
-    function getLocalStorage(type) {
+      function getLocalStorage(type) {
         return JSON.parse(window.localStorage.getItem(type)) || [];
-    }
-</script>
+      }
+        
+    </script>
 <script src="../scripts/pieChart.js"></script>
 <script src="../scripts/toggleSidebar.js"></script>
 <script src="../scripts/newPage.js"></script>
 <script src="../scripts/localStorageHandler.js"></script>
-
 </html>
