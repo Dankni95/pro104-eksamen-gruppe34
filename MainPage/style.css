@@ -302,7 +302,7 @@ body {
 #addMainTaskText{
 	position: absolute;
 	top: 25px;
-	left: 30px;
+	left: 2%;
 
 }
 #addMainTask h3{
@@ -422,7 +422,7 @@ body {
 #piechart {
 	position: absolute;
 	bottom: 80px;
-	left: 150px;
+	left: 50px;
 
 
 }
@@ -474,6 +474,7 @@ body {
 	height: 30px;
 	width: 30px;
 }
+
 
 #addPerson:hover {
 	opacity: 50%;
