@@ -43,7 +43,7 @@
 				</li>
 			</ul>
 		</nav>
-	</div>
+	</div> 
 
 <!--Overview of projects (Project tabs on left side)-->
 <div id="left_container">
@@ -77,15 +77,15 @@
 <!--Hovedinnhold (Task info, Descriotions, etc...)-->
 <div id="main_container">
 
-	<h2 id="mainTitle">HTML</h2>
-
-	<div class="toggle-btn" onclick="toggleSidebar()"></div>
-
 	<!--add maintasks -->
     <div id="containerAddmainTasks">
     <div class="addMainTasks" id="addMainTask">addMainTask</div><br><input type="text" id="addMainTaskText">
         </div>
     <div id="taskContainerArea">
+
+        <h2 id="mainTitle">HTML</h2>
+
+	<div class="toggle-btn" onclick="toggleSidebar()"></div>
     
     <!--Task container with name, dropPerson, minipiechart and add button-->
 	<div id="taskContainer">
@@ -149,7 +149,7 @@
         var getTextbox = document.getElementById("textbox");
         var getDate = document.getElementById("date");
         var getMainTitle = document.getElementById("mainTitle");
-        var getTaskContainer = document.getElementById("taskContainerArea");
+        var getTaskContainer = document.getElementById("taskContainer");
         
         var categoryArray = [];
         var mainTasksArray= [];
