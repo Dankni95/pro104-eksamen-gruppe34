@@ -80,8 +80,11 @@
 	<div class="toggle-btn" onclick="toggleSidebar()"></div>
 
 	<!--Task container with name, dropPerson, minipiechart and add button-->
+    <div class="addMainTasks" id="addMainTask">addMainTask<br><input type="text" id="addMainTaskText"></div>
+    <div id="taskContainerArea">
+        
 	<div id="taskContainer">
-            <div class="addMainTasks" id="addMainTask">addMainTask</div>
+            
 		<div class="taskTabs" id="taskTab">
             <div class="overskrift" id="overskrift">overskrift</div>
             <div class="plus" onclick="expandTask()" id="test">
@@ -100,7 +103,7 @@
 			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
 		</div>
 	</div>
-
+</div>
 	<!--Workprogress of tasks-->
 	<div id="piechart"></div>
 
@@ -137,11 +140,10 @@
         var getTaskarea = document.getElementById("listoftasks")
         var getAddMainTask = document.getElementById("addMainTask")
         var getAddTask = document.getElementById("addTask");
-    //  var getAddMainTask = document.getElementById("");
         var getTextbox = document.getElementById("textbox");
         var getDate = document.getElementById("date");
         var getMainTitle = document.getElementById("mainTitle");
-        var getTaskContainer = document.getElementById("taskContainer");
+        var getTaskContainer = document.getElementById("taskContainerArea");
         
         var categoryArray = [];
         var mainTasksArray= [];
@@ -178,7 +180,8 @@
         
         function onclickaddMainTask(){
             let category= document.getElementById("mainTitle").innerHTML;
-            mainTasksArray.push({textToShow: "fix shit", backgroundcolor: "beige", category:`${category}`})
+            let getText = document.getElementById("addMainTaskText").value;
+            mainTasksArray.push({textToShow: `${getText}`, backgroundcolor: "beige", category:`${category}`})
             setLocalStorage(`mainTask`, mainTasksArray);
             buildItems("mainTask");
         }
@@ -244,6 +247,36 @@
                 
             }
             getAddPerson.onclick = onclickAddPerson;
+            
+            if(type==="mainTask"){
+                getTaskContainer.innerHTML=``;
+                mainTasksArray = getLocalStorage(`mainTask`);
+                let category = document.getElementById("mainTitle").innerHTML;
+                let counter=0;
+                for(var i=0; i<mainTasksArray.length; i++){
+                    if(category===mainTasksArray[i].category){
+                        let getMaintext = mainTasksArray[i].textToShow;
+                        getTaskContainer.innerHTML += `<div id="${getMaintext}">
+		<div class="taskTabs" id="taskTab">
+            <div class="overskrift" id="${getMaintext}">${getMaintext}</div>
+            <div class="plus" onclick="expandTask()" id="test${counter}">
+                <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
+            </div>
+            
+            <div class="listoftasks" id="listoftasks">
+            </div>
+			<div class="miniChart" id="miniChart1"></div>
+            <div id="addTasks">
+            <input type="text" id="textbox" value="to add tasks">
+                <input type="button" id="addTask" value="O"><br>
+                <input type="date" id="date">
+            </div>
+			<div class="dropPerson" id="dropPerson1" ondrop="drop(event)" ondragover="allowDrop(event)">Drop person here</div>
+		</div>
+	</div>`
+                    }
+                }
+            }
             }
         
         

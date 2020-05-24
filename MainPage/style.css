@@ -281,7 +281,7 @@ body{
 	position: absolute;
 	bottom: 20px;
 	left: 5px;
-	visibility: hidden;
+	visibility: visible;
 	transition: all 10ms linear;
 	transition-delay: 200ms;
 	
@@ -299,7 +299,8 @@ body{
     right: 200px;
     height: 30px;
     width: 100px;
-    background-color: beige
+    background-color: beige;
+    z-index: 4;
 }
 
 /*Task container: Start*/
@@ -307,6 +308,12 @@ body{
 	position: absolute;
 	left: 10px;
 	width: 1252px;
+}
+#taskContainerArea{
+    position: absolute;
+    left: 10px;
+    width: 1300px;
+    z-index: 1;
 }
 #taskTab.active{
 	width: 450px;
