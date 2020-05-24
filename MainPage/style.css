@@ -9,7 +9,6 @@
 /* Navigation Bar */
 nav {
 	background: #273138;
-	z-index: 0;
 	height: 70px;
 }
 
@@ -439,9 +438,9 @@ input {
 	left: 30px;
 	width: 90%;
 	height: 258px;
-	
+
 	overflow: hidden;
-	
+
 
 }
 
