@@ -373,13 +373,19 @@ body {
 
 .miniChart {
 	position: absolute;
-	bottom: 10px;
+	bottom: 30px;
 	width: 20px;
 	height: 20px;
 	border: 1px solid black;
 	border-radius: 100%;
 	left: 15px;
 
+}
+.task{
+	position: absolute;
+	top: 15px;
+	left: 5px;
+	margin: 5px;
 }
 
 #miniChart1 {
@@ -389,7 +395,7 @@ body {
 #miniChart1.active {
 	left: 380px;
 	transform: scale(2.5);
-	bottom: 30px;
+	bottom: 50px;
 
 
 }
