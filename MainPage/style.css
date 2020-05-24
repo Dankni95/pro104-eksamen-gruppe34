@@ -306,7 +306,7 @@ body {
 	top: 0px;
 	left: 160px;
 	height: 610px;
-	width: 1300px;
+	width: 100%;
 	border: 1px solid black;
 	z-index: -1;
 	transition: all 400ms linear;
@@ -401,7 +401,7 @@ body {
 #piechart {
 	position: absolute;
 	bottom: 80px;
-	left: 12px;
+	left: 20px;
 
 
 }
@@ -461,10 +461,10 @@ body {
 #descriptionBox {
 	position: absolute;
 	width: 692px;
-	height: 270px;
+	height: 255px;
 	border: 1px solid black;
-	bottom: 40px;
-	left: 570px;
+	bottom: 10px;
+	left: 590px;
 	background-color: gray;
 
 }
