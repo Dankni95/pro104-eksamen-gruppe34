@@ -38,10 +38,12 @@ nav ul {
   margin-right: 75px;
   position: relative;
   isolation: isolate;
+
 }
 
 nav ul li i:hover {
-  color: orangered;
+  color: #f8a437;
+
 }
 
 nav ul li {
@@ -62,12 +64,14 @@ nav ul li a {
 
 nav ul li a:hover {
   border-radius: 5px;
-  transform: scale(1.25);
+  color: #f8a437;
+  transform: scale(1.05);
+
 }
 
 nav ul ul li a:hover {
   box-shadow: none;
-  transform: scale(1.1);
+  background-color: rgb(39, 37, 37);
 }
 
 nav ul ul {
@@ -156,8 +160,10 @@ input {
   }
 
   .show:hover {
-    color: orangered;
-    text-decoration: underline;
+    color: #f8a437;
+    background-color: rgb(39, 37, 37);
+    background-size: 5px;
+
   }
 
   .icon {

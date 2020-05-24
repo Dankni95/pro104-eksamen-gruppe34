@@ -24,11 +24,11 @@
     <input type="checkbox" id="btn" />
     <ul>
       <li>
-        <label for="btn-0" class="show">Home</label>
+        <label for="btn-0" class="show"><i class="fa fa-home"></i> Home</label>
         <a href="Index.html"><i class="fa fa-home"></i></a>
       </li>
       <li>
-        <label for="btn-1" class="show">Theme</label>
+        <label for="btn-1" class="show"><i class="fa fa-image"></i> Theme</label>
         <a href="#"><i class="fa fa-image"></i></a>
         <input type="checkbox" id="btn-1" />
         <ul>
@@ -65,7 +65,7 @@
         </ul>
       </li>
       <li>
-        <label for="btn-2" class="show">Settings</label>
+        <label for="btn-2" class="show"><i class="fa fa-cog"></i> Settings</label>
         <a href="#"><i class="fa fa-cog"></i></a>
         <input type="checkbox" id="btn-2" />
         <ul>
@@ -120,8 +120,9 @@
       var projectArray = [];
       let counter = 0;
       getPlussAddProject.onclick = onClickAddProject;
-      
-        buildItems();
+
+      buildItems();
+
       function onClickAddProject() {
         projectArray.push({
           textToShow: `New Project ${++counter}`,
@@ -153,15 +154,15 @@
     </div>`;
         let getter = document.getElementById("createBox");
         getPlussAddProject = getter;
-        getPlussAddProject.onclick = onClickAddProject; 
+        getPlussAddProject.onclick = onClickAddProject;
       }
-        
+
       function removeItem(toBeRemoved) {
         console.log("test");
         for (let i in projectArray) {
-            if (toBeRemoved===projectArray[i].textToShow) {
-                projectArray.splice(i, 1);
-            }
+          if (toBeRemoved === projectArray[i].textToShow) {
+            projectArray.splice(i, 1);
+          }
         }
         setLocalStorage(`project`, projectArray);
         buildItems();
