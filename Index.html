@@ -59,9 +59,10 @@
           </li>
           <li>
             <a>
-              <div id="orange">Orange</div>
+              <div id="picture">Picture</div>
             </a>
           </li>
+
         </ul>
       </li>
       <li>
@@ -114,7 +115,7 @@
       var getColorGreen = document.getElementById("green");
       var getColorGray = document.getElementById("gray");
       var getColorYellow = document.getElementById("yellow");
-      var getColorOrange = document.getElementById("orange");
+      var getColorPicture = document.getElementById("picture");
       var getPlussAddProject = document.getElementById("createBox");
       var getTrash = document.getElementById("trash");
       var projectArray = [];
@@ -126,7 +127,7 @@
       function onClickAddProject() {
         projectArray.push({
           textToShow: `New Project ${++counter}`,
-          backgroundcolor: "#28cc6d"
+          backgroundcolor: "#677c91"
         });
         setLocalStorage("project", projectArray);
         console.log(counter);
@@ -183,8 +184,8 @@
       getColorYellow.onclick = function () {
         getMainContainer.style.backgroundColor = "#e9bc0a";
       };
-      getColorOrange.onclick = function () {
-        getMainContainer.style.backgroundColor = "#df7921";
+      getColorPicture.onclick = function () {
+        getMainContainer.style.backgroundImage = "url(Images/gradient.jpg)";
       };
 
       function setLocalStorage(type, object) {

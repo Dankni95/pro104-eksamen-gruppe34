@@ -10,7 +10,8 @@
 /* Navigation Bar */
 nav {
   background: #273138;
-  z-index: 0;
+
+
 }
 
 nav::after {
@@ -212,13 +213,13 @@ input {
   background: #e9bc0a;
 }
 
-#orange {
-  background: #df7921;
+
+#Picture {
+  background-image: url(Images/gradient.jpg);
 }
 
 /* Code that creates the boxes containing the different projects */
 .MainContainer {
-  background-image: url(/Images/gradient.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 5;
