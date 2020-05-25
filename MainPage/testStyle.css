@@ -454,13 +454,13 @@ input {
 }
 
 .miniChart {
-	
-	
-	width: 20px;
-	height: 20px;
+	position: absolute;
+	bottom: 10px;
+	left: 7px;
+	width: 30px;
+	height: 30px;
 	border: 1px solid black;
 	border-radius: 100%;
-	left: 15px;
 
 }
 
@@ -469,7 +469,8 @@ input {
 }
 
 #miniChart1.active {
-	
+	bottom: 30px;
+	left: 30px;
 	transform: scale(2.5);
 	
 
@@ -490,7 +491,7 @@ input {
 	display: block;
 	height: 50px;
 	width: 200px;
-	bottom: 40px;
+	bottom: 10px;
 	border: 1px solid black;
 	border-radius: 15px;
 	padding: 5px;
