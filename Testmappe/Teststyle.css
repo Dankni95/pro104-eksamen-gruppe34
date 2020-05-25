@@ -1,0 +1,267 @@
+/* Removes default styling */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "popins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/images/gradient.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* Navigation Bar */
+nav {
+    background: #273138;
+    box-shadow: 0px 1px 15px black;
+}
+
+nav::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    position: relative;
+    float: left;
+    width: 60px;
+    height: 55px;
+    margin-top: 10px;
+    margin-left: 50%;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 75px;
+    position: relative;
+    isolation: isolate;
+
+}
+
+nav ul li i:hover {
+    color: #53bdb9;
+}
+
+nav ul li {
+    float: left;
+    display: inline-block;
+    background: #273138;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+    display: list-item;
+
+}
+
+nav ul li a:hover {
+    border-radius: 5px;
+    color: #53bdb9;
+    transform: scale(1.05);
+
+}
+
+nav ul ul li a:hover {
+    box-shadow: none;
+    background-color: rgb(39, 37, 37);
+}
+
+nav ul ul {
+    position: absolute;
+    top: 30px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav ul li:hover>ul {
+    top: 85px;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li {
+    position: relative;
+    width: 100px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+nav ul ul ul li a {
+    line-height: 50px;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+
+.show,
+.icon,
+input {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media all and (max-width: 768px) {
+    nav ul {
+        margin-right: 0px;
+        float: left;
+    }
+
+    nav nav .logo {
+        padding-left: 30px;
+        width: 100%;
+    }
+
+    nav ul li,
+    nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul ul {
+        top: 70px;
+        position: static;
+        border-top: none;
+        float: none;
+        display: 1;
+        visibility: visible;
+    }
+
+    nav ul ul ul li {
+        position: static;
+    }
+
+    nav ul ul li {
+        border-bottom: 0px;
+    }
+
+    nav ul ul a {
+        padding-left: 80px;
+        text-align: center;
+    }
+
+    .show {
+        display: block;
+        color: #f5f7fa;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+
+    .show:hover {
+        color: #53bdb9;
+        background-color: rgb(39, 37, 37);
+        background-size: 5px;
+    }
+
+    .icon {
+        display: block;
+        color: #ffffff;
+        position: absolute;
+        right: 40px;
+        line-height: 50px;
+        font-size: 25px;
+        cursor: pointer;
+        top: 24px;
+    }
+
+    nav ul li a:hover {
+        box-shadow: none;
+    }
+
+    .show+a,
+    ul {
+        display: none;
+    }
+
+    [id^="btn"]:checked+ul {
+        display: block;
+    }
+}
+
+/* Colors for theme change */
+#red {
+    background: #e74837;
+}
+
+#blue {
+    background: #2b8aca;
+}
+
+#green {
+    background: #28cc6d;
+}
+
+#gray {
+    background: #364c61;
+}
+
+#yellow {
+    background: #e9bc0a;
+}
+
+
+#Picture {
+    background-image: url(Images/gradient.jpg)no-repeat center center fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#Picture2 {
+    background-image: url(Images/gradient.jpg)no-repeat center center fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Main start */
+
+.main {
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "sideNav mainBoard"
+        "footer";
+}
+
+.sideNav {
+    background-color: ivory;
+    width: 100%;
+    height: 100%;
+}
+
+.mainBoard {
+    background-color: lawngreen;
+    grid-area: initial;
+}
+
+.footer {
+    background-color: red;
+    width: 1500px;
+    height: 20%;
+    width: 100% auto;
+}
