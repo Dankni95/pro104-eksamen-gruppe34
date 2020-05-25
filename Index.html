@@ -160,7 +160,7 @@
           getMainContainer.innerHTML += `<div class="card"  style="--background:${backgroundColor}; --text:white;">
         <div class="multi-button" id="${text}card">
         <button class="fa fa-edit" onclick="changeNamePart1('${text}')"></button>
-        <button class="fa fa-cog" id ="cog" onclick ="changeColorBox('${text}')"></button>
+        <button class="fa fa-paint-brush" id ="paint-brush" onclick ="changeColorBox('${text}')"></button>
         <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
         <div class="container" id="${text}"><a href="#" onclick="newPage('test_page')">${text}</a></div>
@@ -180,9 +180,9 @@
           var rgbparameter1 = Math.floor(Math.random() * 255);
           var rgbparameter2 = Math.floor(Math.random() * 255);
           var rgbparameter3 = Math.floor(Math.random() * 255);
-          var RandomColorGen1 = `rgb(${rgbparameter1},${rgbparameter2},${rgbparameter3})`;
+          var RandomColorGen = `rgb(${rgbparameter1},${rgbparameter2},${rgbparameter3})`;
 
-          box.style.backgroundColor = RandomColorGen1;
+          box.style.backgroundColor = RandomColorGen;
         }
         for (var i = 0; i < projectArray.length; i++) {
           if (projectArray[i].textToShow === `${whoToChange}`) {
