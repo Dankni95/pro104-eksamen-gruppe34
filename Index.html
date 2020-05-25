@@ -112,10 +112,10 @@
     <div class="createBox" id="createBox">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </div>
-  <form>
-    <input type="text" class ="textBox" id ="textBox">
-    
-  </form>
+    <form>
+      <input type="text" class="textBox" id="textBox">
+
+    </form>
 
 
     <!--JavaScript-->
@@ -138,8 +138,10 @@
 
       function onClickAddProject() {
         projectArray.push({
-          textToShow: `New_Project_${++counter}`,
+          textToShow: `New Project ${++counter}`,
           backgroundcolor: "#53bdb9"
+
+
         });
         setLocalStorage("project", projectArray);
         console.log(counter);
@@ -171,33 +173,37 @@
         getPlussAddProject = getter;
         getPlussAddProject.onclick = onClickAddProject;
       }
-      function changeColorBox(){
-            var box = 
-            box.style.backgroundColor="red";
+
+      function changeColorBox() {
+        var box =
+          box.style.backgroundColor = "red";
       }
 
-        function changeNamePart1(whoToChange){
-            var getIt = document.getElementById(`${whoToChange}`);
-            getIt.innerHTML += `<input type="text" id="${whoToChange}text" class="tekstboksen" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 65px; left:5px; width: 140px; color: black">`;
-            var getIt2 = document.getElementById(`${whoToChange}text`).value;
-            var getIt3 = document.getElementById(`${whoToChange}`).innerHTML[0];
-            getIt.innerHTML += `<div id="${whoToChange}btn" onclick="changeNamePart2()" style="widt 20px; height: 20px; z-index: 6; position: absolute; display: inline; top: 65px;">OK</div>`
-            let getbtn = document.getElementById(`${whoToChange}btn`)
+      function changeNamePart1(whoToChange) {
+        var getIt = document.getElementById(`${whoToChange}`);
+        getIt.innerHTML +=
+          `<input type="text" id="${whoToChange}text" class="tekstboksen" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 65px; left:5px; width: 140px; color: black">`;
+        var getIt2 = document.getElementById(`${whoToChange}text`).value;
+        var getIt3 = document.getElementById(`${whoToChange}`).innerHTML[0];
+        getIt.innerHTML +=
+          `<div id="${whoToChange}btn" onclick="changeNamePart2()" style="widt 20px; height: 20px; z-index: 6; position: absolute; display: inline; top: 65px;">OK</div>`
+        let getbtn = document.getElementById(`${whoToChange}btn`)
+      }
+
+      function changeNamePart2() {
+        let newName = document.getElementsByClassName("tekstboksen")[0].value;
+        let oldName = document.getElementsByClassName("tekstboksen")[0].parentElement.id;
+        console.log(`${newName}${oldName}`);
+
+        for (var i = 0; i < projectArray.length; i++) {
+          if (oldName === projectArray[i].textToShow) {
+            projectArray[i].textToShow = newName;
+            setLocalStorage(`project`, projectArray);
+            buildItems();
+          }
         }
-                    function changeNamePart2(){
-                    let newName = document.getElementsByClassName("tekstboksen")[0].value;
-                    let oldName= document.getElementsByClassName("tekstboksen")[0].parentElement.id;
-                    console.log(`${newName}${oldName}`);
-                    
-                    for(var i=0; i<projectArray.length; i++){
-                        if(oldName===projectArray[i].textToShow){
-                            projectArray[i].textToShow = newName;
-                            setLocalStorage(`project`, projectArray);
-                            buildItems();
-                        }
-                    }
-                        
-            }
+
+      }
 
       function removeItem(toBeRemoved) {
         console.log("test");

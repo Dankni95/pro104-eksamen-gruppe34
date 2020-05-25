@@ -2,7 +2,6 @@
 * {
   margin: 0px;
   padding: 0px;
-  color: white;
   font-family: "popins", sans-serif;
   box-sizing: border-box;
 }
@@ -393,4 +392,15 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 
 .createBox i:hover {
   opacity: 1;
+}
+
+.MainContainer .card a {
+  text-decoration: none;
+  font-family: "popins", sans-serif;
+  color: black;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px #000000;
+
+
+
 }
