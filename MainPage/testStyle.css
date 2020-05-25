@@ -1,102 +1,214 @@
 * {
-	padding: 0;
-	margin: 0;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	font-family: "popins", sans-serif;
+	box-sizing: border-box;
 }
 
-body {
-	background-color: #ffffffff;
-	font-family: Poppins;
+/* Navigation Bar */
+nav {
+	background: #273138;
+	box-shadow: 0px 1px 15px black;
+}
+
+nav::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.logo {
+	text-align: center;
+}
+
+.logo img {
+	position: relative;
+	float: left;
+	width: 60px;
+	height: 55px;
+	margin-top: 10px;
+	margin-left: 50%;
+}
+
+nav ul {
+	float: right;
+	list-style: none;
+	margin-right: 75px;
+	position: relative;
+	isolation: isolate;
 
 }
 
-/*Top bar: Start*/
-#topBar {
+nav ul li i:hover {
+	color: #53bdb9;
+}
 
-	background-color: #273138;
+nav ul li {
+	float: left;
+	display: inline-block;
+	background: #273138;
+	margin: 0 5px;
+}
+
+nav ul li a {
+	color: whitesmoke;
+	text-decoration: none;
+	line-height: 70px;
+	font-size: 18px;
+	padding: 8px 15px;
+	display: list-item;
 
 }
 
-#header{ 
-	
+nav ul li a:hover {
+	border-radius: 5px;
+	color: #53bdb9;
+	transform: scale(1.05);
+
 }
 
-/*Button: Start*/
-#buttons_container {
+nav ul ul li a:hover {
+	box-shadow: none;
+	background-color: rgb(39, 37, 37);
+}
+
+nav ul ul {
 	position: absolute;
-	top: 5px;
+	top: 30px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+nav ul li:hover>ul {
+	top: 85px;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav ul ul li {
+	position: relative;
 	width: 100px;
-	height: 50px;
-	left: 30px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.buttons {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	border: 1px solid black;
-	margin-left: 6px;
-	margin-top: 15px;
-	border-radius: 100%;
+nav ul ul ul li a {
+	line-height: 50px;
 }
 
-#button1 {
-	background-color: #6DA7E8;
+nav ul ul ul li {
+	position: relative;
+	top: -70px;
+	left: 150px;
 }
 
-#button2 {
-	background-color: gray;
+.show,
+.icon,
+input {
+	display: none;
 }
 
-#button3 {
-	background-color: #6BE892;
+/* Mobile Responsive */
+@media all and (max-width: 768px) {
+	nav ul {
+		margin-right: 0px;
+		float: left;
+	}
+
+	nav nav .logo {
+		padding-left: 30px;
+		width: 100%;
+	}
+
+	nav ul li,
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul {
+		top: 70px;
+		position: static;
+		border-top: none;
+		float: none;
+		display: 1;
+		visibility: visible;
+	}
+
+	nav ul ul ul li {
+		position: static;
+	}
+
+	nav ul ul li {
+		border-bottom: 0px;
+	}
+
+	nav ul ul a {
+		padding-left: 80px;
+		text-align: center;
+	}
+
+	.show {
+		display: block;
+		color: #f5f7fa;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+
+	.show:hover {
+		color: #53bdb9;
+		background-color: rgb(39, 37, 37);
+		background-size: 5px;
+	}
+
+	.icon {
+		display: block;
+		color: #ffffff;
+		position: absolute;
+		right: 40px;
+		line-height: 50px;
+		font-size: 25px;
+		cursor: pointer;
+		top: 10px;
+	}
+
+	nav ul li a:hover {
+		box-shadow: none;
+	}
+
+	.show+a,
+	ul {
+		display: none;
+	}
+
+	[id^="btn"]:checked+ul {
+		display: block;
+	}
 }
 
-.buttons:hover {
-	opacity: 50%;
+/* Colors for theme change */
+#red {
+	background: #e74837;
 }
 
-/*Button: End*/
-
-
-/*Logo: Start*/
-#logo {
-	position: absolute;
-	top: 10px;
-	width: 50px;
-	height: auto;
-	left: 50%;
-
+#blue {
+	background: #2b8aca;
 }
 
-#logoImg {
-	width: auto;
-	height: 75px;
+#green {
+	background: #28cc6d;
 }
 
-/*Logo: End*/
-
-
-/*Nav bar: Start*/
-#navBar {
-	float:right;
-	border: 1px solid gray;
-	border-radius: 25px;
+#gray {
+	background: #364c61;
 }
 
-#navBar li {
-	display: inline-block;
-	padding: 4px 10px 0px 10px;
-
-	color: whitesmoke;
-}
-
-#navBar a {
-	color: whitesmoke;
-	cursor: pointer;
-}
-
-#navBar a:hover {
-	color: #ff9800;
+#yellow {
+	background: #e9bc0a;
 }
 
 /*Nav bar: End*/
@@ -105,11 +217,11 @@ body {
 
 /*Left Box: Start*/
 #left_container {
-	
+
 	height: 800px;
 	background-color: #273138;
 	transition: all 400ms linear;
-	
+
 
 
 }
@@ -121,7 +233,7 @@ body {
 }
 
 #containerAddmainTasks {
-	padding-left:40px;
+	padding-left: 40px;
 }
 
 .toggle-btn {
@@ -141,7 +253,7 @@ body {
 
 /*Task boxes: Start*/
 #task_container {
-	
+
 	width: 130px;
 	height: 300px;
 
@@ -153,6 +265,7 @@ body {
 	display: none;
 
 }
+
 #miniContainer {
 
 	width: 15px;
@@ -167,7 +280,7 @@ body {
 }
 
 .miniBox {
-	
+
 	border: 1px solid black;
 	background-color: #A2C76D;
 	border-radius: 25%;
@@ -182,10 +295,10 @@ body {
 }
 
 #miniAdd {
-	
+
 	width: 10px;
 	height: 10px;
-	
+
 	border: 1px solid black;
 	border-radius: 25%;
 	visibility: hidden;
@@ -238,21 +351,20 @@ body {
 
 /*Main: Start*/
 #main_container {
-	
+
 	width: 100%;
 	height: 610px;
 	background-color: #A2C76D;
 	transition: all 400ms linear;
 	z-index: -1;
-	
+
 
 }
 
-#mainTitle {
+#mainTitle {}
 
-}
 #addTasks {
-	
+
 	visibility: visible;
 	transition: all 10ms linear;
 	transition-delay: 200ms;
@@ -268,7 +380,7 @@ body {
 }
 
 #addMainTask {
-	
+
 	height: 30px;
 	width: 75px;
 	background-color: beige;
@@ -277,34 +389,33 @@ body {
 	border: 1px solid black;
 	cursor: pointer;
 }
+
 #addMainTask:hover {
 	opacity: 70%;
 }
-#addMainTaskText{
-	
 
-}
-#addMainTask h3{
+#addMainTaskText {}
+
+#addMainTask h3 {
 	font-size: 15px;
 	margin-top: 5px;
 	margin-left: 5px;
-	
+
 }
 
 /*Task container: Start*/
-#taskContainer {
-	
-}
+#taskContainer {}
 
 #taskContainerArea {
-	
+
 	height: 610px;
 	width: 90%;
 
 	z-index: -1;
 	transition: all 400ms linear;
 }
-#taskContainerArea.active{
+
+#taskContainerArea.active {
 	left: 20px;
 }
 
@@ -316,7 +427,7 @@ body {
 	display: inline-block;
 	height: 250px;
 	width: 45px;
-	
+
 	border: 1px solid black;
 	margin-top: 3px;
 	margin-left: 2px;
@@ -325,7 +436,7 @@ body {
 }
 
 .plus {
-	
+
 	border: 1px solid black;
 	width: 20px;
 	height: 20px;
@@ -335,14 +446,14 @@ body {
 }
 
 .plus_icon {
-	position:absolute;
+	position: absolute;
 	width: 20px;
 	height: 20px;
 	margin-bottom: 5px;
 }
 
 .miniChart {
-	
+
 	width: 20px;
 	height: 20px;
 	border: 1px solid black;
@@ -356,7 +467,7 @@ body {
 }
 
 #miniChart1.active {
-	
+
 	transform: scale(2.5);
 	bottom: 30px;
 
@@ -371,7 +482,7 @@ body {
 
 #dropPerson1.active {
 	display: block;
-	
+
 	height: 20px;
 	width: 125px;
 	border: 1px solid black;
@@ -386,11 +497,7 @@ body {
 
 
 /*Task Container: End*/
-#piechart {
-	
-
-
-}
+#piechart {}
 
 #personList {
 	width: 350px;
@@ -401,7 +508,7 @@ body {
 }
 
 .person {
-	
+
 	height: 30px;
 	width: 30px;
 	border: 1px solid black;
@@ -409,7 +516,7 @@ body {
 }
 
 #personId {
-	
+
 	width: 30;
 	height: 30;
 	border-radius: 100%;
@@ -418,10 +525,10 @@ body {
 }
 
 #addPerson {
-	
+
 	height: 30px;
 	width: 30px;
-	
+
 	border: 1px solid black;
 	border-radius: 100%;
 	background-color: whitesmoke;
@@ -438,26 +545,23 @@ body {
 }
 
 #descriptionBox {
-	
+
 	width: 70%;
 	height: 255px;
 	border: 1px solid black;
-	float:right;
+	float: right;
 	background-color: gray;
 
 }
 
 /*Main: End*/
 
-#trash_container {
-	
-
-}
+#trash_container {}
 
 #trash {
 	width: auto;
 	height: 60px;
-	float:right;
+	float: right;
 
 }
 
@@ -470,7 +574,7 @@ body {
 #task_container .card .multi-button button {
 	display: grid;
 	place-items: center;
-	
+
 	border: none;
 	border-radius: 100%;
 	background: var(--background);
@@ -555,6 +659,4 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 }
 
 #task_container .card:hover .multi-button,
-#task_container .card .multi-button:focus-within {
-
-}
+#task_container .card .multi-button:focus-within {}

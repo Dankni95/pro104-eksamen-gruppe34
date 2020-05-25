@@ -1,55 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Web Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Project</title>
     <link rel="stylesheet" type="text/css" href="testStyle.css">
     <link rel="stylesheet" type="text/css" href="grindStyle.css">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 </head>
-<body>
- 
-    <div class="grid-container">
 
-        <div class="header">
-            <div id="logo">
-                <img src="/images/firelogo.png" alt="Logo" id="logoImg">
-                </div>
-    
-                <nav id="navBar">
-                    <ul>
-                        <li>
-                            <a href="../Index.html" onclick="frontPage()"><i class="fa fa-home"></i></a>
-                        </li>
-                        <li class="navSymbols">
-                            <a href="index.html"><i class="fa fa-cog"></i></a>
-                        </li>
-                        <li class="navSymbols">
-                            <a href="index.html"><i class="fa fa-eye"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-        </div> <!--header-->
-            
-            
+<body>
+
+    <!-- Navigation Bar-->
+    <nav>
+        <div class="logo">
+            <img src="/images/firelogo.png" alt="logo" />
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input type="checkbox" id="btn" />
+        <ul>
+            <li>
+                <label for="btn-0" class="show"><i class="fa fa-home"></i> Home</label>
+                <a href="Index.html"><i class="fa fa-home"></i></a>
+            </li>
+            <li>
+                <label for="btn-1" class="show"><i class="fa fa-image"></i> Theme</label>
+                <a href="#"><i class="fa fa-image"></i></a>
+                <input type="checkbox" id="btn-1" />
+                <ul>
+                    <li>
+                        <a>
+                            <div id="red">Red</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div id="blue">Blue</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div id="green">Green</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div id="gray">Gray</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div id="yellow">Yellow</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <div id="picture">Picture</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show"><i class="fa fa-cog"></i> Settings</label>
+                <a href="#"><i class="fa fa-cog"></i></a>
+                <input type="checkbox" id="btn-2" />
+                <ul>
+                    <li><a href="#">Grapics</a></li>
+                    <li><a href="#">Adjust</a></li>
+                    <li><a href="#">Colorblind</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="grid-container">
         <div class="sideBar">
             <div id="buttons_container">
-			    <div class="buttons" id="button1"></div>
-			    <div class="buttons" id="button2"></div>
-			    <div class="buttons" id="button3"></div>
+                <div class="buttons" id="button1"></div>
+                <div class="buttons" id="button2"></div>
+                <div class="buttons" id="button3"></div>
             </div>
 
             <!--<div id="task_container">
                 <div id="task_box1" class="task_boxes"></div>
             </div> -->
-        
+
             <br>
             <div id="add_container">
                 <div id="add_category">
@@ -66,8 +112,9 @@
                 <img src="../images/plus_icon.png" id="miniPlus_icon" alt="plus">
             </div>
 
-        </div> <!--sidebar-->
-         
+        </div>
+        <!--sidebar-->
+
 
         <div class="taskArea">
             <div id="containerAddmainTasks">
@@ -76,74 +123,80 @@
                 </div>
                 <input type="text" id="addMainTaskText">
             </div>
-        
+
             <h4 id="mainTitle">HTML</h4>
 
             <!--<div class="toggle-btn" onclick="toggleSidebar()"></div>-->
-            
+
             <div id="taskContainer">
                 <div class="plus" onclick="expandTask()" id="test">
                     <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
                 </div>
                 <div class="taskTabs" id="taskTab">
-                   
-                    <div class="overskrift" id="overskrift">overskrift     
+
+                    <div class="overskrift" id="overskrift">overskrift
                     </div>
-                    
-                    
+
+
                     <div class="listoftasks" id="listoftasks">
-                        <div class="task" id="task0" style="background-color: beige;">her kommer det diverse tasks. de blir generert etter localstorage.
+                        <div class="task" id="task0" style="background-color: beige;">her kommer det diverse tasks. de
+                            blir generert etter localstorage.
                         </div>
                     </div>
-                    
+
                     <div class="miniChart" id="miniChart1">
                     </div>
-                    
+
                     <div id="addTasks">
                         <input type="text" id="textbox" value="to add tasks">
-                            <input type="button" id="addTask" value="O"><br>
-                            <input type="date" id="date">
+                        <input type="button" id="addTask" value="O"><br>
+                        <input type="date" id="date">
                     </div>
-                    
-                    <div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p>
+
+                    <div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)">
+                        <p>Drop person here</p>
                     </div>
                 </div>
             </div>
 
-        </div> <!--taskArea-->
+        </div>
+        <!--taskArea-->
 
         <div class="piechart">
             <div id="piechart"></div>
 
             <!--Shows how many people are in the project-->
-	        <div id="personList">
+            <div id="personList">
 
-		        <div class="person">
-			        <img src="" alt="P" id="personId" draggable="true" ondragstart="x_drag(event)">	
-	    	    </div>
+                <div class="person">
+                    <img src="" alt="P" id="personId" draggable="true" ondragstart="x_drag(event)">
+                </div>
 
-		        <div id="addPerson">
-			        <img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
-		        </div>
-	        </div>
-            
-        </div><!--piechart-->
+                <div id="addPerson">
+                    <img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
+                </div>
+            </div>
+
+        </div>
+        <!--piechart-->
 
         <div class="infoArea">
             <!--Information about task-->
-	        <div id="descriptionBox">
+            <div id="descriptionBox">
                 <p>insert text here</p>
             </div>
-            
-        </div><!--infoArea-->
+
+        </div>
+        <!--infoArea-->
 
         <div class="footer">
-	        <!--Trash-->
-	        <div id=trash_container>
-		        <img src="../images/Garbage.png" id="trash" alt="Trash">
-             </div>
+            <!--Trash-->
+            <div id=trash_container>
+                <img src="../images/Garbage.png" id="trash" alt="Trash">
+            </div>
 
-        </div><!--footer-->
+        </div>
+        <!--footer-->
 
     </div>
 
