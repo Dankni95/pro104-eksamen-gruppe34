@@ -395,12 +395,11 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 }
 
 .MainContainer .card a {
+  position: sticky;
   text-decoration: none;
   font-family: "popins", sans-serif;
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   text-shadow: 1px 1px 2px #000000;
-
-
-
+  top: 33%;
 }
