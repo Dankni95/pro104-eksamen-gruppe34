@@ -356,7 +356,6 @@ input {
 	background-color: gray;
 	transition: all 600ms linear;
 }
-
 .plus {
 	border: 1px solid black;
 	width: 15px;
@@ -375,18 +374,6 @@ input {
 	opacity: 70%;
 }
 
-.miniChart {
-	width: 30px;
-	height: 30px;
-	border: 1px solid black;
-	border-radius: 100%;
-
-}
-
-#miniChart1 {
-
-	transition: all 600ms linear;
-}
 
 #miniChart1.active {
 	transform: scale(2.0);
