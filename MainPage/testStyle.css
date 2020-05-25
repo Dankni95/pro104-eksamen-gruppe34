@@ -367,7 +367,6 @@ input {
 }
 
 .plus_icon {
-	position: absolute;
 	width: 15px;
 	height: 15px;
 	margin-bottom: 5px;
@@ -377,7 +376,6 @@ input {
 }
 
 .miniChart {
-	bottom: 10px;
 	width: 30px;
 	height: 30px;
 	border: 1px solid black;
@@ -386,6 +384,7 @@ input {
 }
 
 #miniChart1 {
+
 	transition: all 600ms linear;
 }
 
@@ -397,10 +396,13 @@ input {
 }
 
 .dropPerson {
+	position: absolute;
 	right: 10px;
 	display: none;
 	height: 10px;
 	width: 50px;
+	top: 500px;
+	left: 300px;
 	
 	
 }
@@ -475,13 +477,31 @@ input {
 
 #descriptionBox {
 	position: absolute;
-	left: 1150px;
+	left: 1145px;
 	width: 550px;
 	height: 255px;
-	border: 20px solid #273138;
+	border: px solid black;
 	float: right;
-	background-color: gray;
+	background-color: #273138;
 
+}
+#text-box{
+	margin-left: 9px;
+	width: 530px;
+	height: 200px;
+	border: 1px solid black;
+	background-color: gray;
+	overflow: scroll;
+
+}
+#text-box::-webkit-scrollbar{
+	display: none;
+}
+#descriptionBox h3, h4{
+	margin-left: 5px;
+}
+#descriptionBox h4{
+	margin-top: 5px;
 }
 
 /*Main: End*/
