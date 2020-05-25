@@ -11,6 +11,7 @@ background-color: #273138;
 
  }
 .taskArea { grid-area: taskArea;
+    position: relative;
      }
 .piechart { grid-area: piechart;
    }
