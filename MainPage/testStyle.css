@@ -3,6 +3,10 @@
 	padding: 0px;
 	font-family: "popins", sans-serif;
 	box-sizing: border-box;
+	
+}
+body{
+	background-image: url(/images/gradient.jpg);
 }
 textarea {
 	resize: none;
@@ -215,24 +219,6 @@ input {
 /*Nav bar: End*/
 /*Top bar: End*/
 
-
-/*Left Box: Start*/
-#left_container {
-
-	height: 800px;
-	background-color: #273138;
-	transition: all 400ms linear;
-
-
-
-}
-
-#left_container.active {
-	left: -140px;
-
-
-}
-
 #containerAddmainTasks {
 	padding-left: 40px;
 }
@@ -250,16 +236,18 @@ input {
 
 
 }
-
-
-/*Task boxes: Start*/
+/*SideBar: Start*/
+.sideBar{
+	width: 150px;
+	height: 800px;
+}
 #task_container {
-
+	margin-left: 10px;
 	width: 130px;
 	height: 300px;
-
 	overflow: scroll;
 	height: 500px;
+	border: 4px solid #f86e37;
 }
 
 #task_container::-webkit-scrollbar {
@@ -267,65 +255,9 @@ input {
 
 }
 
-#miniContainer {
-
-	width: 15px;
-	height: 500px;
-
-	visibility: hidden;
-	overflow: scroll;
-}
-
-#miniContainer::-webkit-scrollbar {
-	display: none;
-}
-
-.miniBox {
-
-	border: 1px solid black;
-	background-color: #A2C76D;
-	border-radius: 25%;
-}
-
-.miniBox:hover {
-	opacity: 50%;
-}
-
-#miniContainer.active {
-	visibility: visible;
-}
-
-#miniAdd {
-
-	width: 10px;
-	height: 10px;
-
-	border: 1px solid black;
-	border-radius: 25%;
-	visibility: hidden;
-	background-color: whitesmoke;
-}
-
-#miniPlus_icon {
-	margin-bottom: 4px;
-	width: 10px;
-	height: 10px;
-}
-
-#miniAdd.active {
-	visibility: visible;
-}
-
-#miniAdd:hover {
-	opacity: 50%;
-}
-
-/*Task boxes: End*/
-
-
-
 #add_container {
-	
+	margin-left: 30px;
+	margin-top: 100px;
 	height: 80px;
 	width: 80px;
 	border: 1px solid gray;
@@ -336,7 +268,7 @@ input {
 }
 
 #plus_icon {
-	
+
 	height: 80px;
 	width: 80px;
 
@@ -347,20 +279,14 @@ input {
 
 }
 
-/*Left Box: End*/
-
-
-
-/*Main: Start*/
-#main_container {
-
-	width: 100%;
-	height: 610px;
-	background-color: #A2C76D;
-	transition: all 400ms linear;
-	z-index: -1;
-
-
+/*SideBar: End*/
+.taskArea{
+	width: 1500px;
+	
+}
+#area_container{
+	border: 1px solid black;
+	width: 300px;
 }
 
 #mainTitle {
@@ -382,9 +308,7 @@ input {
 
 
 }
-
 #addMainTask {
-
 	height: 30px;
 	width: 75px;
 	background-color: beige;
@@ -392,48 +316,40 @@ input {
 	border-radius: 20px;
 	border: 1px solid black;
 	cursor: pointer;
+	background-color: #273138;
 }
 
 #addMainTask:hover {
 	opacity: 70%;
 }
 
-#addMainTaskText {}
 
 #addMainTask h3 {
 	font-size: 15px;
 	margin-top: 5px;
 	margin-left: 5px;
+	color: whitesmoke;
 }
 
 /*Task container: Start*/
+
 #taskContainer {
-	padding-left: 40px;
+	padding-left: 10px;
+	border: 1px solid black;
+	height: 300px;
+	background-color: #273138;
 }
 
-#taskContainerArea {
-	background-color: #363636;
-	height: 500px;
-	width: 90%;
 
-	z-index: -1;
-	transition: all 400ms linear;
-}
-
-#taskContainerArea.active {
-	left: 20px;
-}
 
 #taskTab.active {
 	width: 450px;
 }
 
 .taskTabs {
-	position: relative;
 	display: inline-block;
-	height:  500px;
+	height:  270px;
 	width: 45px;
-
 	border: 1px solid black;
 	margin-top: 3px;
 	margin-left: 2px;
@@ -442,10 +358,9 @@ input {
 }
 
 .plus {
-
 	border: 1px solid black;
-	width: 20px;
-	height: 20px;
+	width: 15px;
+	height: 15px;
 	background-color: whitesmoke;
 	cursor: pointer;
 	border-radius: 25%;
@@ -453,15 +368,16 @@ input {
 
 .plus_icon {
 	position: absolute;
-	width: 20px;
-	height: 20px;
+	width: 15px;
+	height: 15px;
 	margin-bottom: 5px;
+}
+.plus:hover{
+	opacity: 70%;
 }
 
 .miniChart {
-	position: absolute;
 	bottom: 10px;
-	left: 7px;
 	width: 30px;
 	height: 30px;
 	border: 1px solid black;
@@ -474,8 +390,6 @@ input {
 }
 
 #miniChart1.active {
-	bottom: 30px;
-	left: 30px;
 	transform: scale(2.0);
 	
 
@@ -483,7 +397,6 @@ input {
 }
 
 .dropPerson {
-	position: absolute;
 	right: 10px;
 	display: none;
 	height: 10px;
@@ -510,39 +423,41 @@ input {
 
 
 /*Task Container: End*/
-#piechart {}
 
 #personList {
-	float: right;
+	position: absolute;
+	left: 300px;
 	width: 350px;
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 25px;
+	background-color: #273138;
 
 }
 
 .person {
-
+	position: absolute;
 	height: 30px;
 	width: 30px;
 	border: 1px solid black;
 	border-radius: 100%;
+	left: 10px;
+	top: 5px;
 }
 
 #personId {
-
-	width: 30;
-	height: 30;
-	border-radius: 100%;
-
+	width: 30px;
+	height: 30px;
 	border: 1px solid black;
+	border-radius: 100%;
 }
 
 #addPerson {
-
+	position: absolute;
 	height: 30px;
 	width: 30px;
-
+	left: 300px;
+	top: 8px;
 	border: 1px solid black;
 	border-radius: 100%;
 	background-color: whitesmoke;
@@ -559,10 +474,11 @@ input {
 }
 
 #descriptionBox {
-
-	width: 70%;
+	position: absolute;
+	left: 1150px;
+	width: 550px;
 	height: 255px;
-	border: 1px solid black;
+	border: 20px solid #273138;
 	float: right;
 	background-color: gray;
 
@@ -570,12 +486,12 @@ input {
 
 /*Main: End*/
 
-#trash_container {}
-
 #trash {
+	position: absolute;
 	width: auto;
 	height: 60px;
-	float: right;
+	left: 1650px;
+	
 
 }
 
