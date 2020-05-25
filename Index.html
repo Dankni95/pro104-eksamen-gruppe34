@@ -182,10 +182,15 @@
             var rgbparameter3= Math.floor(Math.random() * 255);
             var RandomColorGen1 = `rgb(${rgbparameter1},${rgbparameter2},${rgbparameter3})`;
 
-            box.style.backgroundColor = RandomColorGen1;
-          
-                              
+            box.style.backgroundColor = RandomColorGen1;                 
         }
+         for(var i=0; i<projectArray.length; i++){
+             if(projectArray[i].textToShow === `${whoToChange}`){
+                 projectArray[i].backgroundcolor = RandomColorGen1;
+                 setLocalStorage(`project`, projectArray);
+             }
+             
+         }
       }
 
       function changeNamePart1(whoToChange) {
