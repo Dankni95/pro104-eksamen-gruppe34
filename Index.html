@@ -15,7 +15,7 @@
   <!-- Navigation Bar-->
   <nav>
     <div class="logo">
-      <img src="images/firelogo.png" alt="logo" />
+      <img src="/images/firelogo.png" alt="logo" />
     </div>
     <label for="btn" class="icon">
       <span class="fa fa-bars"></span>
@@ -58,7 +58,8 @@
           </li>
           <li>
             <a>
-              <div id="picture">Picture</div>
+              <div id="picture">Picture
+              </div>
             </a>
           </li>
 
@@ -137,7 +138,7 @@
         console.log(counter);
         buildItems();
       };
-        
+
 
 
 
@@ -167,17 +168,20 @@
           getMainContainer.style.backgroundColor="red";
       }
 
-        function changeNamePart1(whoToChange){
-            var getIt = document.getElementById(`${whoToChange}`);
-            getIt.innerHTML += `<input type="text" id="${whoToChange}text" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 65px; left:5px; width: 140px;">`;
-            var getIt2 = document.getElementById(`${whoToChange}text`).value;
-            getIt.innerHTML += `<div id="${whoToChange}btn">OK</div><input type="button" value="OK" onclick="changeNamePart2(getIt2)" id=" style="position: absolute; z-index: 40; display: inline; top: 65px; left:10px">`
-            let getbtn = document.getElementById(`${whoToChange}btn`)
-        }
-                    function changeNamePart2(whoToChange){
-                console.log(`${whoToChange}`);
-            }
-        
+      function changeNamePart1(whoToChange) {
+        var getIt = document.getElementById(`${whoToChange}`);
+        getIt.innerHTML +=
+          `<input type="text" id="${whoToChange}text" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 65px; left:5px; width: 140px;">`;
+        var getIt2 = document.getElementById(`${whoToChange}text`).value;
+        getIt.innerHTML +=
+          `<div id="${whoToChange}btn">OK</div><input type="button" value="OK" onclick="changeNamePart2(getIt2)" id=" style="position: absolute; z-index: 40; display: inline; top: 65px; left:10px">`
+        let getbtn = document.getElementById(`${whoToChange}btn`)
+      }
+
+      function changeNamePart2(whoToChange) {
+        console.log(`${whoToChange}`);
+      }
+
       function removeItem(toBeRemoved) {
         console.log("test");
         for (let i in projectArray) {
@@ -191,19 +195,19 @@
 
       getColorRed.onclick = function () {
         getMainContainer.style.backgroundColor = "#e74837";
-          getMainContainer.style.backgroundImage = "";
+        getMainContainer.style.backgroundImage = "";
       };
       getColorBlue.onclick = function () {
         getMainContainer.style.backgroundColor = "#2b8aca";
-          getMainContainer.style.backgroundImage = "";
+        getMainContainer.style.backgroundImage = "";
       };
       getColorGreen.onclick = function () {
         getMainContainer.style.backgroundColor = "#28cc6d";
-          getMainContainer.style.backgroundImage = "";
+        getMainContainer.style.backgroundImage = "";
       };
       getColorGray.onclick = function () {
         getMainContainer.style.backgroundColor = "#364c61";
-          getMainContainer.style.backgroundImage = "";
+        getMainContainer.style.backgroundImage = "";
       };
       getColorYellow.onclick = function () {
         getMainContainer.style.backgroundColor = "#e9bc0a";
