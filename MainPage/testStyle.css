@@ -281,8 +281,6 @@ input {
 
 /*SideBar: End*/
 .taskArea{
-	position: absolute;
-	left: 170px;
 	width: 1500px;
 	
 }
@@ -428,7 +426,6 @@ input {
 
 #personList {
 	position: absolute;
-	bottom: 150px;
 	left: 300px;
 	width: 350px;
 	height: 50px;
@@ -477,8 +474,9 @@ input {
 }
 
 #descriptionBox {
-
-	width: 70%;
+	position: absolute;
+	left: 1150px;
+	width: 550px;
 	height: 255px;
 	border: 20px solid #273138;
 	float: right;
@@ -489,9 +487,11 @@ input {
 /*Main: End*/
 
 #trash {
+	position: absolute;
 	width: auto;
 	height: 60px;
-	float: right;
+	left: 1650px;
+	
 
 }
 
