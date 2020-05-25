@@ -11,6 +11,7 @@ body {
   background-image: url(/images/gradient.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 /* Navigation Bar */
@@ -170,7 +171,6 @@ input {
     color: #53bdb9;
     background-color: rgb(39, 37, 37);
     background-size: 5px;
-
   }
 
   .icon {
@@ -226,6 +226,14 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#Picture2 {
+  background-image: url(Images/gradient.jpg)no-repeat center center fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 /* Code that creates the boxes containing the different projects */
 .MainContainer {

@@ -62,6 +62,12 @@
               </div>
             </a>
           </li>
+          <li>
+            <a>
+              <div id="picture2">Picture2
+              </div>
+            </a>
+          </li>
 
         </ul>
       </li>
@@ -121,6 +127,7 @@
       var getColorGray = document.getElementById("gray");
       var getColorYellow = document.getElementById("yellow");
       var getColorPicture = document.getElementById("picture");
+      var getColorPicture2 = document.getElementById("picture2")
       var getPlussAddProject = document.getElementById("createBox");
       var getTrash = document.getElementById("trash");
       var projectArray = [];
@@ -165,7 +172,8 @@
         getPlussAddProject.onclick = onClickAddProject;
       }
       function changeColorBox(){
-          getMainContainer.style.backgroundColor="red";
+            var box = 
+            box.style.backgroundColor="red";
       }
 
         function changeNamePart1(whoToChange){
@@ -225,6 +233,11 @@
       getColorPicture.onclick = function () {
         getMainContainer.style.backgroundImage = "url(Images/gradient.jpg)";
       };
+
+      getColorPicture2.onclick = function () {
+        getMainContainer.style.backgroundImage = "url(Images/Mountain.jpg)";
+      };
+
 
       function setLocalStorage(type, object) {
         window.localStorage.setItem(type, JSON.stringify(object));
