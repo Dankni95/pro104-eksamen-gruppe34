@@ -112,6 +112,11 @@
     <div class="createBox" id="createBox">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </div>
+  <form>
+    <input type="text" class ="textBox" id ="textBox">
+    
+  </form>
+
 
     <!--JavaScript-->
     <script type="text/javascript">
@@ -153,7 +158,7 @@
           getMainContainer.innerHTML += `<div class="card"  style="--background:${backgroundColor}; --text:white;">
         <div class="multi-button" id="${text}card">
         <button class="fa fa-comment"></button>
-        <button class="fa fa-cog"></button>
+        <button class="fa fa-cog" id ="cog" onclick ="changeColorBox('${projectArray[i].backgroundColor}')"></button>
         <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
         <div class="container" id="${text}"><a href="#" onclick="newPage('test_page')">${text}</a></div>
@@ -165,6 +170,10 @@
         let getter = document.getElementById("createBox");
         getPlussAddProject = getter;
         getPlussAddProject.onclick = onClickAddProject;
+      }
+      function changeColorBox(){
+            var box = 
+            box.style.backgroundColor="red";
       }
 
       function changeNamePart1(whoToChange) {
