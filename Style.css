@@ -412,6 +412,27 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 .tekstboksen {
   position: sticky;
   padding: 10px;
+  position: absolute;
+  z-index: 6;
+  display: inline-block;
+  width: 195px;
+  color: black;
+  left: 1%;
+  top: 35%;
+}
+
+.okbtn{
+    width: 30px;
+    height: 20px;
+    z-index: 6;
+    position: absolute;
+    display: inline;
+    border: 2px solid black;
+    top: 65%;
+    left: 40%;
+    color: black;
+    background-color: whitesmoke;
+    
 }
 .card {
   cursor: grab;
