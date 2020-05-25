@@ -160,7 +160,7 @@
           getMainContainer.innerHTML += `<div class="card"  style="--background:${backgroundColor}; --text:white;">
         <div class="multi-button" id="${text}card">
         <button class="fa fa-comment" onclick="changeNamePart1('${text}')"></button>
-        <button class="fa fa-cog" id ="cog" onclick ="changeColorBox('${projectArray[i].backgroundColor}')"></button>
+        <button class="fa fa-cog" id ="cog" onclick ="changeColorBox('${text}')"></button>
         <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
         <div class="container" id="${text}"><a href="#" onclick="newPage('test_page')">${text}</a></div>
@@ -174,15 +174,15 @@
         getPlussAddProject.onclick = onClickAddProject;
       }
 
-      function changeColorBox() {
-        var box =
+      function changeColorBox(whoToChange) {
+        var box = document.getElementById(`${whoToChange}`);
           box.style.backgroundColor = "red";
       }
 
       function changeNamePart1(whoToChange) {
         var getIt = document.getElementById(`${whoToChange}`);
         getIt.innerHTML +=
-          `<input type="text" id="${whoToChange}text" class="tekstboksen" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 65px; left:5px; width: 140px; color: black">`;
+          `<input type="text" id="${whoToChange}text" class="tekstboksen" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 35px; left:5px; width: 120px; color: black">`;
         var getIt2 = document.getElementById(`${whoToChange}text`).value;
         var getIt3 = document.getElementById(`${whoToChange}`).innerHTML[0];
         getIt.innerHTML +=
@@ -258,8 +258,7 @@
 
     <script src="scripts/newPage.js"></script>
     <script src="scripts/localStorageHandler.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
-    <script src="scripts/darkmode.js"></script>
+    <script src="scripts/draggit.js"></script>
 </body>
 
 </html>
