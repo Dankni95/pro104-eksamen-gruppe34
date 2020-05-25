@@ -201,13 +201,13 @@
           `<div id="${whoToChange}btn" onclick="changeNamePart2()" style="widt 20px; height: 20px; z-index: 6; position: absolute; display: inline; top: 65px;">OK</div>`;
         getit2 = document.getElementById(`${whoToChange}text`);
         getit2.focus();
+          
+        document.getElementsByClassName("tekstboksen")[0].onkeydown = function(event){
+            if(event.keyCode == 13){
+                changeNamePart2();
+            }
+        }
 
-        input.addEventListener("keyup", function (event) {
-          if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById(`${whoToChange}btn`).click();
-          }
-        });
 
       }
 
