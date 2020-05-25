@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url(/images/gradient.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* Navigation Bar */
 nav {
   background: #273138;
@@ -215,7 +221,10 @@ input {
 
 
 #Picture {
-  background-image: url(Images/gradient.jpg);
+  background-image: url(Images/gradient.jpg)no-repeat center center fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Code that creates the boxes containing the different projects */
