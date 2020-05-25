@@ -8,10 +8,11 @@ background-color: #273138;
 .sideBar { 
     grid-area: sideBar;
     background-color: #273138;
+    
 
  }
 .taskArea { grid-area: taskArea;
-    position: relative;
+    
      }
 .piechart { grid-area: piechart;
    }
@@ -33,5 +34,5 @@ background-color: #273138;
 
 .grid-container > div {
   padding: 20px 0;
-  font-size: 30px;
+  
 }
