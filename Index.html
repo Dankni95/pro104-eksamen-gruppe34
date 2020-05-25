@@ -163,7 +163,7 @@
         <button class="fa fa-paint-brush" id ="paint-brush" onclick ="changeColorBox('${text}')"></button>
         <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
-        <div class="container" id="${text}"><a href="#" onclick="newPage('test_page')">${text}</a></div>
+        <div class="container" id="${text}"><a href="#" onclick="newPage('${text}')">${text}</a></div>
         </div>`;
         }
         getMainContainer.innerHTML += `<div class="createBox" id="createBox">
