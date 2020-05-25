@@ -412,3 +412,30 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 .tekstboksen {
   position: sticky;
   padding: 10px;
+}
+.card {
+  cursor: grab;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+.column {
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.column.drop {
+    border: 2px dashed #FFF;
+}
+
+.column.drop article {
+    pointer-events: none;
+}
+.card {
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card.dragging {
+  opacity: .5;
+  transform: scale(.8);
+}

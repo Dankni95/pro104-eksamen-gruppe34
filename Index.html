@@ -86,6 +86,7 @@
 
   <!-- Box Creator -->
   <div class="MainContainer" id="maincontainer">
+    
     <!--<div class="card" style="--background: lightblue; --text: white;">
       <div class="multi-button">
         <button class="fa fa-comment"></button>
@@ -157,14 +158,22 @@
         for (var i = 0; i < projectArray.length; i++) {
           var backgroundColor = projectArray[i].backgroundcolor;
           var text = projectArray[i].textToShow;
-          getMainContainer.innerHTML += `<div class="card"  style="--background:${backgroundColor}; --text:white;">
-        <div class="multi-button" id="${text}card">
+          getMainContainer.innerHTML += `
+          <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+           <div class="card" draggable="true" ondragstart="drag(event)" style="--background:${backgroundColor}; --text:white;">
+        
+            <div class="multi-button" id="${text}card">
         <button class="fa fa-edit" onclick="changeNamePart1('${text}')"></button>
         <button class="fa fa-paint-brush" id ="paint-brush" onclick ="changeColorBox('${text}')"></button>
         <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
+
         <div class="container" id="${text}"><a href="#" onclick="newPage('test_page')">${text}</a></div>
-        </div>`;
+        </div>
+      </div>
+      </div>
+        `;
         }
         getMainContainer.innerHTML += `<div class="createBox" id="createBox">
       <i class="fa fa-plus" aria-hidden="true"></i>
@@ -218,16 +227,9 @@
 
         for (var i = 0; i < projectArray.length; i++) {
           if (oldName === projectArray[i].textToShow) {
-                        if(newName===""){
-            projectArray[i].textToShow = oldName;
+            projectArray[i].textToShow = newName;
             setLocalStorage(`project`, projectArray);
             buildItems();
-        }else{
-                          projectArray[i].textToShow = newName;
-            setLocalStorage(`project`, projectArray);
-            buildItems();
-        }
-
           }
         }
 
