@@ -4,7 +4,9 @@
 	font-family: "popins", sans-serif;
 	box-sizing: border-box;
 }
-
+textarea {
+	resize: none;
+  }
 /* Navigation Bar */
 nav {
 	background: #273138;
@@ -361,7 +363,9 @@ input {
 
 }
 
-#mainTitle {}
+#mainTitle {
+	padding-left: 40px;
+}
 
 #addTasks {
 
@@ -400,14 +404,15 @@ input {
 	font-size: 15px;
 	margin-top: 5px;
 	margin-left: 5px;
-
 }
 
 /*Task container: Start*/
-#taskContainer {}
+#taskContainer {
+	padding-left: 40px;
+}
 
 #taskContainerArea {
-	background-color: #28cc6d;
+	background-color: #363636;
 	height: 500px;
 	width: 90%;
 
@@ -471,7 +476,7 @@ input {
 #miniChart1.active {
 	bottom: 30px;
 	left: 30px;
-	transform: scale(2.5);
+	transform: scale(2.0);
 	
 
 
