@@ -17,6 +17,8 @@ background-color: #273138;
   
     
      }
+
+
 .piechart { grid-area: piechart;
    }
 .infoArea { grid-area: infoArea;
@@ -24,17 +26,25 @@ background-color: #273138;
 .footer { grid-area: footer; 
     
   }
+  
+  @media screen and (min-width: 760px){ 
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'sideBar header header header header header'
+        'sideBar taskArea taskArea taskArea taskArea taskArea'
+        'sideBar piechart piechart infoArea infoArea infoArea'
+        'sideBar footer footer footer footer footer';
+      grid-gap: 0px;
+    
+    }
+   
 
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'sideBar header header header header header'
-    'sideBar taskArea taskArea taskArea taskArea taskArea'
-    'sideBar piechart piechart infoArea infoArea infoArea'
-    'sideBar footer footer footer footer footer';
-  grid-gap: 0px;
 
-}
+  }
+
+
+
 
 .grid-container > div {
   padding: 20px 0;
