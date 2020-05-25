@@ -477,27 +477,27 @@ input {
 }
 
 .dropPerson {
-	position: relative;
-	bottom 10px;
-
+	position: absolute;
+	right: 10px;
+	display: none;
 	height: 10px;
 	width: 50px;
-	transition: opacity 4s ease;
-	opacity: 0;
+	
+	
 }
 
 #dropPerson1.active {
-	position: relative;
-	bottom 10px;
-
-	height: 10px;
-	width: 50px;
+	display: block;
+	height: 50px;
+	width: 200px;
+	bottom: 40px;
 	border: 1px solid black;
 	border-radius: 15px;
 	padding: 5px;
-	opacity: 1;
 	background-color: #ffffff;
-
+}
+.dropPerson .p{
+	font-size: 15px;
 }
 
 
@@ -580,9 +580,9 @@ input {
 
 /* kortene på venstre side*/
 #task_container .card .multi-button button {
+	
 	display: grid;
 	place-items: center;
-
 	border: none;
 	border-radius: 100%;
 	background: var(--background);
