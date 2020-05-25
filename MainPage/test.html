@@ -118,7 +118,7 @@
 
         <div class="taskArea">
             <div id="containerAddmainTasks">
-                <div class="addMainTasks" id="addMainTask">
+                <div onclick="onclickaddMainTask()" class="addMainTasks" id="addMainTask">
                     <h3>Add Task</h3>
                 </div>
                 <input type="text" id="addMainTaskText">
@@ -183,10 +183,16 @@
         <div class="infoArea">
             <!--Information about task-->
             <div id="descriptionBox">
-                <p>insert text here</p>
-            </div>
+				<h3>Task</h3>
+				<div id="text-box">
 
-        </div>
+					<p id="taskInfo">Task info</p>
+				</div>
+				<h4 id="assignTask">Assigned to:</h4>
+			</div>
+
+		</div>
+
         <!--infoArea-->
 
         <div class="footer">
