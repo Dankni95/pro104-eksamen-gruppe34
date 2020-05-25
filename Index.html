@@ -218,9 +218,16 @@
 
         for (var i = 0; i < projectArray.length; i++) {
           if (oldName === projectArray[i].textToShow) {
-            projectArray[i].textToShow = newName;
+                        if(newName===""){
+            projectArray[i].textToShow = oldName;
             setLocalStorage(`project`, projectArray);
             buildItems();
+        }else{
+                          projectArray[i].textToShow = newName;
+            setLocalStorage(`project`, projectArray);
+            buildItems();
+        }
+
           }
         }
 
