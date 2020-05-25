@@ -108,10 +108,12 @@ function changeNamePart2() {
                 projectArray[i].textToShow = oldName;
                 setLocalStorage(`project`, projectArray);
                 buildItems();
+            } else {
+                projectArray[i].textToShow = newName;
+                setLocalStorage(`project`, projectArray);
+                buildItems();
             }
-            projectArray[i].textToShow = newName;
-            setLocalStorage(`project`, projectArray);
-            buildItems();
+
         }
     }
 
