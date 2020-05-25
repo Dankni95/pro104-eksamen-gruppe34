@@ -137,7 +137,7 @@ function buildItems(type) {
             </div>
 			<div class="miniChart" id="miniChart1"></div>
             <div id="addTasks">
-            <input type="text" id="textbox${counter}" value="to add tasks">
+            <input type="text" id="textbox${counter}" value="to add tasks" style="display: inline">
                 <input type="button" id="addTask{counter}" value="O"><br>
                 <input type="date" id="date">
             </div>
