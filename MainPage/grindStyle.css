@@ -11,7 +11,10 @@ background-color: #273138;
     
 
  }
-.taskArea { grid-area: taskArea;
+.taskArea { 
+  grid-area: taskArea;
+  
+  
     
      }
 .piechart { grid-area: piechart;
@@ -19,7 +22,8 @@ background-color: #273138;
 .infoArea { grid-area: infoArea;
    }
 .footer { grid-area: footer; 
-    background-color:#658092;}
+    
+  }
 
 .grid-container {
   display: grid;
