@@ -137,8 +137,8 @@ function buildItems(type) {
             </div>
 			<div class="miniChart" id="miniChart1"></div>
             <div id="addTasks">
-            <input type="text" id="textbox${counter}" value="to add tasks" style="display: inline">
-                <input type="button" id="addTask{counter}" value="O"><br>
+            <input type="text" id="textbox${counter}" value="to add tasks" style="display: inline;">
+                <input type="button" id="addTask{counter}" value="O" style="display: inline;"><br>
                 <input type="date" id="date">
             </div>
 			<div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p></div>
