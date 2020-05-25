@@ -424,6 +424,7 @@ input {
 }
 
 .taskTabs {
+	position: relative;
 	display: inline-block;
 	height:  500px;
 	width: 45px;
@@ -453,7 +454,8 @@ input {
 }
 
 .miniChart {
-
+	
+	
 	width: 20px;
 	height: 20px;
 	border: 1px solid black;
@@ -467,14 +469,17 @@ input {
 }
 
 #miniChart1.active {
-
+	
 	transform: scale(2.5);
-	bottom: 30px;
+	
 
 
 }
 
 .dropPerson {
+	position: relative;
+	bottom 10px;
+
 	height: 10px;
 	width: 50px;
 	transition: opacity 4s ease;
@@ -482,7 +487,8 @@ input {
 }
 
 #dropPerson1.active {
-	
+	position: relative;
+	bottom 10px;
 
 	height: 10px;
 	width: 50px;
@@ -537,7 +543,6 @@ input {
 }
 
 #addPluss {
-	
 	height: 30px;
 	width: 30px;
 }
