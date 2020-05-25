@@ -7,6 +7,7 @@
 }
 body{
 	background-image: url(/images/gradient.jpg);
+	background-repeat: no-repeat;
 }
 textarea {
 	resize: none;
@@ -498,11 +499,17 @@ input {
 #text-box::-webkit-scrollbar{
 	display: none;
 }
-#descriptionBox h3, h4{
-	margin-left: 5px;
+#descriptionBox h3{
+	margin-left: 7px;
+	color: whitesmoke;
 }
 #descriptionBox h4{
+	margin-left: 7px;
 	margin-top: 5px;
+	color: whitesmoke;
+}
+#text-box p{
+	color: whitesmoke;
 }
 
 /*Main: End*/
