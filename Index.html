@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+<p>heo</p>
   <!-- Navigation Bar-->
   <nav>
     <div class="logo">
@@ -126,13 +126,15 @@
 
       function onClickAddProject() {
         projectArray.push({
-          textToShow: `New Project ${++counter}`,
+          textToShow: `New_Project_${++counter}`,
           backgroundcolor: "#53bdb9"
         });
         setLocalStorage("project", projectArray);
         console.log(counter);
         buildItems();
       };
+        
+
 
 
       function buildItems() {
@@ -141,13 +143,13 @@
         for (var i = 0; i < projectArray.length; i++) {
           var backgroundColor = projectArray[i].backgroundcolor;
           var text = projectArray[i].textToShow;
-          getMainContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white;">
-        <div class="multi-button">
+          getMainContainer.innerHTML += `<div class="card"  style="--background:${backgroundColor}; --text:white;">
+        <div class="multi-button" id="${text}card">
         <button class="fa fa-comment"></button>
         <button class="fa fa-cog"></button>
         <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
-        <div class="container"><a href="#" onclick="newPage('test_page')">${text}</a></div>
+        <div class="container" id="${text}"><a href="#" onclick="newPage('test_page')">${text}</a></div>
         </div>`;
         }
         getMainContainer.innerHTML += `<div class="createBox" id="createBox">
@@ -158,6 +160,17 @@
         getPlussAddProject.onclick = onClickAddProject;
       }
 
+        function changeNamePart1(whoToChange){
+            var getIt = document.getElementById(`${whoToChange}`);
+            getIt.innerHTML += `<input type="text" id="${whoToChange}text" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 65px; left:5px; width: 140px;">`;
+            var getIt2 = document.getElementById(`${whoToChange}text`).value;
+            getIt.innerHTML += `<input type="button" value="OK" onclick="changeNamePart2(getIt2)" id="${whoToChange}btn style="position: absolute; z-index: 40; display: inline; top: 65px; left:10px">`
+            let getbtn = document.getElementById(`${whoToChange}btn`)
+        }
+                    function changeNamePart2(whoToChange){
+                console.log(`${whoToChange}`)
+            }
+        
       function removeItem(toBeRemoved) {
         console.log("test");
         for (let i in projectArray) {
@@ -171,18 +184,23 @@
 
       getColorRed.onclick = function () {
         getMainContainer.style.backgroundColor = "#e74837";
+          getMainContainer.style.backgroundImage = "";
       };
       getColorBlue.onclick = function () {
         getMainContainer.style.backgroundColor = "#2b8aca";
+          getMainContainer.style.backgroundImage = "";
       };
       getColorGreen.onclick = function () {
         getMainContainer.style.backgroundColor = "#28cc6d";
+          getMainContainer.style.backgroundImage = "";
       };
       getColorGray.onclick = function () {
         getMainContainer.style.backgroundColor = "#364c61";
+          getMainContainer.style.backgroundImage = "";
       };
       getColorYellow.onclick = function () {
         getMainContainer.style.backgroundColor = "#e9bc0a";
+        getMainContainer.style.backgroundImage = "";
       };
       getColorPicture.onclick = function () {
         getMainContainer.style.backgroundImage = "url(Images/gradient.jpg)";
