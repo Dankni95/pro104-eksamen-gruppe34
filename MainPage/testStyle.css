@@ -323,7 +323,7 @@ input {
 
 
 #add_container {
-
+	
 	height: 80px;
 	width: 80px;
 	border: 1px solid gray;
@@ -334,6 +334,7 @@ input {
 }
 
 #plus_icon {
+	
 	height: 80px;
 	width: 80px;
 
@@ -406,8 +407,8 @@ input {
 #taskContainer {}
 
 #taskContainerArea {
-
-	height: 610px;
+	background-color: #28cc6d;
+	height: 500px;
 	width: 90%;
 
 	z-index: -1;
@@ -424,7 +425,7 @@ input {
 
 .taskTabs {
 	display: inline-block;
-	height: 250px;
+	height:  500px;
 	width: 45px;
 
 	border: 1px solid black;
@@ -474,16 +475,17 @@ input {
 }
 
 .dropPerson {
-	display: none;
+	height: 10px;
+	width: 50px;
 	transition: opacity 4s ease;
 	opacity: 0;
 }
 
 #dropPerson1.active {
-	display: block;
+	
 
-	height: 20px;
-	width: 125px;
+	height: 10px;
+	width: 50px;
 	border: 1px solid black;
 	border-radius: 15px;
 	padding: 5px;
@@ -499,6 +501,7 @@ input {
 #piechart {}
 
 #personList {
+	float: right;
 	width: 350px;
 	height: 50px;
 	border: 1px solid black;
@@ -534,6 +537,7 @@ input {
 }
 
 #addPluss {
+	
 	height: 30px;
 	width: 30px;
 }
