@@ -164,11 +164,11 @@
             var getIt = document.getElementById(`${whoToChange}`);
             getIt.innerHTML += `<input type="text" id="${whoToChange}text" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 65px; left:5px; width: 140px;">`;
             var getIt2 = document.getElementById(`${whoToChange}text`).value;
-            getIt.innerHTML += `<input type="button" value="OK" onclick="changeNamePart2(getIt2)" id="${whoToChange}btn style="position: absolute; z-index: 40; display: inline; top: 65px; left:10px">`
+            getIt.innerHTML += `<div id="${whoToChange}btn">OK</div><input type="button" value="OK" onclick="changeNamePart2(getIt2)" id=" style="position: absolute; z-index: 40; display: inline; top: 65px; left:10px">`
             let getbtn = document.getElementById(`${whoToChange}btn`)
         }
                     function changeNamePart2(whoToChange){
-                console.log(`${whoToChange}`)
+                console.log(`${whoToChange}`);
             }
         
       function removeItem(toBeRemoved) {
