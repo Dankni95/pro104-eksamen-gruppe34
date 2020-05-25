@@ -400,40 +400,24 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
   text-shadow: 1px 1px #141212;
   text-decoration: none;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bold;
-
   text-transform: capitalize;
   line-height: 6;
   text-align: center;
-
 }
 
 .tekstboksen {
-  position: sticky;
+  position: static;
   padding: 10px;
-  position: absolute;
-  z-index: 6;
-  display: inline-block;
-  width: 195px;
-  color: black;
-  left: 1%;
-  top: 35%;
+  line-height: 1.5;
+  font-size: 18px;
+  padding: 25px;
+
+
+
 }
 
-.okbtn{
-    width: 30px;
-    height: 20px;
-    z-index: 6;
-    position: absolute;
-    display: inline;
-    border: 2px solid black;
-    top: 65%;
-    left: 40%;
-    color: black;
-    background-color: whitesmoke;
-    
-}
 .card {
   cursor: grab;
 }
@@ -441,17 +425,19 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 .card:active {
   cursor: grabbing;
 }
+
 .column {
-    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .column.drop {
-    border: 2px dashed #FFF;
+  border: 2px dashed #FFF;
 }
 
 .column.drop article {
-    pointer-events: none;
+  pointer-events: none;
 }
+
 .card {
   transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
