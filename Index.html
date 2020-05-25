@@ -183,11 +183,18 @@
         var getIt = document.getElementById(`${whoToChange}`);
         getIt.innerHTML +=
           `<input type="text" id="${whoToChange}text" class="tekstboksen" placeholder="New name" style="position: absolute; z-index: 40; display: inline; top: 35px; left:5px; width: 120px; color: black">`;
-        var getIt2 = document.getElementById(`${whoToChange}text`).value;
-        var getIt3 = document.getElementById(`${whoToChange}`).innerHTML[0];
         getIt.innerHTML +=
-          `<div id="${whoToChange}btn" onclick="changeNamePart2()" style="widt 20px; height: 20px; z-index: 6; position: absolute; display: inline; top: 65px;">OK</div>`
-        let getbtn = document.getElementById(`${whoToChange}btn`)
+          `<div id="${whoToChange}btn" onclick="changeNamePart2()" style="widt 20px; height: 20px; z-index: 6; position: absolute; display: inline; top: 65px;">OK</div>`;
+        getit2 = document.getElementById(`${whoToChange}text`);
+        getit2.focus();
+
+        input.addEventListener("keyup", function (event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById(`${whoToChange}btn`).click();
+          }
+        });
+
       }
 
       function changeNamePart2() {
@@ -202,6 +209,7 @@
             buildItems();
           }
         }
+
 
       }
 
