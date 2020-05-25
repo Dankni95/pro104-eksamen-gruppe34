@@ -6,13 +6,13 @@ function toggleSidebar(){
     document.getElementById("taskContainerArea").classList.toggle('active');
 }
 
-function expandTask(){
-    document.getElementById("taskTab").classList.toggle('active');
-    document.getElementById("miniChart1").classList.toggle('active'); 
-    document.getElementById("dropPerson1").classList.toggle('active');
-    document.getElementById("addTasks").classList.toggle('active');
-    
-}
+//function expandTask(){
+//    document.getElementById("taskTab").classList.toggle('active');
+//    document.getElementById("miniChart1").classList.toggle('active'); 
+//    document.getElementById("dropPerson1").classList.toggle('active');
+//    document.getElementById("addTasks").classList.toggle('active');
+//    
+//}
 function allowDrop(ev) {
     ev.preventDefault();
 }

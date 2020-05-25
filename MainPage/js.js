@@ -127,9 +127,9 @@ function buildItems(type) {
             if (category === mainTasksArray[i].category) {
                 let getMaintext = mainTasksArray[i].textToShow;
                 getTaskContainer.innerHTML += `<div id="taskContainer${counter}"><div id="${getMaintext}" style="float: left">
-		<div class="taskTabs" id="taskTab">
+		<div class="taskTabs" id="taskTab${counter}">
             <div class="overskrift" id="${getMaintext}">${getMaintext}</div>
-            <div class="plus" onclick="expandTask()" id="test${counter}">
+            <div class="plus" onclick="expandTask('taskTab${counter}')" id="test${counter}">
                 <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
             </div>
             
@@ -151,6 +151,14 @@ function buildItems(type) {
     }
 }
 
+function expandTask(whoToExpand){
+    let getit = document.getElementById(`${whoToExpand}`);
+    if(getit.style.width===`450px`){
+        getit.style.width = `45px`
+    }else{
+            getit.style.width = `450px`;
+    }  
+}
 
 function setLocalStorage(type, object) {
     window.localStorage.setItem(type, JSON.stringify(object));
