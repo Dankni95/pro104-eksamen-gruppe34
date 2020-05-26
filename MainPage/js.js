@@ -12,7 +12,7 @@ var getMainTitle = document.getElementById("taskArea");
 var getTaskContainer = document.getElementById("taskContainer");
 var getboxpath = document.getElementById(`boxPath`);
 var getPlussMember = document.getElementById(`plussMember`);
-
+var getPersonList = document.getElementById(`personList`);
 var prosjektArray = [];
 var categoryArray = [];
 var mainTasksArray = [];
@@ -63,8 +63,14 @@ function onclickAddCategory() {
 
 function onclickAddMember(){
     let getTextPerson = document.getElementById(`text-member`).value;
-    let getPersonList = document.getElementById(`personList`);
-    getPersonList.innerHTML += `<div id="${getTextPerson}" draggable="true" ondragstart="x_drag(event)" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">${getTextPerson}</div>`;
+    let getCat = document.getElementById(`taskArea`)
+    personArray.push({
+        textToShow: `${getTextPerson}`,
+        backgroundcolor: "#28cc6d",
+        category: `${getCat}`
+    });
+    setLocalStorage(`person`, personArray);
+    buildItems("person", `${getTextPerson}`);
 }
 
 function onclickDoneButton(ev) {
@@ -191,9 +197,7 @@ function buildItems(type, whoSentIt) {
         for (let i = 0; i < personArray.length; i++) {
             let backgroundPerson = personArray[i].backgroundcolor;
             let textPerson = personArray[i].textToShow;
-            getPersonList.innerHTML += `<div class="person">
-			<img src="" alt="${textPerson}" id="personId" draggable="true" ondragstart="x_drag(event)">	
-		</div>`;
+            getPersonList.innerHTML += `<div id="${whoSentIt}" draggable="true" ondragstart="x_drag(event)" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">${whoSentIt}</div>`;
         }
         getPersonList.innerHTML += `<div id="addPerson">
 			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
