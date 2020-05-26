@@ -46,6 +46,24 @@ function onclickAddCategory() {
 
 }
 
+function onclickDoneButton(ev) {
+    ev.originalTarget.parentElement.style.backgroundColor = "#00ff00";
+    let val = ev.originalTarget.parentElement.firstChild.innerHTML;
+    // debugger;
+    val = "[DONE] " + val;
+    ev.originalTarget.onclick = onclickDoneButton;
+}
+
+function onclickWIPButton(ev) {
+    ev.originalTarget.parentElement.style.backgroundColor = "#ffff00";
+    let val = ev.originalTarget.parentElement.firstChild.innerHTML;
+    // debugger;
+    val = "[WIP] " + val;
+    ev.originalTarget.onclick = onclickWIPButton;
+}
+
+
+
 function onclickAddPerson() {
     personArray.push({
         textToShow: "G",
@@ -153,13 +171,14 @@ function buildItems(type, whoSentIt) {
     }
 
     if (type === "task") {
+        const value = whoSentIt.split(/ +/).join("-");
         taskArray = getLocalStorage(`task`);
-        let mainToAddTo = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling;
-        mainToAddTo.innerHTML = ``
+        let mainToAddTo = document.getElementById(value).parentElement.previousElementSibling.previousElementSibling;
+        mainToAddTo.innerHTML = ``;
         for (let i = 0; i < taskArray.length; i++) {
 
 
-            let checker = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.id;
+            let checker = document.getElementById(value).parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.id;
             console.log(mainToAddTo);
             console.log(checker);
 
@@ -167,8 +186,8 @@ function buildItems(type, whoSentIt) {
             let textTask = taskArray[i].textToShow;
             if (checker == taskArray[i].maintask) {
 
-                mainToAddTo.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
-            </div>`
+                mainToAddTo.innerHTML += `<div class="task" id="${textTask.split(/ +/).join("-")}" style="background-color: beige; position: relative; width: 250px"><p id="task-text">${textTask}</p><input type="button" id="${textTask.split(/ +/).join("-")}-done" onclick="onclickDoneButton(event)" value="done" style="display: inline;"><input type="button" id="${textTask.split(/ +/).join("-")}-WIP" value="WIP" onclick="onclickWIPButton(event)" style="display: inline;"></div>
+            </div>`;
             }
 
 
@@ -214,7 +233,7 @@ function buildItems(type, whoSentIt) {
                         let insertPathId = document.getElementById(`${getMaintext}`).querySelectorAll(`.listoftasks`)[0].id;
                         let insertPath = document.getElementById(`${insertPathId}`);
                         let textTask = taskArray[j].textToShow;
-                        insertPath.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
+                        insertPath.innerHTML += `<div class="task" id="${textTask.split(/ +/).join("-")}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask.split(/ +/).join("-")}-done" value="done" style="display: inline;"><input type="button" id="${textTask.split(/ +/).join("-")}-WIP" value="WIP" style="display: inline;"></div>
             </div>`;
 
                     }
