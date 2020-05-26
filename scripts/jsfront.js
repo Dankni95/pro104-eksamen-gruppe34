@@ -1,3 +1,4 @@
+//her henter vi alle de forksjellige html elementene
 let getMainContainer = document.getElementById("maincontainer");
 let getColorRed = document.getElementById("red");
 let getColorBlue = document.getElementById("blue");
@@ -11,9 +12,9 @@ let getTrash = document.getElementById("trash");
 let projectArray = [];
 let counter = 0;
 getPlussAddProject.onclick = onClickAddProject;
-
+//bygger siden fra scratch når man kommer inn. henter fra localstorage
 buildItems();
-
+//legger til nytt prosjekt
 function onClickAddProject() {
     projectArray.push({
         textToShow: `New Project ${++counter}`,
@@ -24,7 +25,7 @@ function onClickAddProject() {
     buildItems();
 };
 
-
+//bygger opp siden
 function buildItems() {
     getMainContainer.innerHTML = "";
     projectArray = getLocalStorage(`project`);
@@ -55,7 +56,7 @@ function buildItems() {
     getPlussAddProject = getter;
     getPlussAddProject.onclick = onClickAddProject;
 }
-
+//bytte farge på diver
 function changeColorBox(whoToChange) {
     let box = document.getElementById(`${whoToChange}`);
     for (let i = 0; i < whoToChange.length; i++) {
@@ -74,7 +75,7 @@ function changeColorBox(whoToChange) {
 
     }
 }
-
+//å bytte navn var ikke spesielt lett, den går i 2 runder
 function changeNamePart1(whoToChange) {
     let getIt = document.getElementById(`${whoToChange}`);
     getIt.innerHTML +=
@@ -115,7 +116,7 @@ function changeNamePart2() {
 
 
 }
-
+//slettefunksjonen
 function removeItem(toBeRemoved) {
     for (let i in projectArray) {
         if (toBeRemoved === projectArray[i].textToShow) {
@@ -125,7 +126,7 @@ function removeItem(toBeRemoved) {
     setLocalStorage(`project`, projectArray);
     buildItems();
 }
-
+//fargebyttefunksjonen
 getColorRed.onclick = function () {
     getMainContainer.style.backgroundColor = "#e74837";
     getMainContainer.style.backgroundImage = "";
@@ -154,7 +155,7 @@ getColorPicture2.onclick = function () {
     getMainContainer.style.backgroundImage = "url(./images/Mountain.jpg)";
 };
 
-
+//localstorage
 function setLocalStorage(type, object) {
     window.localStorage.setItem(type, JSON.stringify(object));
 }
@@ -162,6 +163,7 @@ function setLocalStorage(type, object) {
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
 }
+
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')

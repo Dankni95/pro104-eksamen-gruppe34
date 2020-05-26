@@ -110,6 +110,7 @@ function onclickAddPerson() {
     buildItems("person");
 }
 
+//adder tasks
 function onclickAddTask(whoSentThis) {
     let getter = document.getElementById(`${whoSentThis}`);
     let text = getter.previousElementSibling.value;
@@ -129,6 +130,7 @@ function onclickAddTask(whoSentThis) {
     buildItems("task", `${whoSentThis}`);
 }
 
+//adder hovedkort
 function onclickaddMainTask() {
     let category = document.getElementById("taskArea").innerHTML;
     console.log(category);
