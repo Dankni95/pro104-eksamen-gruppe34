@@ -76,7 +76,7 @@ function onclickaddMainTask() {
 
 function buildMainSite(categoryToBuild) {
     console.log(`${categoryToBuild}`)
-    getMainTitle.innerHTML = categoryToBuild;
+    getMainTitle.innerHTML = `${categoryToBuild}`;
     buildItems("mainTask");
 }
 
