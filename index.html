@@ -72,13 +72,19 @@
         </ul>
       </li>
       <li>
-        <label for="btn-2" class="show"><i class="fa fa-cog"></i> Settings</label>
-        <a href="#"><i class="fa fa-cog"></i></a>
-        <input type="checkbox" id="btn-2" />
-        <ul>
-          <li><a href="#">Grapics</a></li>
-          <li><a href="#">Adjust</a></li>
-          <li><a href="#">Colorblind</a></li>
+        <label for="btn-2" class="show"><i class="fa fa-users"></i> Settings</label>
+        <a href="#" data-modal-target="#modal"><i class="fa fa-users"></i></a>
+        <input type="checkbox" id="btn-2"/>
+        <div class="modal" id="modal">
+          <div class="modal-header">
+            <div class="title">PRO104 Eksamen Webprosjekt </div>
+            <button data-close-button class="close-button">&times;</button>
+          </div>
+          <div class="modal-body">
+            Vi er gruppe 34 og dette er vår web applikasjon!
+          </div>
+        </div>
+        <div id="overlay"></div>
         </ul>
       </li>
     </ul>
