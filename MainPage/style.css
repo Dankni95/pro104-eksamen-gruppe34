@@ -546,8 +546,9 @@ input {
 
 }
 
-.overskrift {
-	margin-left: 7px;
+#overskrift {
+	text-align: center;
+	font-size: 35px;
 }
 
 
