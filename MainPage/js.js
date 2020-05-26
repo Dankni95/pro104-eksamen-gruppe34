@@ -26,22 +26,22 @@ getAddTask.onclick = onclickAddTask;
 getAddMainTask.onclick = onclickaddMainTask;
 
 
-function setPage(){
+function setPage() {
     let temp = document.getElementById("boxPath");
     temp.innerHTML = getLocalStorage(`currentPage`);
 }
 
 function onclickAddCategory() {
     let text = document.getElementById("textAdd").value;
-    if(text===""){
+    if (text === "") {
         alert("Please name your category in the textbox below the plus to continue");
-    }else{
-            categoryArray.push({
-        textToShow: `${text}`,
-        backgroundcolor: "#28cc6d"
-    });
-    setLocalStorage(`category`, categoryArray);
-    buildItems("category");
+    } else {
+        categoryArray.push({
+            textToShow: `${text}`,
+            backgroundcolor: "#28cc6d"
+        });
+        setLocalStorage(`category`, categoryArray);
+        buildItems("category");
     }
 
 }
@@ -79,18 +79,18 @@ function onclickaddMainTask() {
     let category = document.getElementById("taskArea").innerHTML;
     console.log(category);
     let getText = document.getElementById("addMainTaskText").value;
-    if(category===""){
+    if (category === "") {
         alert("Please add or select a new category in the bottom right corner before you add a project")
-    }else if(getText===""){
+    } else if (getText === "") {
         alert("Please add a description in the textbox below the add task button");
-    }else{
+    } else {
         mainTasksArray.push({
-        textToShow: `${getText}`,
-        backgroundcolor: "beige",
-        category: `${category}`
-    })
-    setLocalStorage(`mainTask`, mainTasksArray);
-    buildItems("mainTask");
+            textToShow: `${getText}`,
+            backgroundcolor: "beige",
+            category: `${category}`
+        })
+        setLocalStorage(`mainTask`, mainTasksArray);
+        buildItems("mainTask");
     }
 
 }
@@ -128,20 +128,16 @@ function buildItems(type, whoSentIt) {
         for (let i = 0; i < categoryArray.length; i++) {
             let backgroundColor = categoryArray[i].backgroundcolor;
             let text = categoryArray[i].textToShow;
-            let project = getLocalStorage(`currentPage`);
-            if(project===categoryArray[i].project){
-        getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
+            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
         <button style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
         </div>
         <div class="container"></div>
         </div>`;
-            }
-
         }
-        
-    //her kommer en comment
-    
+
+        //her kommer en comment
+
         buildItems("maintask")
     }
     if (type === "person") {
@@ -271,34 +267,34 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
 openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-  })
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
 })
 
 overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => {
-    closeModal(modal)
-  })
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        closeModal(modal)
+    })
 })
 
 closeModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
-  })
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal')
+        closeModal(modal)
+    })
 })
 
 function openModal(modal) {
-  if (modal == null) return
-  modal.classList.add('active')
-  overlay.classList.add('active')
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
 }
 
 function closeModal(modal) {
-  if (modal == null) return
-  modal.classList.remove('active')
-  overlay.classList.remove('active')
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
 }

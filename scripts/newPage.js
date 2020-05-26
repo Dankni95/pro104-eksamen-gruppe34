@@ -1,5 +1,5 @@
 function newPage(page) {
-	setLocalStorage(`currentPage`, page);
+	setLocalStorage(`currentPage`, `${page}`);
 	document.location.href = "MainPage/mainpage.html";
 }
 
