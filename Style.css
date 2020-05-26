@@ -535,3 +535,38 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 #overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+.phone {
+  position: relative;
+  margin: 4% auto;
+  width: 360px;
+  height: 660px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.header {
+  position: relative;
+  padding: 25px;
+  width: 100%;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: #ffffff;
+  line-height: 28px !important;
+}
+
+.removeText {
+  font-weight: bolder;
+  cursor: pointer;
+  padding: 4px 15px;
+  display: inline;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid #fff;
+}
+
+.header p {
+  font-size: 14px;
+}
+
