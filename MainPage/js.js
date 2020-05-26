@@ -33,12 +33,14 @@ function setPage() {
 
 function onclickAddCategory() {
     let text = document.getElementById("textAdd").value;
+    let project = getLocalStorage(`currentPage`);
     if (text === "") {
         alert("Please name your category in the textbox below the plus to continue");
     } else {
         categoryArray.push({
             textToShow: `${text}`,
-            backgroundcolor: "#28cc6d"
+            backgroundcolor: "#28cc6d",
+            project: `${project}`
         });
         setLocalStorage(`category`, categoryArray);
         buildItems("category");
@@ -140,22 +142,26 @@ function x_drop(ev) {
 }
 
 function buildItems(type, whoSentIt) {
-    if (type == "category") {
+        if (type == "category") {
         getLeftContainer.innerHTML = "";
         categoryArray = getLocalStorage(`category`);
         for (let i = 0; i < categoryArray.length; i++) {
             let backgroundColor = categoryArray[i].backgroundcolor;
             let text = categoryArray[i].textToShow;
-            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
+            let project = getLocalStorage(`currentPage`);
+            if(project===categoryArray[i].project){
+        getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
         <button style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
         </div>
         <div class="container"></div>
         </div>`;
+            }
+
         }
-
-        //her kommer en comment
-
+        
+    //her kommer en comment
+    
         buildItems("maintask")
     }
     if (type === "person") {
