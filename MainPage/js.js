@@ -11,7 +11,7 @@ var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("taskArea");
 var getTaskContainer = document.getElementById("taskContainer");
 var getboxpath = document.getElementById(`boxPath`);
-var getTextPerson = document.getElementById(`text-member`);
+var getPlussMember = document.getElementById(`plussMember`);
 
 var prosjektArray = [];
 var categoryArray = [];
@@ -37,7 +37,7 @@ getAddContainer.onclick = onclickAddCategory;
 getAddPerson.onclick = onclickAddPerson;
 getAddTask.onclick = onclickAddTask;
 getAddMainTask.onclick = onclickaddMainTask;
-
+getPlussMember.onclick = onclickAddMember;
 
 function setPage() {
     let temp = document.getElementById("boxPath");
@@ -59,6 +59,12 @@ function onclickAddCategory() {
         buildItems("category");
     }
 
+}
+
+function onclickAddMember(){
+    let getTextPerson = document.getElementById(`text-member`).value;
+    let getPersonList = document.getElementById(`personList`);
+    getPersonList.innerHTML += `<div id="${getTextPerson}" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">${getTextPerson}</div>`;
 }
 
 function onclickDoneButton(ev) {
