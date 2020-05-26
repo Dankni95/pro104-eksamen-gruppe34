@@ -10,7 +10,7 @@ var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("taskArea");
 var getTaskContainer = document.getElementById("taskContainer");
-
+var getboxpath = document.getElementById(`boxPath`);
 var prosjektArray = [];
 var categoryArray = [];
 var mainTasksArray = [];
@@ -19,6 +19,17 @@ var personArray = [];
 setPage();
 buildItems("category");
 buildItems("mainTask");
+
+if(categoryArray.length>0){
+    for(var i=0; i<categoryArray.length; i++){
+        if(categoryArray[i].project===boxPath.innerHTML){
+            getMainTitle.innerHTML= categoryArray[i].textToShow;
+        }
+    }
+    
+}else{
+    getMainTitle.innerHTML="";
+}
 
 getAddContainer.onclick = onclickAddCategory;
 getAddPerson.onclick = onclickAddPerson;
