@@ -345,6 +345,7 @@ input {
 	border: 1px solid black;
 	height: 300px;
 	background-color: #273138;
+	border-radius: 5px;
 }
 
 
@@ -429,9 +430,8 @@ input {
 	width: 350px;
 	height: 50px;
 	border: 1px solid black;
-	border-radius: 25px;
+	border-radius: 25px;#
 	background-color: #273138;
-
 }
 
 .person {
@@ -626,4 +626,5 @@ body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
 	width: 80%;
 	height: 5%;
 	margin: 5%;
+	border-radius: 5px;
 }
