@@ -170,7 +170,7 @@ document.addEventListener("dragover", function(event) {
 //her er koden som kommer når man slipper den i søpplekassen
 document.addEventListener("drop", function(event){
 event.preventDefault();
-    if(event.target.className === "trash"){
+    if(event.target.className === "fa fa-trash"){
         var data = event.dataTransfer.getData("text");
 console.log(`${data}`);
 categoryArray = getLocalStorage(`category`);
