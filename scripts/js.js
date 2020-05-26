@@ -41,6 +41,6 @@ function buildItems() {
         <button class="fa fa-cog"></button>
         <button class="fa fa-trash"></button>
       </div>
-      <div class="container"><a href="#" onclick="newPage('test_page')">${++counter}</a></div>
+      <div class="container"><a href="#" onclick="newPage('${text}')">${++counter}</a></div>
     </div>`;
 }

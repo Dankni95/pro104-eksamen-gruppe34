@@ -203,6 +203,7 @@ function buildItems(type, whoSentIt) {
                 counter++;
                 for (var j = 0; j < taskArray.length; j++) {
                     if (taskArray[j].maintask === getMaintext) {
+                        console.log(getMaintext);
                         let insertPathId = document.getElementById(`${getMaintext}`).querySelectorAll(`.listoftasks`)[0].id;
                         let insertPath = document.getElementById(`${insertPathId}`);
                         let textTask = taskArray[j].textToShow;

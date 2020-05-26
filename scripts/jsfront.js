@@ -42,7 +42,7 @@ function buildItems() {
         <button class="fa fa-trash" id="trash" onclick="removeItem('${projectArray[i].textToShow}')"></button>
         </div>
 
-        <div class="container" id="${text}"><a href="#" onclick="newPage('test_page')">${text}</a></div>
+        <div class="container" id="${text}"><a href="#" onclick="newPage('${text}')">${text}</a></div>
         </div>
       </div>
       </div>
