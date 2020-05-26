@@ -178,10 +178,13 @@ document.addEventListener("dragover", function(event) {
 
 document.addEventListener("drop", function(event){
 event.preventDefault();
-var data = event.dataTransfer.getData("text");
+    if(event.target.className === "trash"){
+        var data = event.dataTransfer.getData("text");
 console.log(`${data}`);
 categoryArray = getLocalStorage(`category`);
 removeItem(data);
+    }
+
 });
 
 function removeItem(toBeRemoved) {
