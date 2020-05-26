@@ -37,13 +37,14 @@ function onclickAddPerson() {
 }
 
 function onclickAddTask(whoSentThis) {
+
     let getter = document.getElementById(`${whoSentThis}`);
     let text = getter.previousElementSibling.value;
     let date = getter.nextElementSibling.value;
     let category = document.getElementById("mainTitle").innerHTML;
     taskArray.push({ textToShow: `${text}`, backgroundcolor: "#28cc6d", date: `${date}`, WIP: "no", done: "no", category: `${category}` });
     setLocalStorage(`task`, taskArray);
-    buildItems("task");
+    buildItems("task", `${whoSentThis}`);
 }
 
 function onclickaddMainTask() {
@@ -74,7 +75,7 @@ function x_drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 }
 
-function buildItems(type) {
+function buildItems(type, whoSentIt) {
     if (type == "category") {
         getLeftContainer.innerHTML = "";
         categoryArray = getLocalStorage(`category`);
@@ -107,12 +108,17 @@ function buildItems(type) {
     }
 
     if (type === "task") {
-        getTaskarea.innerHTML = ``;
+        console.log(`${whoSentIt}`)
+        var getter = document.getElementById(`${whoSentIt}`);
+        var elementToChangePart1 = document.getElementById(`${whoSentIt}`).parentElement.previousSibling.previousSibling.previousSibling.previousSibling.id;
+        elementToChangePart2 = document.getElementById(`${elementToChangePart1}`);
+        console.log(`${elementToChangePart2}`)
+        getTaskarea.innerHTML = `dddd`;
         taskArray = getLocalStorage(`task`);
         for (var i = 0; i < taskArray.length; i++) {
             let backgroundText = taskArray[i].backgroundcolor;
             let textTask = taskArray[i].textToShow;
-            getTaskarea.innerHTML += `<div class="task" id="{textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done"><input type="button" id="${textTask}WIP" value="WIP"></div>
+            elementToChangePart2.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done"><input type="button" id="${textTask}WIP" value="WIP"></div>
             </div>`
         }
 
@@ -134,7 +140,7 @@ function buildItems(type) {
                 <img src="../images/plus_icon.png" alt="Plus" class="plus_icon">
             </div>
             
-            <div class="listoftasks" id="listoftasks">
+            <div class="listoftasks" id="listoftasks${counter}">
             </div>
 			<div class="miniChart" id="miniChart1"></div>
             <div id="addTasks">
