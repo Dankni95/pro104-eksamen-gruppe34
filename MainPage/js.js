@@ -33,12 +33,14 @@ function setPage(){
 
 function onclickAddCategory() {
     let text = document.getElementById("textAdd").value;
+    let project = getLocalStorage(`currentPage`);
     if(text===""){
         alert("Please name your category in the textbox below the plus to continue");
     }else{
             categoryArray.push({
         textToShow: `${text}`,
-        backgroundcolor: "#28cc6d"
+        backgroundcolor: "#28cc6d",
+        project: `${project}` 
     });
     setLocalStorage(`category`, categoryArray);
     buildItems("category");
@@ -47,10 +49,13 @@ function onclickAddCategory() {
 }
 
 function onclickAddPerson() {
+    let category = document.getElementById("taskArea").innerHTML;
+    let project = getLocalStorage(`currentPage`);
     personArray.push({
         textToShow: "G",
         backgroundcolor: "#28cc6d",
-        category: "CSS"
+        category: `${category}`,
+        project: `${project}`
     });
     setLocalStorage(`person`, personArray);
     buildItems("person");
@@ -62,6 +67,7 @@ function onclickAddTask(whoSentThis) {
     let date = getter.nextElementSibling.value;
     let category = document.getElementById("taskArea").innerHTML;
     let maintask = document.getElementById(`${whoSentThis}`).parentElement.parentElement.querySelector(`.overskrift`).id;
+    let project = getLocalStorage(`currentPage`);
     taskArray.push({
         textToShow: `${text}`,
         backgroundcolor: "#28cc6d",
@@ -69,7 +75,8 @@ function onclickAddTask(whoSentThis) {
         WIP: "no",
         done: "no",
         category: `${category}`,
-        maintask: `${maintask}`
+        maintask: `${maintask}`,
+        project: `${project}`
     });
     setLocalStorage(`task`, taskArray);
     buildItems("task", `${whoSentThis}`);
@@ -123,6 +130,7 @@ function x_drop(ev) {
 
 function buildItems(type, whoSentIt) {
     if (type == "category") {
+        let project = getLocalStorage(`currentPage`);
         getLeftContainer.innerHTML = "";
         categoryArray = getLocalStorage(`category`);
         for (let i = 0; i < categoryArray.length; i++) {
