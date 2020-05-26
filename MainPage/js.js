@@ -18,7 +18,6 @@ var getColorGreen = document.getElementById("green");
 var getColorGray = document.getElementById("gray");
 var getColorYellow = document.getElementById("yellow");
 
-
 var categoryArray = [];
 var mainTasksArray = [];
 var taskArray = [];
@@ -246,6 +245,7 @@ function ColorChange() {
 
         taskbox.style.backgroundColor = RandomColorGen;
     }
+}
     getColorRed.onclick = function () {
         getMainContainer.style.backgroundColor = "#e74837";
         getMainContainer.style.backgroundImage = "";
@@ -268,5 +268,7 @@ function ColorChange() {
     };
     
 }
+
+
 buildItems("category");
 

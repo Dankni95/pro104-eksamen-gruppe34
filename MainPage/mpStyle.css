@@ -8,6 +8,10 @@
 
 body {
 	background-repeat: no-repeat;
+	
+}
+#MainContainer{
+	height: 1000px;
 }
 
 textarea {
@@ -243,7 +247,7 @@ input {
 /*SideBar: Start*/
 .sideBar {
 	width: 150px;
-	height: 800px;
+	height: 1000px;
 }
 
 #task_container {
@@ -288,8 +292,8 @@ input {
 
 /*SideBar: End*/
 .taskArea {
-	width: 1500px;
-	height: 500px;
+	width: 1540px;
+	height: 500px;;
 	border: 1px solid;
 }
 
