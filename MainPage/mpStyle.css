@@ -472,6 +472,11 @@ button.plussMember img {
 
 
 /*Bottom Area: Start*/
+#text-member{
+	position: absolute;
+	left: 1720px;
+	top: 860px;
+}
 #personList {
 	position: absolute;
 	left: 1380px;
@@ -611,7 +616,7 @@ button.plussMember img {
 
 .modal {
 	position: fixed;
-	top: 50%;
+	top: 20%;
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0);
 	transition: 200ms ease-in-out;
@@ -668,6 +673,7 @@ button.plussMember img {
 #overlay.active {
 	opacity: 1;
 	pointer-events: all;
+	
 }
 
 #boxPath {
