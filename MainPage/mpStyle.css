@@ -430,7 +430,7 @@ input {
 	border: none;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 2.9);
 	left: 250px;
-	top: 65%;
+	top: 86%;
 	width: 40px;
 	height: 40px;
 	border-radius: 30%;
@@ -443,16 +443,17 @@ input {
 	border: 1px solid white;
 }
 
-.plussMember img {
+button.plussMember img {
+
 	margin: 12%;
 }
 
 #text-member {
-	position: absolute;
+	position: sticky;
 	display: flex;
 	width: 100px;
 	height: 25px;
-	top: 72%;
+	top: 20%;
 	left: 11.5%;
 }
 
@@ -468,7 +469,8 @@ input {
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 25px;
-	# background-color: #273138;
+	background-color: #273138;
+	top: 85%;
 }
 
 .person {
