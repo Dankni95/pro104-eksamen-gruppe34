@@ -2,41 +2,39 @@ var getMainContainer = document.getElementById("MainContainer");
 var getLeftContainer = document.getElementById("task_container");
 var getAddContainer = document.getElementById("add_category");
 var getAddPerson = document.getElementById("addPerson");
-var getPersonList = document.getElementById("personList")
-var getTaskarea = document.getElementById("listoftasks")
-var getAddMainTask = document.getElementById("addMainTask")
+var getPersonList = document.getElementById("personList");
+var getTaskarea = document.getElementById("listoftasks");
+var getAddMainTask = document.getElementById("addMainTask");
 var getAddTask = document.getElementById("addTask");
 var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("mainTitle");
 var getTaskContainer = document.getElementById("taskContainer");
-<<<<<<< HEAD
-var getPaintBrush = document.getElementById("paint-brush");
-var getColorRed = document.getElementById("red");
-var getColorBlue = document.getElementById("blue");
-var getColorGreen = document.getElementById("green");
-var getColorGray = document.getElementById("gray");
-var getColorYellow = document.getElementById("yellow");
-=======
->>>>>>> parent of 87de3e9... color effect mainapge
+//<<<<<<< HEAD
+//var getPaintBrush = document.getElementById("paint-brush");
+//var getColorRed = document.getElementById("red");
+//var getColorBlue = document.getElementById("blue");
+//var getColorGreen = document.getElementById("green");
+//var getColorGray = document.getElementById("gray");
+//var getColorYellow = document.getElementById("yellow");
+//=======
+//>>>>>>> parent of 87de3e9... color effect mainapge
 
 var categoryArray = [];
 var mainTasksArray = [];
 var taskArray = [];
 var personArray = [];
-buildItems("category");
 
-getAddContainer.onclick = onclickAddCategory;
-getAddPerson.onclick = onclickAddPerson;
-getAddTask.onclick = onclickAddTask;
-getAddMainTask.onclick = onclickaddMainTask;
+
+
 
 
 
 function onclickAddCategory() {
-    let text = document.getElementById("textAdd").value;
+    var whattoget = document.getElementById("textAdd");
+    var textToSwitch = whattoget.value;
     categoryArray.push({
-        textToShow: `${text}`,
+        textToShow: `${textToSwitch}`,
         backgroundcolor: "#28cc6d"
     });
     setLocalStorage(`category`, categoryArray);
@@ -89,6 +87,10 @@ function buildMainSite(categoryToBuild) {
     buildItems("mainTask");
 }
 
+getAddContainer.onclick = onclickAddCategory;
+getAddPerson.onclick = onclickAddPerson;
+getAddTask.onclick = onclickAddTask;
+getAddMainTask.onclick = onclickaddMainTask;
 
 function x_allowDrop(ev) {
     ev.preventDefault();
@@ -228,8 +230,9 @@ function setLocalStorage(type, object) {
 
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
-<<<<<<< HEAD
-}
+    }
+
+
 function ColorChange() {
     var taskbox = document.getElementById("textbox");
     for (var i = 0; i < xxxxx.length; i++) {
@@ -260,6 +263,5 @@ function ColorChange() {
         getMainContainer.style.backgroundColor = "#e9bc0a";
         getMainContainer.style.backgroundImage = "";
     };
-=======
->>>>>>> parent of 87de3e9... color effect mainapge
 }
+buildItems("category");
