@@ -516,111 +516,24 @@ input {
 
 /*Main: End*/
 
-#trash {
-	position: absolute;
-	margin-top: 50px;
-	width: auto;
-	height: 60px;
-	left: 1650px;
-
-
-}
-
-#trash_container:hover {
-	visibility: visible;
-
-}
 
 /* kortene på venstre side*/
 #task_container .card .multi-button button {
-
 	display: grid;
-	place-items: center;
-	border: none;
-	border-radius: 100%;
-	background: var(--background);
-	color: var(--text);
-	transform: translate(-50%, -50%);
-	cursor: pointer;
-	transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
-	box-shadow: 0 0 0rem -0.25rem var(--background);
+	grid-column: auto;
+	width: 100px;
+	height: 100px;
+	border-radius: 20px;
+	background-color: rgb(46, 218, 40);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 1.9);
+	margin: auto;
+
+
 }
 
-#task_container .card .multi-button button:hover {
-	background: var(--text);
-	color: var(--background);
-	box-shadow: 0 0 1rem -0.25rem var(--background);
-}
 
-body .card .multi-button button:first-child:nth-last-child(1):nth-child(1),
-body .card .multi-button button:first-child:nth-last-child(1)~*:nth-child(1) {
-	left: 25%;
-	top: 25%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(2):nth-child(1),
-body .card .multi-button button:first-child:nth-last-child(2)~*:nth-child(1) {
-	left: 37.5%;
-	top: 18.75%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(2):nth-child(2),
-body .card .multi-button button:first-child:nth-last-child(2)~*:nth-child(2) {
-	left: 18.75%;
-	top: 37.5%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(3):nth-child(1),
-body .card .multi-button button:first-child:nth-last-child(3)~*:nth-child(1) {
-	left: 50%;
-	top: 15.625%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(3):nth-child(2),
-body .card .multi-button button:first-child:nth-last-child(3)~*:nth-child(2) {
-	left: 25%;
-	top: 25%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(3):nth-child(3),
-body .card .multi-button button:first-child:nth-last-child(3)~*:nth-child(3) {
-	left: 15.625%;
-	top: 50%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(4):nth-child(1),
-body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(1) {
-	left: 62.5%;
-	top: 18.75%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(4):nth-child(2),
-body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(2) {
-	left: 37.5%;
-	top: 18.75%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(4):nth-child(3),
-body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(3) {
-	left: 18.75%;
-	top: 37.5%;
-}
-
-body .card .multi-button button:first-child:nth-last-child(4):nth-child(4),
-body .card .multi-button button:first-child:nth-last-child(4)~*:nth-child(4) {
-	left: 18.75%;
-	top: 62.5%;
-}
-
-#task_container .card .container {
-
-	border-radius: 1rem;
-	background: var(--background);
-	color: var(--text);
-}
-
-#task_container .card:hover .multi-button,
-#task_container .card .multi-button:focus-within {}
+#task_container .card:hover,
+#task_container .card:focus-within {}
 
 #textAdd {
 	display: flex;
