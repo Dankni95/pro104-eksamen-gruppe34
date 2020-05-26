@@ -10,15 +10,12 @@ var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("mainTitle");
 var getTaskContainer = document.getElementById("taskContainer");
-<<<<<<< HEAD
-var getPaintBrush = document.getElementById("paint-brush");
+//var getPaintBrush = document.getElementById("paint-brush");
 var getColorRed = document.getElementById("red");
 var getColorBlue = document.getElementById("blue");
 var getColorGreen = document.getElementById("green");
 var getColorGray = document.getElementById("gray");
 var getColorYellow = document.getElementById("yellow");
-=======
->>>>>>> parent of 87de3e9... color effect mainapge
 
 var categoryArray = [];
 var mainTasksArray = [];
@@ -228,7 +225,6 @@ function setLocalStorage(type, object) {
 
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
-<<<<<<< HEAD
 }
 function ColorChange() {
     var taskbox = document.getElementById("textbox");
@@ -240,6 +236,7 @@ function ColorChange() {
 
         taskbox.style.backgroundColor = RandomColorGen;
     }
+}
     getColorRed.onclick = function () {
         getMainContainer.style.backgroundColor = "#e74837";
         getMainContainer.style.backgroundImage = "";
@@ -260,6 +257,3 @@ function ColorChange() {
         getMainContainer.style.backgroundColor = "#e9bc0a";
         getMainContainer.style.backgroundImage = "";
     };
-=======
->>>>>>> parent of 87de3e9... color effect mainapge
-}
