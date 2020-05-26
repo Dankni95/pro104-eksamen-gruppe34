@@ -15,6 +15,7 @@ let mainTasksArray = [];
 let taskArray = [];
 let personArray = [];
 buildItems("category");
+buildItems("mainTask");
 
 getAddContainer.onclick = onclickAddCategory;
 getAddPerson.onclick = onclickAddPerson;
@@ -75,7 +76,6 @@ function onclickaddMainTask() {
 }
 
 function buildMainSite(categoryToBuild) {
-    console.log(`${categoryToBuild}`)
     getMainTitle.innerHTML = `${categoryToBuild}`;
     buildItems("mainTask");
 }
@@ -110,12 +110,12 @@ function buildItems(type, whoSentIt) {
             let text = categoryArray[i].textToShow;
             getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
-        <button id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
+        <button id="${text}btn" onclick="buildMainSite('${text}')" styling=" padding: 10px; display: flex; justify-content: space-between;">${text}</button>
         </div>
         <div class="container"></div>
         </div>`;
         }
-        buildItems("maintask", )
+        buildItems("maintask")
     }
     if (type === "person") {
         getPersonList.innerHTML = ``;
@@ -140,6 +140,9 @@ function buildItems(type, whoSentIt) {
 
 
             let checker = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.id;
+            console.log(mainToAddTo);
+            console.log(checker);
+            
             let backgroundText = taskArray[i].backgroundcolor;
             let textTask = taskArray[i].textToShow;
             if (checker == taskArray[i].maintask) {
@@ -164,7 +167,7 @@ function buildItems(type, whoSentIt) {
         let counter = 0;
         for (let i = 0; i < mainTasksArray.length; i++) {
             if (category === mainTasksArray[i].category) {
-                let getMaintext = mainTasksArray[i].textToShow;
+                var getMaintext = mainTasksArray[i].textToShow;
                 getTaskContainer.innerHTML += `<div id="taskContainer${counter}"><div id="${getMaintext}" style="float: left">
 		<div class="taskTabs" id="taskTab${counter}">
             <div class="overskrift" id="${getMaintext}">${getMaintext}</div>
@@ -185,8 +188,19 @@ function buildItems(type, whoSentIt) {
 	</div>
     </div>`;
                 counter++;
+            for(var j=0; j<taskArray.length; j++){
+            if(taskArray[j].maintask === getMaintext){
+                let insertPathId = document.getElementById(`${getMaintext}`).querySelectorAll(`.listoftasks`)[0].id;
+                let insertPath=document.getElementById(`${insertPathId}`);
+                let textTask = taskArray[j].textToShow;
+                insertPath.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
+            </div>`;
+                
             }
         }
+    }        
+}
+
     }
 }
 
