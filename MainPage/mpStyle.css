@@ -249,9 +249,14 @@ input {
 }
 
 .trash {
-	position: relative;
-	width: 70px;
-	height: 70px;
+	position: absolute;
+	color: #ffffff;
+	font-size: 85px;
+	border: none;
+	width: 0px;
+	height: 0px;
+	top: 0%;
+	left: 2%;
 }
 
 #task_container {
@@ -472,16 +477,18 @@ button.plussMember img {
 
 
 /*Bottom Area: Start*/
-#text-member{
+#text-member {
 	position: absolute;
 	left: 1720px;
 	top: 860px;
 }
-#plussMember{
+
+#plussMember {
 	position: absolute;
 	left: 1830px;
 	top: 852px;
 }
+
 #personList {
 	position: absolute;
 	left: 1380px;
@@ -678,7 +685,7 @@ button.plussMember img {
 #overlay.active {
 	opacity: 1;
 	pointer-events: all;
-	
+
 }
 
 #boxPath {
