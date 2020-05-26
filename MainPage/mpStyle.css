@@ -7,6 +7,7 @@
 }
 
 body {
+ 	background-image: url(../images/gradient.jpg);
 	background-repeat: no-repeat;
 }
 
@@ -390,13 +391,13 @@ input {
 	display: none;
 	height: 10px;
 	width: 50px;
-	top: 500px;
+	top: 300px;
 	left: 300px;
 
 
 }
 
-#dropPerson1.active {
+#dropPerson1 {
 	display: block;
 	height: 50px;
 	width: 200px;
