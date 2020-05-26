@@ -252,7 +252,9 @@ input {
 	height: 300px;
 	overflow: scroll;
 	height: 500px;
-	border: 4px solid gray;
+	border-top: 4px solid;
+	border-bottom: 4px solid;
+
 }
 
 #task_container::-webkit-scrollbar {
@@ -287,7 +289,8 @@ input {
 /*SideBar: End*/
 .taskArea {
 	width: 1500px;
-
+	height: 500px;
+	border: 1px solid;
 }
 
 #area_container {
@@ -338,17 +341,6 @@ input {
 }
 
 /*Task container: Start*/
-
-#taskContainer {
-	padding-left: 10px;
-	border: 1px solid black;
-	height: 300px;
-	background-color: #273138;
-	border-radius: 5px;
-	background: transparent;
-}
-
-
 
 #taskTab.active {
 	width: 450px;
@@ -523,8 +515,9 @@ input {
 	width: 100px;
 	height: 100px;
 	border-radius: 20px;
-	background-color: rgb(46, 218, 40);
+	background-color: rgb(64, 245, 58);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 1.9);
+	justify-content: space-around;
 	margin: auto;
 
 
