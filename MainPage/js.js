@@ -26,12 +26,17 @@ getAddMainTask.onclick = onclickaddMainTask;
 
 function onclickAddCategory() {
     let text = document.getElementById("textAdd").value;
-    categoryArray.push({
+    if(text===""){
+        alert("Please name your category in the textbox below the plus to continue");
+    }else{
+            categoryArray.push({
         textToShow: `${text}`,
         backgroundcolor: "#28cc6d"
     });
     setLocalStorage(`category`, categoryArray);
     buildItems("category");
+    }
+
 }
 
 function onclickAddPerson() {
@@ -67,8 +72,10 @@ function onclickaddMainTask() {
     let category = document.getElementById("taskArea").innerHTML;
     console.log(category);
     let getText = document.getElementById("addMainTaskText").value;
-    if(category==="Project name"){
+    if(category===""){
         alert("Please add or select a new category in the bottom right corner before you add a project")
+    }else if(getText===""){
+        alert("Please add a description in the textbox below the add task button");
     }else{
         mainTasksArray.push({
         textToShow: `${getText}`,
