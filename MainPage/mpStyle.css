@@ -425,6 +425,37 @@ input {
 	font-size: 15px;
 }
 
+.plussMember {
+	position: absolute;
+	border: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 2.9);
+	left: 250px;
+	top: 65%;
+	width: 40px;
+	height: 40px;
+	border-radius: 30%;
+	background-color: rgb(245, 138, 8);
+	transition: .1s ease-in;
+}
+
+.plussMember:active {
+	opacity: 0.8;
+	border: 1px solid white;
+}
+
+.plussMember img {
+	margin: 12%;
+}
+
+#text-member {
+	position: absolute;
+	display: flex;
+	width: 100px;
+	height: 25px;
+	top: 72%;
+	left: 11.5%;
+}
+
 
 
 
