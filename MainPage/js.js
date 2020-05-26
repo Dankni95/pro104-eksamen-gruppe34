@@ -168,6 +168,20 @@ function x_drop(ev) {
     c++;
 }
 
+document.addEventListener("drop", function(event)){
+event.preventDefault();
+if(event.target.className == "bucket"){
+    var data = event.dataTransfer.getData("Text");
+    console.log(data);
+    for(var i=0; i<categoryArray.length){
+        if(categoryArray[i].textToShow==="data"){
+            categoryArray.splice(i, 1);
+        }
+    }
+}
+}
+
+
 function buildItems(type, whoSentIt) {
         if (type == "category") {
         getLeftContainer.innerHTML = "";
@@ -179,7 +193,7 @@ function buildItems(type, whoSentIt) {
             if(project===categoryArray[i].project){
         getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
-        <button style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
+        <button draggable="true" ondragstart="x_drag(event)" style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
         </div>
         <div class="container"></div>
         </div>`;
@@ -197,7 +211,9 @@ function buildItems(type, whoSentIt) {
         for (let i = 0; i < personArray.length; i++) {
             let backgroundPerson = personArray[i].backgroundcolor;
             let textPerson = personArray[i].textToShow;
-            getPersonList.innerHTML += `<div id="${whoSentIt}" draggable="true" ondragstart="x_drag(event)" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">${whoSentIt}</div>`;
+            getPersonList.innerHTML += `<div id="${whoSentIt}" draggable="true" ondragstart="x_drag(event)" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">
+                <img src="/images/user.jpg" alt="P" id="personId">
+            </div>`;
         }
         getPersonList.innerHTML += `<div id="addPerson">
 			<img src="../images/plus_icon.png" alt="Pluss" id="addPluss">
@@ -256,7 +272,7 @@ function buildItems(type, whoSentIt) {
             <input type="button" id="addTask${counter}" onclick="onclickAddTask('addTask${counter}')" value="ADD" style="display: inline;">
             <input type="date" id="date${counter}" style="display: inline;">
             </div>
-			<div class="dropPerson" id="dropPerson1" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p></div>
+			<div class="dropPerson" id="dropPerson${counter}" ondrop="x_drop(event)" ondragover="x_allowDrop(event)"><p>Drop person here</p></div>
 		</div>
 	</div>
     </div>`;
