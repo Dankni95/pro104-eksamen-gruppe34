@@ -50,18 +50,20 @@ function onclickAddCategory() {
 
 function onclickDoneButton(ev) {
     ev.originalTarget.parentElement.style.backgroundColor = "#00ff00";
-    let val = ev.originalTarget.parentElement.firstChild.innerHTML;
-    // debugger;
-    val = "[DONE] " + val;
-    ev.originalTarget.onclick = onclickDoneButton;
+    let val = ev.originalTarget.parentElement.firstChild;
+    if (val.innerHTML.includes("[Done]")) return;
+    if (val.innerHTML.includes("[WIP]"))
+        val.innerHTML = val.innerHTML.substr("[WIP]".length);
+    val.innerHTML = `[Done] ${val.innerHTML}`;
 }
 
 function onclickWIPButton(ev) {
     ev.originalTarget.parentElement.style.backgroundColor = "#ffff00";
-    let val = ev.originalTarget.parentElement.firstChild.innerHTML;
-    // debugger;
-    val = "[WIP] " + val;
-    ev.originalTarget.onclick = onclickWIPButton;
+    let val = ev.originalTarget.parentElement.firstChild;
+    if (val.innerHTML.includes("[WIP]")) return;
+    if (val.innerHTML.includes("[Done]"))
+        val.innerHTML = val.innerHTML.substr("[Done]".length);
+    val.innerHTML = `[WIP] ${val.innerHTML}`;
 }
 
 
