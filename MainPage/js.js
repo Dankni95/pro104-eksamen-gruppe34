@@ -7,7 +7,7 @@ let getAddMainTask = document.getElementById("addMainTask")
 let getAddTask = document.getElementById("addTask");
 let getTextbox = document.getElementById("textbox");
 let getDate = document.getElementById("date");
-let getMainTitle = document.getElementById("mainTitle");
+let getMainTitle = document.getElementById("taskArea");
 let getTaskContainer = document.getElementById("taskContainer");
 
 let categoryArray = [];
@@ -24,7 +24,7 @@ getAddMainTask.onclick = onclickaddMainTask;
 
 
 function onclickAddCategory() {
-    let text = document.getElementById("categoryText").value;
+    let text = document.getElementById("textAdd").value;
     categoryArray.push({
         textToShow: `${text}`,
         backgroundcolor: "#28cc6d"
@@ -75,6 +75,7 @@ function onclickaddMainTask() {
 }
 
 function buildMainSite(categoryToBuild) {
+    console.log(`${categoryToBuild}`)
     getMainTitle.innerHTML = categoryToBuild;
     buildItems("mainTask");
 }
@@ -109,7 +110,7 @@ function buildItems(type, whoSentIt) {
             let text = categoryArray[i].textToShow;
             getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
-        <button id="trash" onclick="buildMainSite('${text}')">´${text}´</button>
+        <button id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
         </div>
         <div class="container">${text}</div>
         </div>`;
@@ -186,7 +187,6 @@ function buildItems(type, whoSentIt) {
                 counter++;
             }
         }
-        buildItems(`task`);
     }
 }
 
