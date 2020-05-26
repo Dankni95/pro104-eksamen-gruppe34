@@ -1,37 +1,53 @@
+var getMainContainer = document.getElementById("MainContainer");
 var getLeftContainer = document.getElementById("task_container");
 var getAddContainer = document.getElementById("add_category");
 var getAddPerson = document.getElementById("addPerson");
-var getPersonList = document.getElementById("personList")
-var getTaskarea = document.getElementById("listoftasks")
-var getAddMainTask = document.getElementById("addMainTask")
+var getPersonList = document.getElementById("personList");
+var getTaskarea = document.getElementById("listoftasks");
+var getAddMainTask = document.getElementById("addMainTask");
 var getAddTask = document.getElementById("addTask");
 var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("mainTitle");
 var getTaskContainer = document.getElementById("taskContainer");
 
+var getPaintBrush = document.getElementById("paint-brush");
+var getColorRed = document.getElementById("red");
+var getColorBlue = document.getElementById("blue");
+var getColorGreen = document.getElementById("green");
+var getColorGray = document.getElementById("gray");
+var getColorYellow = document.getElementById("yellow");
+
 var categoryArray = [];
 var mainTasksArray = [];
 var taskArray = [];
 var personArray = [];
-buildItems("category");
 
-getAddContainer.onclick = onclickAddCategory;
-getAddPerson.onclick = onclickAddPerson;
-getAddTask.onclick = onclickAddTask;
-getAddMainTask.onclick = onclickaddMainTask;
+
+
 
 
 
 function onclickAddCategory() {
+
+    var whattoget = document.getElementById("textAdd");
+    var textToSwitch = whattoget.value;
     let text = document.getElementById("categoryText").value;
-    categoryArray.push({ textToShow: `${text}`, backgroundcolor: "#28cc6d" });
+
+    categoryArray.push({
+        textToShow: `${textToSwitch}`,
+        backgroundcolor: "#28cc6d"
+    });
     setLocalStorage(`category`, categoryArray);
     buildItems("category");
 }
 
 function onclickAddPerson() {
-    personArray.push({ textToShow: "G", backgroundcolor: "#28cc6d", category: "CSS" });
+    personArray.push({
+        textToShow: "G",
+        backgroundcolor: "#28cc6d",
+        category: "CSS"
+    });
     setLocalStorage(`person`, personArray);
     buildItems("person");
 }
@@ -42,7 +58,15 @@ function onclickAddTask(whoSentThis) {
     let date = getter.nextElementSibling.value;
     let category = document.getElementById("mainTitle").innerHTML;
     let maintask = document.getElementById(`${whoSentThis}`).parentElement.parentElement.querySelector(`.overskrift`).id;
-    taskArray.push({ textToShow: `${text}`, backgroundcolor: "#28cc6d", date: `${date}`, WIP: "no", done: "no", category: `${category}`, maintask: `${maintask}` });
+    taskArray.push({
+        textToShow: `${text}`,
+        backgroundcolor: "#28cc6d",
+        date: `${date}`,
+        WIP: "no",
+        done: "no",
+        category: `${category}`,
+        maintask: `${maintask}`
+    });
     setLocalStorage(`task`, taskArray);
     buildItems("task", `${whoSentThis}`);
 }
@@ -50,7 +74,11 @@ function onclickAddTask(whoSentThis) {
 function onclickaddMainTask() {
     let category = document.getElementById("mainTitle").innerHTML;
     let getText = document.getElementById("addMainTaskText").value;
-    mainTasksArray.push({ textToShow: `${getText}`, backgroundcolor: "beige", category: `${category}` })
+    mainTasksArray.push({
+        textToShow: `${getText}`,
+        backgroundcolor: "beige",
+        category: `${category}`
+    })
     setLocalStorage(`mainTask`, mainTasksArray);
     buildItems("mainTask");
 }
@@ -60,7 +88,14 @@ function buildMainSite(categoryToBuild) {
     buildItems("mainTask");
 }
 
+<<<<<<< HEAD
 let c = 0;
+=======
+getAddContainer.onclick = onclickAddCategory;
+getAddPerson.onclick = onclickAddPerson;
+getAddTask.onclick = onclickAddTask;
+getAddMainTask.onclick = onclickaddMainTask;
+>>>>>>> db3a8cd1f3d52966f93392a1d90738d6caae96fd
 
 function x_allowDrop(ev) {
     ev.preventDefault();
@@ -80,7 +115,7 @@ function x_drop(ev) {
     //document.getElementById(data).parentElement.ondragover = x_allowDrop;
     c++;
 }
-
+/* */
 function buildItems(type, whoSentIt) {
     if (type == "category") {
         getLeftContainer.innerHTML = "";
@@ -88,13 +123,11 @@ function buildItems(type, whoSentIt) {
         for (var i = 0; i < categoryArray.length; i++) {
             let backgroundColor = categoryArray[i].backgroundcolor;
             let text = categoryArray[i].textToShow;
-            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
+            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="">
         <div class="multi-button">
-        <button class="fa fa-comment"></button>
-        <button class="fa fa-cog"></button>
-        <button class="fa fa-trash" id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
+        <button id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
         </div>
-        <div class="container">${text}</div>
+        
         </div>`;
         }
         buildItems("maintask", )
@@ -117,26 +150,26 @@ function buildItems(type, whoSentIt) {
     if (type === "task") {
         taskArray = getLocalStorage(`task`);
         let mainToAddTo = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling;
-        mainToAddTo.innerHTML= ``
-        for(var i=0; i<taskArray.length; i++){
-            
+        mainToAddTo.innerHTML = ``
+        for (var i = 0; i < taskArray.length; i++) {
+
 
             let checker = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.id;
             let backgroundText = taskArray[i].backgroundcolor;
             let textTask = taskArray[i].textToShow;
-           if(checker==taskArray[i].maintask){
-               
-               mainToAddTo.innerHTML +=`<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
-            </div>`
-           }
+            if (checker == taskArray[i].maintask) {
 
-            
+                mainToAddTo.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
+            </div>`
+            }
+
+
 
         }
-           
+
     }
 
-    
+
     getAddPerson.onclick = onclickAddPerson;
 
     if (type === "mainTask") {
@@ -173,31 +206,31 @@ function buildItems(type, whoSentIt) {
     }
 }
 
-function expandTask(whoToExpand){
+function expandTask(whoToExpand) {
     let getit = document.getElementById(`${whoToExpand}`);
     let getTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.task`);
     let getAddTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.addTasks`);
-    if(getit.style.width===`450px`){
+    if (getit.style.width === `450px`) {
         getit.style.width = `45px`;
         //hide tasks
-        for(var i=0;i<getTasks.length; i++ ){
+        for (var i = 0; i < getTasks.length; i++) {
             getTasks[i].style.display = `none`;
         }
-        for(var i=0;i<getAddTasks.length; i++ ){
+        for (var i = 0; i < getAddTasks.length; i++) {
             getAddTasks[i].style.display = `none`;
         }
-        
-    }else{
+
+    } else {
         getit.style.width = `450px`;
         //show tasks
-        for(var i=0;i<getTasks.length; i++ ){
-        getTasks[i].style.display = `inline`;
+        for (var i = 0; i < getTasks.length; i++) {
+            getTasks[i].style.display = `inline`;
         }
-        for(var i=0;i<getAddTasks.length; i++ ){
-        getAddTasks[i].style.display = `inline`;
+        for (var i = 0; i < getAddTasks.length; i++) {
+            getAddTasks[i].style.display = `inline`;
         }
-            
-    }  
+
+    }
 }
 
 function setLocalStorage(type, object) {
@@ -206,4 +239,45 @@ function setLocalStorage(type, object) {
 
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
+
+    }
+
+
+
+function ColorChange() {
+    var taskbox = document.getElementById("textbox");
+    for (var i = 0; i < xxxxx.length; i++) {
+        var rgbparameter1 = Math.floor(Math.random() * 255);
+        var rgbparameter2 = Math.floor(Math.random() * 255);
+        var rgbparameter3 = Math.floor(Math.random() * 255);
+        var RandomColorGen = `rgb(${rgbparameter1},${rgbparameter2},${rgbparameter3})`;
+
+        taskbox.style.backgroundColor = RandomColorGen;
+    }
 }
+    getColorRed.onclick = function () {
+        getMainContainer.style.backgroundColor = "#e74837";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorBlue.onclick = function () {
+        getMainContainer.style.backgroundColor = "#2b8aca";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorGreen.onclick = function () {
+        getMainContainer.style.backgroundColor = "#28cc6d";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorGray.onclick = function () {
+        getMainContainer.style.backgroundColor = "#364c61";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorYellow.onclick = function () {
+        getMainContainer.style.backgroundColor = "#e9bc0a";
+        getMainContainer.style.backgroundImage = "";
+    };
+    
+}
+
+
+buildItems("category");
+
