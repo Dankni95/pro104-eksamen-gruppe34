@@ -26,12 +26,17 @@ getAddMainTask.onclick = onclickaddMainTask;
 
 function onclickAddCategory() {
     let text = document.getElementById("textAdd").value;
-    categoryArray.push({
+    if(text===""){
+        alert("Please name your category in the textbox below the plus to continue");
+    }else{
+            categoryArray.push({
         textToShow: `${text}`,
         backgroundcolor: "#28cc6d"
     });
     setLocalStorage(`category`, categoryArray);
     buildItems("category");
+    }
+
 }
 
 function onclickAddPerson() {
