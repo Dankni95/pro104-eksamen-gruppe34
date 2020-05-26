@@ -109,7 +109,7 @@ function buildItems(type, whoSentIt) {
             let text = categoryArray[i].textToShow;
             getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
-        <button id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
+        <button id="trash" onclick="buildMainSite('${text}')">´${text}´</button>
         </div>
         <div class="container">${text}</div>
         </div>`;
