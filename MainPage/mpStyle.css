@@ -405,12 +405,11 @@ input {
 
 .dropPerson {
 	position: absolute;
-	right: 10px;
 	display: none;
 	height: 10px;
 	width: 50px;
-	top: 300px;
-	left: 300px;
+	top: 550px;
+	left: 400px;
 
 
 }
