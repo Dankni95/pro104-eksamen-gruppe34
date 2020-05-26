@@ -248,6 +248,12 @@ input {
 	height: 800px;
 }
 
+.trash {
+	position: relative;
+	width: 70px;
+	height: 70px;
+}
+
 #task_container {
 	margin-left: 10px;
 	width: 130px;
