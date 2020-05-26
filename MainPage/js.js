@@ -2,15 +2,16 @@ var getMainContainer = document.getElementById("MainContainer");
 var getLeftContainer = document.getElementById("task_container");
 var getAddContainer = document.getElementById("add_category");
 var getAddPerson = document.getElementById("addPerson");
-var getPersonList = document.getElementById("personList")
-var getTaskarea = document.getElementById("listoftasks")
-var getAddMainTask = document.getElementById("addMainTask")
+var getPersonList = document.getElementById("personList");
+var getTaskarea = document.getElementById("listoftasks");
+var getAddMainTask = document.getElementById("addMainTask");
 var getAddTask = document.getElementById("addTask");
 var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("mainTitle");
 var getTaskContainer = document.getElementById("taskContainer");
-//var getPaintBrush = document.getElementById("paint-brush");
+
+var getPaintBrush = document.getElementById("paint-brush");
 var getColorRed = document.getElementById("red");
 var getColorBlue = document.getElementById("blue");
 var getColorGreen = document.getElementById("green");
@@ -21,19 +22,20 @@ var categoryArray = [];
 var mainTasksArray = [];
 var taskArray = [];
 var personArray = [];
-buildItems("category");
 
-getAddContainer.onclick = onclickAddCategory;
-getAddPerson.onclick = onclickAddPerson;
-getAddTask.onclick = onclickAddTask;
-getAddMainTask.onclick = onclickaddMainTask;
+
+
 
 
 
 function onclickAddCategory() {
-    let text = document.getElementById("textAdd").value;
+
+    var whattoget = document.getElementById("textAdd");
+    var textToSwitch = whattoget.value;
+    let text = document.getElementById("categoryText").value;
+
     categoryArray.push({
-        textToShow: `${text}`,
+        textToShow: `${textToSwitch}`,
         backgroundcolor: "#28cc6d"
     });
     setLocalStorage(`category`, categoryArray);
@@ -86,6 +88,10 @@ function buildMainSite(categoryToBuild) {
     buildItems("mainTask");
 }
 
+getAddContainer.onclick = onclickAddCategory;
+getAddPerson.onclick = onclickAddPerson;
+getAddTask.onclick = onclickAddTask;
+getAddMainTask.onclick = onclickaddMainTask;
 
 function x_allowDrop(ev) {
     ev.preventDefault();
@@ -110,8 +116,7 @@ function buildItems(type, whoSentIt) {
             let text = categoryArray[i].textToShow;
             getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="">
         <div class="multi-button">
-        <button id="${text}" value="${text}" onclick="buildMainSite(${text})')">${text}</button>
-<div class="container"></div>
+        <button id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
         </div>
         
         </div>`;
@@ -225,7 +230,11 @@ function setLocalStorage(type, object) {
 
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
-}
+
+    }
+
+
+
 function ColorChange() {
     var taskbox = document.getElementById("textbox");
     for (var i = 0; i < xxxxx.length; i++) {
@@ -257,3 +266,6 @@ function ColorChange() {
         getMainContainer.style.backgroundColor = "#e9bc0a";
         getMainContainer.style.backgroundImage = "";
     };
+
+buildItems("category");
+
