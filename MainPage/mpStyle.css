@@ -405,7 +405,7 @@ input {
 
 }
 
-#dropPerson1.active {
+#dropPerson1 {
 	display: block;
 	height: 50px;
 	width: 200px;

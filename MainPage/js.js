@@ -60,6 +60,7 @@ function buildMainSite(categoryToBuild) {
     buildItems("mainTask");
 }
 
+let c = 0;
 
 function x_allowDrop(ev) {
     ev.preventDefault();
@@ -72,7 +73,12 @@ function x_drag(ev) {
 function x_drop(ev) {
     ev.preventDefault();
     const data = ev.dataTransfer.getData("text");
+    console.log(ev.target);
     ev.target.appendChild(document.getElementById(data));
+    ev.target.ondragover = x_allowDrop;
+    ev.target.ondrop = x_drop;
+    //document.getElementById(data).parentElement.ondragover = x_allowDrop;
+    c++;
 }
 
 function buildItems(type, whoSentIt) {
