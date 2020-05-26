@@ -486,6 +486,10 @@ button.plussMember img {
 	left: 10px;
 	top: 7px;
 }
+#undefined{
+	
+	
+}
 
 #personId {
 	width: 30px;
@@ -518,7 +522,7 @@ button.plussMember img {
 #descriptionBox {
 	position: absolute;
 	top: 650px;
-	left: 50%;
+	left: 40%;
 	width: 400px;
 	height: 220px;
 	float: right;
