@@ -139,6 +139,9 @@ function buildItems(type, whoSentIt) {
             }
 
         }
+        
+    //her kommer en comment
+    
         buildItems("maintask")
     }
     if (type === "person") {
