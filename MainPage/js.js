@@ -1,3 +1,4 @@
+var getMainContainer = document.getElementById("MainContainer");
 var getLeftContainer = document.getElementById("task_container");
 var getAddContainer = document.getElementById("add_category");
 var getAddPerson = document.getElementById("addPerson");
@@ -10,6 +11,11 @@ var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("mainTitle");
 var getTaskContainer = document.getElementById("taskContainer");
 var getPaintBrush = document.getElementById("paint-brush");
+var getColorRed = document.getElementById("red");
+var getColorBlue = document.getElementById("blue");
+var getColorGreen = document.getElementById("green");
+var getColorGray = document.getElementById("gray");
+var getColorYellow = document.getElementById("yellow");
 
 var categoryArray = [];
 var mainTasksArray = [];
@@ -214,3 +220,24 @@ function ColorChange() {
 
         taskbox.style.backgroundColor = RandomColorGen;
     }
+    getColorRed.onclick = function () {
+        getMainContainer.style.backgroundColor = "#e74837";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorBlue.onclick = function () {
+        getMainContainer.style.backgroundColor = "#2b8aca";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorGreen.onclick = function () {
+        getMainContainer.style.backgroundColor = "#28cc6d";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorGray.onclick = function () {
+        getMainContainer.style.backgroundColor = "#364c61";
+        getMainContainer.style.backgroundImage = "";
+    };
+    getColorYellow.onclick = function () {
+        getMainContainer.style.backgroundColor = "#e9bc0a";
+        getMainContainer.style.backgroundImage = "";
+    };
+}
