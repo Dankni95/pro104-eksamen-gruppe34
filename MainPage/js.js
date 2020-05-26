@@ -37,12 +37,12 @@ function onclickAddPerson() {
 }
 
 function onclickAddTask(whoSentThis) {
-
     let getter = document.getElementById(`${whoSentThis}`);
     let text = getter.previousElementSibling.value;
     let date = getter.nextElementSibling.value;
     let category = document.getElementById("mainTitle").innerHTML;
-    taskArray.push({ textToShow: `${text}`, backgroundcolor: "#28cc6d", date: `${date}`, WIP: "no", done: "no", category: `${category}` });
+    let maintask = document.getElementById(`${whoSentThis}`).parentElement.parentElement.querySelector(`.overskrift`).id;
+    taskArray.push({ textToShow: `${text}`, backgroundcolor: "#28cc6d", date: `${date}`, WIP: "no", done: "no", category: `${category}`, maintask: `${maintask}` });
     setLocalStorage(`task`, taskArray);
     buildItems("task", `${whoSentThis}`);
 }
@@ -91,6 +91,7 @@ function buildItems(type, whoSentIt) {
         <div class="container">${text}</div>
         </div>`;
         }
+        buildItems("maintask", )
     }
     if (type === "person") {
         getPersonList.innerHTML = ``;
@@ -108,21 +109,28 @@ function buildItems(type, whoSentIt) {
     }
 
     if (type === "task") {
-        console.log(`${whoSentIt}`)
-        var getter = document.getElementById(`${whoSentIt}`);
-        var elementToChangePart1 = document.getElementById(`${whoSentIt}`).parentElement.previousSibling.previousSibling.previousSibling.previousSibling.id;
-        elementToChangePart2 = document.getElementById(`${elementToChangePart1}`);
-        console.log(`${elementToChangePart2}`)
-        elementToChangePart2.innerHTML = ``;
         taskArray = getLocalStorage(`task`);
-        for (var i = 0; i < taskArray.length; i++) {
+        let mainToAddTo = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling;
+        mainToAddTo.innerHTML= ``
+        for(var i=0; i<taskArray.length; i++){
+            
+
+            let checker = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.id;
             let backgroundText = taskArray[i].backgroundcolor;
             let textTask = taskArray[i].textToShow;
-            elementToChangePart2.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
+           if(checker==taskArray[i].maintask){
+               
+               mainToAddTo.innerHTML +=`<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
             </div>`
-        }
+           }
 
+            
+
+        }
+           
     }
+
+    
     getAddPerson.onclick = onclickAddPerson;
 
     if (type === "mainTask") {
@@ -155,11 +163,11 @@ function buildItems(type, whoSentIt) {
                 counter++;
             }
         }
+        buildItems(`task`);
     }
 }
 
 function expandTask(whoToExpand){
-    console.log(`${whoToExpand}`)
     let getit = document.getElementById(`${whoToExpand}`);
     let getTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.task`);
     let getAddTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.addTasks`);
