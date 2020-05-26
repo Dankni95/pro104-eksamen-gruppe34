@@ -112,7 +112,7 @@ function buildItems(type, whoSentIt) {
         <div class="multi-button">
         <button id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
         </div>
-        <div class="container">${text}</div>
+        <div class="container"></div>
         </div>`;
         }
         buildItems("maintask", )
