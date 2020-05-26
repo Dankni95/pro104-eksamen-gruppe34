@@ -466,6 +466,11 @@ button.plussMember img {
 
 
 /*Bottom Area: Start*/
+#text-member{
+	position: absolute;
+	left: 1720px;
+	top: 860px;
+}
 #personList {
 	position: absolute;
 	left: 1380px;
