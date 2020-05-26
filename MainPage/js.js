@@ -143,7 +143,7 @@ function buildItems(type, whoSentIt) {
             <div class="listoftasks" id="listoftasks${counter}">
             </div>
 			<div class="miniChart" id="miniChart1"></div>
-            <div id="addTasks">
+            <div id="addTasks" class="addTasks">
             <input type="text" id="textbox${counter}" value="to add tasks" style="display: inline;">
             <input type="button" id="addTask${counter}" onclick="onclickAddTask('addTask${counter}')" value="ADD" style="display: inline;">
             <input type="date" id="date${counter}" style="display: inline;">
@@ -159,11 +159,30 @@ function buildItems(type, whoSentIt) {
 }
 
 function expandTask(whoToExpand){
+    console.log(`${whoToExpand}`)
     let getit = document.getElementById(`${whoToExpand}`);
+    let getTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.task`);
+    let getAddTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.addTasks`);
     if(getit.style.width===`450px`){
-        getit.style.width = `45px`
+        getit.style.width = `45px`;
+        //hide tasks
+        for(var i=0;i<getTasks.length; i++ ){
+            getTasks[i].style.display = `none`;
+        }
+        for(var i=0;i<getAddTasks.length; i++ ){
+            getAddTasks[i].style.display = `none`;
+        }
+        
     }else{
-            getit.style.width = `450px`;
+        getit.style.width = `450px`;
+        //show tasks
+        for(var i=0;i<getTasks.length; i++ ){
+        getTasks[i].style.display = `inline`;
+        }
+        for(var i=0;i<getAddTasks.length; i++ ){
+        getAddTasks[i].style.display = `inline`;
+        }
+            
     }  
 }
 
