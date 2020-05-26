@@ -23,22 +23,6 @@ nav::after {
 	text-align: center;
 }
 
-.logo img {
-	position: relative;
-	float: left;
-	width: 60px;
-	height: 55px;
-	margin-top: 10px;
-	margin-left: 50%;
-}
-
-nav ul {
-	float: right;
-	list-style: none;
-	margin-right: 75px;
-	position: relative;
-	isolation: isolate;
-}
 
 nav ul li i:hover {
 	color: orangered;
