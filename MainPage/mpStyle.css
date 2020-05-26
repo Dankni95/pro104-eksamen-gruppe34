@@ -466,12 +466,13 @@ input {
 /*Bottom Area: Start*/
 #personList {
 	position: absolute;
-	left: 300px;
+	left: 450px;
 	width: 350px;
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 25px;
 	background-color: #273138;
+	top: 830px;
 }
 
 .person {
@@ -515,7 +516,7 @@ input {
 #descriptionBox {
 	position: absolute;
 	top: 650px;
-	left: 35%;
+	left: 50%;
 	width: 400px;
 	height: 220px;
 	float: right;
@@ -548,7 +549,7 @@ input {
 
 #descriptionBox h4 {
 	margin-left: 7px;
-	margin-top: px;
+	margin-top: 10px;
 	color: whitesmoke;
 }
 
