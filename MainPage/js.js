@@ -1,19 +1,22 @@
-let getLeftContainer = document.getElementById("task_container");
-let getAddContainer = document.getElementById("add_category");
-let getAddPerson = document.getElementById("addPerson");
-let getPersonList = document.getElementById("personList")
-let getTaskarea = document.getElementById("listoftasks")
-let getAddMainTask = document.getElementById("addMainTask")
-let getAddTask = document.getElementById("addTask");
-let getTextbox = document.getElementById("textbox");
-let getDate = document.getElementById("date");
-let getMainTitle = document.getElementById("taskArea");
-let getTaskContainer = document.getElementById("taskContainer");
+// var er ment for å lagre variabler over lenger tid
+var getLeftContainer = document.getElementById("task_container");
+var getAddContainer = document.getElementById("add_category");
+var getAddPerson = document.getElementById("addPerson");
+var getPersonList = document.getElementById("personList")
+var getTaskarea = document.getElementById("listoftasks")
+var getAddMainTask = document.getElementById("addMainTask")
+var getAddTask = document.getElementById("addTask");
+var getTextbox = document.getElementById("textbox");
+var getDate = document.getElementById("date");
+var getMainTitle = document.getElementById("taskArea");
+var getTaskContainer = document.getElementById("taskContainer");
 
-let categoryArray = [];
-let mainTasksArray = [];
-let taskArray = [];
-let personArray = [];
+var prosjektArray = [];
+var categoryArray = [];
+var mainTasksArray = [];
+var taskArray = [];
+var personArray = [];
+setPage();
 buildItems("category");
 buildItems("mainTask");
 
@@ -23,6 +26,10 @@ getAddTask.onclick = onclickAddTask;
 getAddMainTask.onclick = onclickaddMainTask;
 
 
+function setPage(){
+    let temp = document.getElementById("boxPath");
+    temp.innerHTML = getLocalStorage(`currentPage`);
+}
 
 function onclickAddCategory() {
     let text = document.getElementById("textAdd").value;
