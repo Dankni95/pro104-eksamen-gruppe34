@@ -471,6 +471,11 @@ button.plussMember img {
 	left: 1720px;
 	top: 860px;
 }
+#plussMember{
+	position: absolute;
+	left: 1830px;
+	top: 852px;
+}
 #personList {
 	position: absolute;
 	left: 1380px;
