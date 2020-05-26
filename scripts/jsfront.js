@@ -1,14 +1,14 @@
-var getMainContainer = document.getElementById("maincontainer");
-var getColorRed = document.getElementById("red");
-var getColorBlue = document.getElementById("blue");
-var getColorGreen = document.getElementById("green");
-var getColorGray = document.getElementById("gray");
-var getColorYellow = document.getElementById("yellow");
-var getColorPicture = document.getElementById("picture");
-var getColorPicture2 = document.getElementById("picture2")
-var getPlussAddProject = document.getElementById("createBox");
-var getTrash = document.getElementById("trash");
-var projectArray = [];
+let getMainContainer = document.getElementById("maincontainer");
+let getColorRed = document.getElementById("red");
+let getColorBlue = document.getElementById("blue");
+let getColorGreen = document.getElementById("green");
+let getColorGray = document.getElementById("gray");
+let getColorYellow = document.getElementById("yellow");
+let getColorPicture = document.getElementById("picture");
+let getColorPicture2 = document.getElementById("picture2")
+let getPlussAddProject = document.getElementById("createBox");
+let getTrash = document.getElementById("trash");
+let projectArray = [];
 let counter = 0;
 getPlussAddProject.onclick = onClickAddProject;
 
@@ -18,8 +18,6 @@ function onClickAddProject() {
     projectArray.push({
         textToShow: `New Project ${++counter}`,
         backgroundcolor: "#53bdb9"
-
-
     });
     setLocalStorage("project", projectArray);
     console.log(counter);
@@ -27,14 +25,12 @@ function onClickAddProject() {
 };
 
 
-
-
 function buildItems() {
     getMainContainer.innerHTML = "";
     projectArray = getLocalStorage(`project`);
-    for (var i = 0; i < projectArray.length; i++) {
-        var backgroundColor = projectArray[i].backgroundcolor;
-        var text = projectArray[i].textToShow;
+    for (let i = 0; i < projectArray.length; i++) {
+        let backgroundColor = projectArray[i].backgroundcolor;
+        let text = projectArray[i].textToShow;
         getMainContainer.innerHTML += `
           <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
 
@@ -61,16 +57,16 @@ function buildItems() {
 }
 
 function changeColorBox(whoToChange) {
-    var box = document.getElementById(`${whoToChange}`);
-    for (var i = 0; i < whoToChange.length; i++) {
-        var rgbparameter1 = Math.floor(Math.random() * 255);
-        var rgbparameter2 = Math.floor(Math.random() * 255);
-        var rgbparameter3 = Math.floor(Math.random() * 255);
-        var RandomColorGen = `rgb(${rgbparameter1},${rgbparameter2},${rgbparameter3})`;
+    let box = document.getElementById(`${whoToChange}`);
+    for (let i = 0; i < whoToChange.length; i++) {
+        let rgbparameter1 = Math.floor(Math.random() * 255);
+        let rgbparameter2 = Math.floor(Math.random() * 255);
+        let rgbparameter3 = Math.floor(Math.random() * 255);
+        let RandomColorGen = `rgb(${rgbparameter1},${rgbparameter2},${rgbparameter3})`;
 
         box.style.backgroundColor = RandomColorGen;
     }
-    for (var i = 0; i < projectArray.length; i++) {
+    for (let i = 0; i < projectArray.length; i++) {
         if (projectArray[i].textToShow === `${whoToChange}`) {
             projectArray[i].backgroundcolor = RandomColorGen;
             setLocalStorage(`project`, projectArray);
@@ -80,7 +76,7 @@ function changeColorBox(whoToChange) {
 }
 
 function changeNamePart1(whoToChange) {
-    var getIt = document.getElementById(`${whoToChange}`);
+    let getIt = document.getElementById(`${whoToChange}`);
     getIt.innerHTML +=
         `<input type="text" id="${whoToChange}text" class="tekstboksen" placeholder="New name">`;
     getIt.innerHTML +=
@@ -102,7 +98,7 @@ function changeNamePart2() {
     let oldName = document.getElementsByClassName("tekstboksen")[0].parentElement.id;
     console.log(`${newName}${oldName}`);
 
-    for (var i = 0; i < projectArray.length; i++) {
+    for (let i = 0; i < projectArray.length; i++) {
         if (oldName === projectArray[i].textToShow) {
             if (newName === "") {
                 projectArray[i].textToShow = oldName;
