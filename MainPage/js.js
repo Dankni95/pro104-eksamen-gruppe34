@@ -11,6 +11,8 @@ var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("taskArea");
 var getTaskContainer = document.getElementById("taskContainer");
 var getboxpath = document.getElementById(`boxPath`);
+var getTextPerson = document.getElementById(`text-member`);
+
 var prosjektArray = [];
 var categoryArray = [];
 var mainTasksArray = [];
