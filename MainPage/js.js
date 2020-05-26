@@ -146,13 +146,20 @@ function buildItems(type, whoSentIt) {
         for (let i = 0; i < categoryArray.length; i++) {
             let backgroundColor = categoryArray[i].backgroundcolor;
             let text = categoryArray[i].textToShow;
-            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
+            let project = getLocalStorage(`currentPage`);
+            if(project===categoryArray[i].project){
+        getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
         <button style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
         </div>
         <div class="container"></div>
         </div>`;
+            }
+
         }
+        
+    //her kommer en comment
+    
         buildItems("maintask")
     }
     if (type === "person") {
