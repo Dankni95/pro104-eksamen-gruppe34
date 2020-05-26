@@ -64,7 +64,7 @@ function onclickAddCategory() {
 function onclickAddMember(){
     let getTextPerson = document.getElementById(`text-member`).value;
     let getPersonList = document.getElementById(`personList`);
-    getPersonList.innerHTML += `<div id="${getTextPerson}" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">${getTextPerson}</div>`;
+    getPersonList.innerHTML += `<div id="${getTextPerson}" draggable="true" ondragstart="x_drag(event)" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">${getTextPerson}</div>`;
 }
 
 function onclickDoneButton(ev) {
