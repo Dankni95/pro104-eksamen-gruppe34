@@ -65,14 +65,20 @@ function onclickAddTask(whoSentThis) {
 
 function onclickaddMainTask() {
     let category = document.getElementById("taskArea").innerHTML;
+    console.log(category);
     let getText = document.getElementById("addMainTaskText").value;
-    mainTasksArray.push({
+    if(category==="Project name"){
+        alert("Please add or select a new category in the bottom right corner before you add a project")
+    }else{
+        mainTasksArray.push({
         textToShow: `${getText}`,
         backgroundcolor: "beige",
         category: `${category}`
     })
     setLocalStorage(`mainTask`, mainTasksArray);
     buildItems("mainTask");
+    }
+
 }
 
 function buildMainSite(categoryToBuild) {
