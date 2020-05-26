@@ -110,9 +110,7 @@ function buildItems(type, whoSentIt) {
             let text = categoryArray[i].textToShow;
             getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
-
-        <button style="margin: 15px"; id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
-
+        <button style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
         </div>
         <div class="container"></div>
         </div>`;
@@ -144,7 +142,7 @@ function buildItems(type, whoSentIt) {
             let checker = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.id;
             console.log(mainToAddTo);
             console.log(checker);
-            
+
             let backgroundText = taskArray[i].backgroundcolor;
             let textTask = taskArray[i].textToShow;
             if (checker == taskArray[i].maintask) {
@@ -190,18 +188,18 @@ function buildItems(type, whoSentIt) {
 	</div>
     </div>`;
                 counter++;
-            for(var j=0; j<taskArray.length; j++){
-            if(taskArray[j].maintask === getMaintext){
-                let insertPathId = document.getElementById(`${getMaintext}`).querySelectorAll(`.listoftasks`)[0].id;
-                let insertPath=document.getElementById(`${insertPathId}`);
-                let textTask = taskArray[j].textToShow;
-                insertPath.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
+                for (var j = 0; j < taskArray.length; j++) {
+                    if (taskArray[j].maintask === getMaintext) {
+                        let insertPathId = document.getElementById(`${getMaintext}`).querySelectorAll(`.listoftasks`)[0].id;
+                        let insertPath = document.getElementById(`${insertPathId}`);
+                        let textTask = taskArray[j].textToShow;
+                        insertPath.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
             </div>`;
-                
+
+                    }
+                }
             }
         }
-    }        
-}
 
     }
 }
