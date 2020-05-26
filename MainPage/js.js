@@ -10,15 +10,14 @@ var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("mainTitle");
 var getTaskContainer = document.getElementById("taskContainer");
-//<<<<<<< HEAD
-//var getPaintBrush = document.getElementById("paint-brush");
-//var getColorRed = document.getElementById("red");
-//var getColorBlue = document.getElementById("blue");
-//var getColorGreen = document.getElementById("green");
-//var getColorGray = document.getElementById("gray");
-//var getColorYellow = document.getElementById("yellow");
-//=======
-//>>>>>>> parent of 87de3e9... color effect mainapge
+
+var getPaintBrush = document.getElementById("paint-brush");
+var getColorRed = document.getElementById("red");
+var getColorBlue = document.getElementById("blue");
+var getColorGreen = document.getElementById("green");
+var getColorGray = document.getElementById("gray");
+var getColorYellow = document.getElementById("yellow");
+
 
 var categoryArray = [];
 var mainTasksArray = [];
@@ -31,8 +30,11 @@ var personArray = [];
 
 
 function onclickAddCategory() {
+
     var whattoget = document.getElementById("textAdd");
     var textToSwitch = whattoget.value;
+    let text = document.getElementById("categoryText").value;
+
     categoryArray.push({
         textToShow: `${textToSwitch}`,
         backgroundcolor: "#28cc6d"
@@ -115,8 +117,7 @@ function buildItems(type, whoSentIt) {
             let text = categoryArray[i].textToShow;
             getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="">
         <div class="multi-button">
-        <button id="${text}" value="${text}" onclick="buildMainSite(${text})')">${text}</button>
-<div class="container"></div>
+        <button id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
         </div>
         
         </div>`;
@@ -230,7 +231,9 @@ function setLocalStorage(type, object) {
 
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
+
     }
+
 
 
 function ColorChange() {
@@ -265,3 +268,4 @@ function ColorChange() {
     };
 }
 buildItems("category");
+
