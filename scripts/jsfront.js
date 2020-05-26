@@ -117,7 +117,6 @@ function changeNamePart2() {
 }
 
 function removeItem(toBeRemoved) {
-    console.log("test");
     for (let i in projectArray) {
         if (toBeRemoved === projectArray[i].textToShow) {
             projectArray.splice(i, 1);

@@ -147,40 +147,52 @@ function buildMainSite(categoryToBuild) {
     buildItems("mainTask");
 }
 
-let c = 0;
+//let c = 0;
+//
+//function x_allowDrop(ev) {
+//    ev.preventDefault();
+//}
+//
+//function x_drag(ev) {
+//    ev.dataTransfer.setData("text", ev.target.id);
+//}
+//
+//function x_drop(ev) {
+//    ev.preventDefault();
+//    let data = ev.dataTransfer.getData("text");
+//    console.log(ev.target);
+//    ev.target.appendChild(document.getElementById(data));
+//    ev.target.ondragover = x_allowDrop;
+//    ev.target.ondrop = x_drop;
+//    document.getElementById(data).parentElement.ondragover = x_allowDrop;
+//    c++;
+//}
 
-function x_allowDrop(ev) {
-    ev.preventDefault();
-}
+document.addEventListener("dragstart", function(event){
+    event.dataTransfer.setData("Text", event.target.id);
+});
 
-function x_drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function x_drop(ev) {
-    ev.preventDefault();
-    let data = ev.dataTransfer.getData("text");
-    console.log(ev.target);
-    ev.target.appendChild(document.getElementById(data));
-    ev.target.ondragover = x_allowDrop;
-    ev.target.ondrop = x_drop;
-    document.getElementById(data).parentElement.ondragover = x_allowDrop;
-    c++;
-}
+document.addEventListener("dragover", function(event) {
+  event.preventDefault();
+});
 
 document.addEventListener("drop", function(event){
 event.preventDefault();
-if(event.target.className == "bucket"){
-    var data = event.dataTransfer.getData("Text");
-    console.log(data);
-    for(var i=0; i<categoryArray.length; i++){
-        if(categoryArray[i].textToShow==="data"){
+var data = event.dataTransfer.getData("text");
+console.log(`${data}`);
+categoryArray = getLocalStorage(`category`);
+removeItem(data);
+});
+
+function removeItem(toBeRemoved) {
+    for (let i in categoryArray) {
+        if (toBeRemoved === categoryArray[i].textToShow) {
             categoryArray.splice(i, 1);
         }
     }
+    setLocalStorage(`category`, categoryArray);
+    buildItems(`category`);
 }
-});
-
 
 function buildItems(type, whoSentIt) {
         if (type == "category") {
@@ -193,7 +205,7 @@ function buildItems(type, whoSentIt) {
             if(project===categoryArray[i].project){
         getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
-        <button draggable="true" ondragstart="x_drag(event)" style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}btn" onclick="buildMainSite('${text}')">${text}</button>
+        <button draggable="true" style="margin: 15px; color: #ffff; font-size: 15px; font-weight: bold; line" id="${text}" onclick="buildMainSite('${text}')">${text}</button>
         </div>
         <div class="container"></div>
         </div>`;
