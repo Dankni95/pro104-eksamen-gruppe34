@@ -113,12 +113,12 @@ function buildItems(type, whoSentIt) {
         var elementToChangePart1 = document.getElementById(`${whoSentIt}`).parentElement.previousSibling.previousSibling.previousSibling.previousSibling.id;
         elementToChangePart2 = document.getElementById(`${elementToChangePart1}`);
         console.log(`${elementToChangePart2}`)
-        getTaskarea.innerHTML = `dddd`;
+        elementToChangePart2.innerHTML = ``;
         taskArray = getLocalStorage(`task`);
         for (var i = 0; i < taskArray.length; i++) {
             let backgroundText = taskArray[i].backgroundcolor;
             let textTask = taskArray[i].textToShow;
-            elementToChangePart2.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done"><input type="button" id="${textTask}WIP" value="WIP"></div>
+            elementToChangePart2.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
             </div>`
         }
 
