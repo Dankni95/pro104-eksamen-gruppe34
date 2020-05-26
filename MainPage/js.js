@@ -1,4 +1,4 @@
-// var er ment for å lagre variabler over lenger tid
+// henting av html elementer
 var getLeftContainer = document.getElementById("task_container");
 var getAddContainer = document.getElementById("add_category");
 var getAddPerson = document.getElementById("addPerson");
@@ -13,15 +13,19 @@ var getTaskContainer = document.getElementById("taskContainer");
 var getboxpath = document.getElementById(`boxPath`);
 var getPlussMember = document.getElementById(`plussMember`);
 var getPersonList = document.getElementById(`personList`);
+//arrays som skal inn i localstorage
 var prosjektArray = [];
 var categoryArray = [];
 var mainTasksArray = [];
 var taskArray = [];
 var personArray = [];
+//setter riktig prosjekt på siden
 setPage();
+//starter oppbygging av siden
 buildItems("category");
 buildItems("mainTask");
 
+//setter første kategori som default når man kommer inn fra en ny økt
 if(categoryArray.length>0){
     for(var i=0; i<categoryArray.length; i++){
         if(categoryArray[i].project===boxPath.innerHTML){
@@ -33,17 +37,20 @@ if(categoryArray.length>0){
     getMainTitle.innerHTML="";
 }
 
+//onclick funksjoner
 getAddContainer.onclick = onclickAddCategory;
 getAddPerson.onclick = onclickAddPerson;
 getAddTask.onclick = onclickAddTask;
 getAddMainTask.onclick = onclickaddMainTask;
 getPlussMember.onclick = onclickAddMember;
 
+//setter siden med localstorage fra forrige side. altså fra frontpage
 function setPage() {
     let temp = document.getElementById("boxPath");
     temp.innerHTML = getLocalStorage(`currentPage`);
 }
 
+//klikke for å legge til kategori
 function onclickAddCategory() {
     let text = document.getElementById("textAdd").value;
     let project = getLocalStorage(`currentPage`);
@@ -60,7 +67,7 @@ function onclickAddCategory() {
     }
 
 }
-
+// klikke for å legge til nytt member
 function onclickAddMember(){
     let getTextPerson = document.getElementById(`text-member`).value;
     let getCat = document.getElementById(`taskArea`)
@@ -72,7 +79,7 @@ function onclickAddMember(){
     setLocalStorage(`person`, personArray);
     buildItems("person", `${getTextPerson}`);
 }
-
+//vet ikke
 function onclickDoneButton(ev) {
     ev.originalTarget.parentElement.style.backgroundColor = "#00ff00";
     let val = ev.originalTarget.parentElement.firstChild;
@@ -92,7 +99,7 @@ function onclickWIPButton(ev) {
 }
 
 
-
+//legger til personer
 function onclickAddPerson() {
     personArray.push({
         textToShow: "G",
@@ -142,40 +149,23 @@ function onclickaddMainTask() {
 
 }
 
+//starter bygging av siden
 function buildMainSite(categoryToBuild) {
     getMainTitle.innerHTML = `${categoryToBuild}`;
     buildItems("mainTask");
 }
 
-//let c = 0;
-//
-//function x_allowDrop(ev) {
-//    ev.preventDefault();
-//}
-//
-//function x_drag(ev) {
-//    ev.dataTransfer.setData("text", ev.target.id);
-//}
-//
-//function x_drop(ev) {
-//    ev.preventDefault();
-//    let data = ev.dataTransfer.getData("text");
-//    console.log(ev.target);
-//    ev.target.appendChild(document.getElementById(data));
-//    ev.target.ondragover = x_allowDrop;
-//    ev.target.ondrop = x_drop;
-//    document.getElementById(data).parentElement.ondragover = x_allowDrop;
-//    c++;
-//}
-
+//drag and drop starter her. Begynner med å dra ting
 document.addEventListener("dragstart", function(event){
     event.dataTransfer.setData("Text", event.target.id);
 });
 
+//deretter forhindrer den at man ikke kan slippe når man beveger over
 document.addEventListener("dragover", function(event) {
   event.preventDefault();
 });
 
+//her er koden som kommer når man slipper den i søpplekassen
 document.addEventListener("drop", function(event){
 event.preventDefault();
     if(event.target.className === "trash"){
@@ -186,7 +176,7 @@ removeItem(data);
     }
 
 });
-
+//her er slettefunksjonen til søpplekassen og drag/drop
 function removeItem(toBeRemoved) {
     for (let i in categoryArray) {
         if (toBeRemoved === categoryArray[i].textToShow) {
@@ -197,6 +187,7 @@ function removeItem(toBeRemoved) {
     buildItems(`category`);
 }
 
+//dette er hovedfunksjonen på siden. Den bygger alt
 function buildItems(type, whoSentIt) {
         if (type == "category") {
         getLeftContainer.innerHTML = "";
@@ -215,8 +206,6 @@ function buildItems(type, whoSentIt) {
             }
 
         }
-        
-    //her kommer en comment
     
         buildItems("maintask")
     }
@@ -309,6 +298,7 @@ function buildItems(type, whoSentIt) {
     }
 }
 
+//expander en task når man trykker på plussikonet, og minimerer når man trykker på det mens den er åpen
 function expandTask(whoToExpand) {
     let getit = document.getElementById(`${whoToExpand}`);
     let getTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.task`);
@@ -335,7 +325,7 @@ function expandTask(whoToExpand) {
 
     }
 }
-
+//localstorage funksjonen
 function setLocalStorage(type, object) {
     window.localStorage.setItem(type, JSON.stringify(object));
 }
@@ -343,6 +333,8 @@ function setLocalStorage(type, object) {
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
 }
+
+
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
@@ -361,6 +353,7 @@ overlay.addEventListener('click', () => {
     })
 })
 
+//morsomt med eventlisteners 
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = button.closest('.modal')
