@@ -266,6 +266,7 @@ function ColorChange() {
         getMainContainer.style.backgroundColor = "#e9bc0a";
         getMainContainer.style.backgroundImage = "";
     };
+    
 }
 buildItems("category");
 
