@@ -545,5 +545,6 @@ input {
 #taskTab{
 	position: absolute;
 	width: 146px;
+	border-radius: 10%;
 	
 }
