@@ -148,11 +148,11 @@ getColorYellow.onclick = function () {
     getMainContainer.style.backgroundImage = "";
 };
 getColorPicture.onclick = function () {
-    getMainContainer.style.backgroundImage = "url(Images/gradient.jpg)";
+    getMainContainer.style.backgroundImage = "url(./images/gradient.jpg)";
 };
 
 getColorPicture2.onclick = function () {
-    getMainContainer.style.backgroundImage = "url(Images/Mountain.jpg)";
+    getMainContainer.style.backgroundImage = "url(./images/Mountain.jpg)";
 };
 
 
