@@ -10,12 +10,15 @@ var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("mainTitle");
 var getTaskContainer = document.getElementById("taskContainer");
+<<<<<<< HEAD
 var getPaintBrush = document.getElementById("paint-brush");
 var getColorRed = document.getElementById("red");
 var getColorBlue = document.getElementById("blue");
 var getColorGreen = document.getElementById("green");
 var getColorGray = document.getElementById("gray");
 var getColorYellow = document.getElementById("yellow");
+=======
+>>>>>>> parent of 87de3e9... color effect mainapge
 
 var categoryArray = [];
 var mainTasksArray = [];
@@ -31,14 +34,21 @@ getAddMainTask.onclick = onclickaddMainTask;
 
 
 function onclickAddCategory() {
-    let text = document.getElementById("categoryText").value;
-    categoryArray.push({ textToShow: `${text}`, backgroundcolor: "#28cc6d" });
+    let text = document.getElementById("textAdd").value;
+    categoryArray.push({
+        textToShow: `${text}`,
+        backgroundcolor: "#28cc6d"
+    });
     setLocalStorage(`category`, categoryArray);
     buildItems("category");
 }
 
 function onclickAddPerson() {
-    personArray.push({ textToShow: "G", backgroundcolor: "#28cc6d", category: "CSS" });
+    personArray.push({
+        textToShow: "G",
+        backgroundcolor: "#28cc6d",
+        category: "CSS"
+    });
     setLocalStorage(`person`, personArray);
     buildItems("person");
 }
@@ -49,7 +59,15 @@ function onclickAddTask(whoSentThis) {
     let date = getter.nextElementSibling.value;
     let category = document.getElementById("mainTitle").innerHTML;
     let maintask = document.getElementById(`${whoSentThis}`).parentElement.parentElement.querySelector(`.overskrift`).id;
-    taskArray.push({ textToShow: `${text}`, backgroundcolor: "#28cc6d", date: `${date}`, WIP: "no", done: "no", category: `${category}`, maintask: `${maintask}` });
+    taskArray.push({
+        textToShow: `${text}`,
+        backgroundcolor: "#28cc6d",
+        date: `${date}`,
+        WIP: "no",
+        done: "no",
+        category: `${category}`,
+        maintask: `${maintask}`
+    });
     setLocalStorage(`task`, taskArray);
     buildItems("task", `${whoSentThis}`);
 }
@@ -57,7 +75,11 @@ function onclickAddTask(whoSentThis) {
 function onclickaddMainTask() {
     let category = document.getElementById("mainTitle").innerHTML;
     let getText = document.getElementById("addMainTaskText").value;
-    mainTasksArray.push({ textToShow: `${getText}`, backgroundcolor: "beige", category: `${category}` })
+    mainTasksArray.push({
+        textToShow: `${getText}`,
+        backgroundcolor: "beige",
+        category: `${category}`
+    })
     setLocalStorage(`mainTask`, mainTasksArray);
     buildItems("mainTask");
 }
@@ -81,7 +103,7 @@ function x_drop(ev) {
     const data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
-
+/* */
 function buildItems(type, whoSentIt) {
     if (type == "category") {
         getLeftContainer.innerHTML = "";
@@ -89,13 +111,12 @@ function buildItems(type, whoSentIt) {
         for (var i = 0; i < categoryArray.length; i++) {
             let backgroundColor = categoryArray[i].backgroundcolor;
             let text = categoryArray[i].textToShow;
-            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
+            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="">
         <div class="multi-button">
-        <button class="fa fa-comment"></button>
-        <button class="fa fa-cog"></button>
-        <button class="fa fa-trash" id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
+        <button id="${text}" value="${text}" onclick="buildMainSite(${text})')">${text}</button>
+<div class="container"></div>
         </div>
-        <div class="container">${text}</div>
+        
         </div>`;
         }
         buildItems("maintask", )
@@ -118,26 +139,26 @@ function buildItems(type, whoSentIt) {
     if (type === "task") {
         taskArray = getLocalStorage(`task`);
         let mainToAddTo = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling;
-        mainToAddTo.innerHTML= ``
-        for(var i=0; i<taskArray.length; i++){
-            
+        mainToAddTo.innerHTML = ``
+        for (var i = 0; i < taskArray.length; i++) {
+
 
             let checker = document.getElementById(`${whoSentIt}`).parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.id;
             let backgroundText = taskArray[i].backgroundcolor;
             let textTask = taskArray[i].textToShow;
-           if(checker==taskArray[i].maintask){
-               
-               mainToAddTo.innerHTML +=`<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
-            </div>`
-           }
+            if (checker == taskArray[i].maintask) {
 
-            
+                mainToAddTo.innerHTML += `<div class="task" id="${textTask}" style="background-color: beige; position: relative; width: 250px">${textTask}<input type="button" id="${textTask}done" value="done" style="display: inline;"><input type="button" id="${textTask}WIP" value="WIP" style="display: inline;"></div>
+            </div>`
+            }
+
+
 
         }
-           
+
     }
 
-    
+
     getAddPerson.onclick = onclickAddPerson;
 
     if (type === "mainTask") {
@@ -159,9 +180,7 @@ function buildItems(type, whoSentIt) {
             </div>
 			<div class="miniChart" id="miniChart1"></div>
             <div id="addTasks" class="addTasks">
-            <input type="text" id="textbox${counter}" value="to add tasks" style="display: inline;             
-            
-            ">
+            <input type="text" id="textbox${counter}" value="to add tasks" style="display: inline;">
             <input type="button" id="addTask${counter}" onclick="onclickAddTask('addTask${counter}')" value="ADD" style="display: inline;">
             <input type="date" id="date${counter}" style="display: inline;">
             </div>
@@ -176,31 +195,31 @@ function buildItems(type, whoSentIt) {
     }
 }
 
-function expandTask(whoToExpand){
+function expandTask(whoToExpand) {
     let getit = document.getElementById(`${whoToExpand}`);
     let getTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.task`);
     let getAddTasks = document.getElementById(`${whoToExpand}`).querySelectorAll(`.addTasks`);
-    if(getit.style.width===`450px`){
+    if (getit.style.width === `450px`) {
         getit.style.width = `45px`;
         //hide tasks
-        for(var i=0;i<getTasks.length; i++ ){
+        for (var i = 0; i < getTasks.length; i++) {
             getTasks[i].style.display = `none`;
         }
-        for(var i=0;i<getAddTasks.length; i++ ){
+        for (var i = 0; i < getAddTasks.length; i++) {
             getAddTasks[i].style.display = `none`;
         }
-        
-    }else{
+
+    } else {
         getit.style.width = `450px`;
         //show tasks
-        for(var i=0;i<getTasks.length; i++ ){
-        getTasks[i].style.display = `inline`;
+        for (var i = 0; i < getTasks.length; i++) {
+            getTasks[i].style.display = `inline`;
         }
-        for(var i=0;i<getAddTasks.length; i++ ){
-        getAddTasks[i].style.display = `inline`;
+        for (var i = 0; i < getAddTasks.length; i++) {
+            getAddTasks[i].style.display = `inline`;
         }
-            
-    }  
+
+    }
 }
 
 function setLocalStorage(type, object) {
@@ -209,6 +228,7 @@ function setLocalStorage(type, object) {
 
 function getLocalStorage(type) {
     return JSON.parse(window.localStorage.getItem(type)) || [];
+<<<<<<< HEAD
 }
 function ColorChange() {
     var taskbox = document.getElementById("textbox");
@@ -240,4 +260,6 @@ function ColorChange() {
         getMainContainer.style.backgroundColor = "#e9bc0a";
         getMainContainer.style.backgroundImage = "";
     };
+=======
+>>>>>>> parent of 87de3e9... color effect mainapge
 }
