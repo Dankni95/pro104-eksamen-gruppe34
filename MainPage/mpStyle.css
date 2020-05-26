@@ -467,14 +467,14 @@ button.plussMember img {
 
 /*Bottom Area: Start*/
 #personList {
-	position: ;
-	left: 450px;
-	width: 350px;
+	position: absolute;
+	left: 1380px;
+	width: 330px;
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 25px;
 	background-color: #273138;
-	top: 830px;
+	top: 850px;
 }
 
 .person {
@@ -484,8 +484,10 @@ button.plussMember img {
 	border: 1px solid black;
 	border-radius: 100%;
 	left: 10px;
-	top: 5px;
+	top: 7px;
 }
+
+#undefined {}
 
 #personId {
 	width: 30px;
@@ -498,7 +500,7 @@ button.plussMember img {
 	position: absolute;
 	height: 30px;
 	width: 30px;
-	left: 300px;
+	left: 285px;
 	top: 8px;
 	border: 1px solid black;
 	border-radius: 100%;
@@ -518,7 +520,7 @@ button.plussMember img {
 #descriptionBox {
 	position: absolute;
 	top: 650px;
-	left: 50%;
+	left: 40%;
 	width: 400px;
 	height: 220px;
 	float: right;
@@ -552,7 +554,7 @@ button.plussMember img {
 
 #descriptionBox h4 {
 	margin-left: 7px;
-	margin-top: 10px;
+	margin-top: 160px;
 	color: whitesmoke;
 }
 
