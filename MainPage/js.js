@@ -67,8 +67,10 @@ function onclickaddMainTask() {
     let category = document.getElementById("taskArea").innerHTML;
     console.log(category);
     let getText = document.getElementById("addMainTaskText").value;
-    if(category==="Project name"){
+    if(category===""){
         alert("Please add or select a new category in the bottom right corner before you add a project")
+    }else if(getText===""){
+        alert("Please add a description in the textbox below the add task button");
     }else{
         mainTasksArray.push({
         textToShow: `${getText}`,
