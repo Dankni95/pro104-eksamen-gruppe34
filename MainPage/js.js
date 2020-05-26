@@ -24,7 +24,7 @@ getAddMainTask.onclick = onclickaddMainTask;
 
 
 function onclickAddCategory() {
-    let text = document.getElementById("categoryText").value;
+    let text = document.getElementById("textAdd").value;
     categoryArray.push({
         textToShow: `${text}`,
         backgroundcolor: "#28cc6d"
@@ -101,11 +101,12 @@ function buildItems(type, whoSentIt) {
         for (var i = 0; i < categoryArray.length; i++) {
             let backgroundColor = categoryArray[i].backgroundcolor;
             let text = categoryArray[i].textToShow;
-            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
+            getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="">
         <div class="multi-button">
-        <button id="trash" onclick="removeItem('${categoryArray[i].textToShow}')"></button>
+        <button id="${text}" value="${text}" onclick="buildMainSite(${text})')">${text}</button>
+<div class="container"></div>
         </div>
-        <div class="container">${text}</div>
+        
         </div>`;
         }
         buildItems("maintask", )
