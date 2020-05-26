@@ -289,6 +289,9 @@ input {
 }
 
 /*SideBar: End*/
+
+
+/*Main: Start*/
 .taskArea {
 	width: 1500px;
 	height: 500px;
@@ -350,6 +353,9 @@ input {
 	margin-left: 5px;
 	color: whitesmoke;
 }
+
+/*Main: End*/
+
 
 /*Task container: Start*/
 
@@ -453,15 +459,14 @@ button.plussMember img {
 	display: flex;
 	width: 100px;
 	height: 25px;
-	top: 20%;
-	left: 11.5%;
+	top: 90%;
+	left: 90%;
 }
-
-
-
 
 /*Task Container: End*/
 
+
+/*Bottom Area: Start*/
 #personList {
 	position: absolute;
 	left: 300px;
@@ -525,6 +530,7 @@ button.plussMember img {
 }
 
 #text-box {
+	position: absolute;
 	margin-left: 9px;
 	width: 380px;
 	height: 150px;
@@ -559,9 +565,7 @@ button.plussMember img {
 	line-height: 130px;
 }
 
-
-
-/*Main: End*/
+/*Bottom Area: End*/
 
 
 /* kortene på venstre side*/
