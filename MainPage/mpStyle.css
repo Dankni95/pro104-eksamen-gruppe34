@@ -7,8 +7,9 @@
 }
 
 body {
- 	background-image: url(../images/gradient.jpg);
+	background-image: url(../images/Mountain.jpg);
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 textarea {
@@ -349,13 +350,15 @@ input {
 
 .taskTabs {
 	display: inline-block;
-	height: 270px;
-	width: 45px;
-	border: 1px solid black;
+	border-radius: 10px;
+	width: 180px;
+	height: 350px;
+	border: 5px solid #ffff;
 	margin-top: 3px;
 	margin-left: 2px;
-	background-color: gray;
-	transition: all 600ms linear;
+	background-color: #ffff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 2.9);
+	transition: all 600ms
 }
 
 .plus {
