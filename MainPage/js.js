@@ -10,6 +10,8 @@ var getTextbox = document.getElementById("textbox");
 var getDate = document.getElementById("date");
 var getMainTitle = document.getElementById("taskArea");
 var getTaskContainer = document.getElementById("taskContainer");
+var getboxpath = document.getElementById(`boxPath`);
+var getPlussMember = document.getElementById(`plussMember`);
 
 var prosjektArray = [];
 var categoryArray = [];
@@ -20,11 +22,22 @@ setPage();
 buildItems("category");
 buildItems("mainTask");
 
+if(categoryArray.length>0){
+    for(var i=0; i<categoryArray.length; i++){
+        if(categoryArray[i].project===boxPath.innerHTML){
+            getMainTitle.innerHTML= categoryArray[i].textToShow;
+        }
+    }
+    
+}else{
+    getMainTitle.innerHTML="";
+}
+
 getAddContainer.onclick = onclickAddCategory;
 getAddPerson.onclick = onclickAddPerson;
 getAddTask.onclick = onclickAddTask;
 getAddMainTask.onclick = onclickaddMainTask;
-
+getPlussMember.onclick = onclickAddMember;
 
 function setPage() {
     let temp = document.getElementById("boxPath");
@@ -46,6 +59,12 @@ function onclickAddCategory() {
         buildItems("category");
     }
 
+}
+
+function onclickAddMember(){
+    let getTextPerson = document.getElementById(`text-member`).value;
+    let getPersonList = document.getElementById(`personList`);
+    getPersonList.innerHTML += `<div id="${getTextPerson}" draggable="true" ondragstart="x_drag(event)" class="person" style="display: inline; float: left; height: 30px; width: 30px; background-color: white;">${getTextPerson}</div>`;
 }
 
 function onclickDoneButton(ev) {
