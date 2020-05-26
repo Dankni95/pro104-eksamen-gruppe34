@@ -168,18 +168,18 @@ function x_drop(ev) {
     c++;
 }
 
-document.addEventListener("drop", function(event)){
+document.addEventListener("drop", function(event){
 event.preventDefault();
 if(event.target.className == "bucket"){
     var data = event.dataTransfer.getData("Text");
     console.log(data);
-    for(var i=0; i<categoryArray.length){
+    for(var i=0; i<categoryArray.length; i++){
         if(categoryArray[i].textToShow==="data"){
             categoryArray.splice(i, 1);
         }
     }
 }
-}
+});
 
 
 function buildItems(type, whoSentIt) {
