@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(/images/gradient.jpg);
+    background-image: url(./images/gradient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -220,14 +220,14 @@ input {
 
 
 #Picture {
-    background-image: url(Images/gradient.jpg)no-repeat center center fixed;
+    background-image: url(./images/gradient.jpg)no-repeat center center fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #Picture2 {
-    background-image: url(Images/gradient.jpg)no-repeat center center fixed;
+    background-image: url(./images/gradient.jpg)no-repeat center center fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
