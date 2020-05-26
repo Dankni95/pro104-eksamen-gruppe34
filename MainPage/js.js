@@ -128,6 +128,7 @@ function buildItems(type, whoSentIt) {
         for (let i = 0; i < categoryArray.length; i++) {
             let backgroundColor = categoryArray[i].backgroundcolor;
             let text = categoryArray[i].textToShow;
+            let project = getLocalStorage(`currentPage`);
             if(project===categoryArray[i].project){
         getLeftContainer.innerHTML += `<div class="card" style="--background:${backgroundColor}; --text:white; onclick="buildMainSite(${text})">
         <div class="multi-button">
