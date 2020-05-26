@@ -47,7 +47,7 @@ function onclickAddTask(whoSentThis) {
     let getter = document.getElementById(`${whoSentThis}`);
     let text = getter.previousElementSibling.value;
     let date = getter.nextElementSibling.value;
-    let category = document.getElementById("mainTitle").innerHTML;
+    let category = document.getElementById("taskArea").innerHTML;
     let maintask = document.getElementById(`${whoSentThis}`).parentElement.parentElement.querySelector(`.overskrift`).id;
     taskArray.push({
         textToShow: `${text}`,
@@ -63,7 +63,7 @@ function onclickAddTask(whoSentThis) {
 }
 
 function onclickaddMainTask() {
-    let category = document.getElementById("mainTitle").innerHTML;
+    let category = document.getElementById("taskArea").innerHTML;
     let getText = document.getElementById("addMainTaskText").value;
     mainTasksArray.push({
         textToShow: `${getText}`,
@@ -160,7 +160,7 @@ function buildItems(type, whoSentIt) {
     if (type === "mainTask") {
         getTaskContainer.innerHTML = ``;
         mainTasksArray = getLocalStorage(`mainTask`);
-        let category = document.getElementById("mainTitle").innerHTML;
+        let category = document.getElementById("taskArea").innerHTML;
         let counter = 0;
         for (let i = 0; i < mainTasksArray.length; i++) {
             if (category === mainTasksArray[i].category) {
